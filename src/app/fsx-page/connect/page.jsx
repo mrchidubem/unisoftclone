@@ -7,12 +7,13 @@ import AOS from "aos";
 import 'aos/dist/aos.css';
 import CountUp from 'react-countup';
 import { useEffect } from "react"
+import ButtonGroup from "@/app/components/ButtonGroup";
 
-const roboto = Roboto({
-  variable: "--font-roboto",
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+// const roboto = Roboto({
+//   variable: "--font-roboto",
+//   subsets: ["latin"],
+//   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+// });
 
 // export const metadata = {
 //   title: "Fsx Connect",
@@ -21,13 +22,31 @@ const roboto = Roboto({
 
 
 
-const scrollToSection = (e, sectionId) => {
-  e.preventDefault();
-  const section = document.getElementById(sectionId);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
+// const scrollToContact = (e, sectionId) => {
+//   e.preventDefault();
+//   const section = document.getElementById(sectionId);
+//   if (section) {
+//     section.scrollIntoView({ behavior: "smooth" });
+//   }
+// };
+const scrollToContact = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    closeMobileMenu();
+  };
+
+
+  const scrollToExplore = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('joinCommunity');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+     closeMobileMenu();
+  };
 
 
 
@@ -44,21 +63,30 @@ export default function FsxConnect() {
 
   return (
     <div
-      className={`${roboto.variable} ${styles.fsxSection} ${styles.fsxConnectPage}`}
+      className=""
     >
-      <section className={styles.fsxConnectContainer}>
-        <section className={styles.heroSection} data-aos="fade-up">
-          <div className={styles.heroTextContainer}>
-            <h2 className={styles.heroTitle}>FSX Connect</h2>
-            <p className={styles.heroDescription}>
+      <div className={styles.fsxConnectContainer}>
+        <div className="hero" data-aos="fade-up">
+          <div className="heroText">
+            <h1>FSX Connect</h1>
+            <p>
               Building meaningful networks for growth and collaboration. Connect
               with entrepreneurs, investors, mentors, and innovators across
               Africa and beyond.
             </p>
-            <section className={styles.heroBtnContainer}>
+             <div className={styles.heroBtns} >
+                        <ButtonGroup
+                          filterKeys={['fsxconnect1', 'ExploreConnect']}
+                          onClickHandlers={{
+                           fsxconnect1: scrollToContact,
+                           ExploreConnect: scrollToExplore,
+                          }}
+                        />
+                      </div>
+            {/* <div className={styles.heroBtnContainer}>
            <button className={styles.exploreBtn}  onClick={(e) => scrollToSection(e, "joinCommunity" )}>Explore Network</button>
               <button className={styles.joinBtn} onClick={(e) => scrollToSection(e, "contact")}>Join Community</button> 
-            </section>
+            </div> */}
           </div>
           <div className={styles.heroImageContainer}>
             <Image
@@ -71,7 +99,7 @@ export default function FsxConnect() {
               objectFit="cover"
             />
           </div>
-        </section>
+        </div>
 
         <section className={styles.cardParticipation} data-aos="fade-up">
           <div className={styles.communityMem}>
@@ -91,14 +119,18 @@ export default function FsxConnect() {
             <p className={styles.countriesTitle}>Countries Represented</p>
           </div>
         </section>
-        <section className={styles.connectionSection} data-aos="fade-up">
-          <h4 className={styles.connectionTitle}>Our Connection Services</h4>
-          <p className={styles.connectionDescription}>
-            We facilitate meaningful connections through specialized networks
-            and programs designed to foster collaboration and growth.
-          </p>
-          <div className={styles.connectionCardsContainer} id="connection" >
-            <div className={styles.connectionCard}>
+
+        
+        <section data-aos="fade-up">
+          <div className="sectionHead">
+            <h2>Our Connection Services</h2>
+            <h6>
+              We facilitate meaningful connections through specialized networks
+              and programs designed to foster collaboration and growth.
+            </h6>
+          </div>
+          <div className='grid' id="connection" >
+            <div className='card2'>
               <Image
                 src="/networkIcon.svg"
                 alt="Network Icon"
@@ -106,14 +138,14 @@ export default function FsxConnect() {
                 height={60}
                 className={styles.cardIcon}
               />
-              <h5 className={styles.cardTitle}>Professional Networks</h5>
+              <h4 className={styles.cardTitle}>Professional Networks</h4>
               <p className={styles.cardDescription}>
                 Connect with like-minded professionals, entrepreneurs, and
                 innovators in your industry and beyond through curated
                 networking events and forums.
               </p>
             </div>
-            <div className={styles.connectionCard}>
+            <div className="card1">
               <Image
                 src="/investor-relations-icon.svg"
                 alt="Investor Relations Icon"
@@ -121,14 +153,14 @@ export default function FsxConnect() {
                 height={60}
                 className={styles.cardIcon}
               />
-              <h5 className={styles.cardTitle}>Investor Relations</h5>
+              <h4 className={styles.cardTitle}>Investor Relations</h4>
               <p className={styles.cardDescription}>
                 Bridge the gap between innovative startups and investors looking
                 for the next breakthrough opportunity with our matchmaking
                 platform.
               </p>
             </div>
-            <div className={styles.connectionCard}>
+            <div className="card1">
               <Image
                 src="/mentor-matching-icon.svg"
                 alt="Mentor Matching Icon"
@@ -136,14 +168,14 @@ export default function FsxConnect() {
                 height={60}
                 className={styles.cardIcon}
               />
-              <h5 className={styles.cardTitle}>Mentorship Matching</h5>
+              <h4 className={styles.cardTitle}>Mentorship Matching</h4>
               <p className={styles.cardDescription}>
                 Intelligent pairing of mentors and mentees based on goals,
                 experience, and growth objectives to maximize learning and
                 development.
               </p>
             </div>
-            <div className={styles.connectionCard}>
+            <div className="card1">
               <Image
                 src="/networkIcon.svg"
                 alt="Startup Ecosystem Icon"
@@ -151,14 +183,14 @@ export default function FsxConnect() {
                 height={60}
                 className={styles.cardIcon}
               />
-              <h5 className={styles.cardTitle}>Startup Ecosystem</h5>
+              <h4 className={styles.cardTitle}>Startup Ecosystem</h4>
               <p className={styles.cardDescription}>
                 Access a vibrant ecosystem of startups, incubators, and
                 accelerators to fuel innovation and entrepreneurial growth
                 across Africa.
               </p>
             </div>
-            <div className={styles.connectionCard}>
+            <div className="card1">
               <Image
                 src="/partnership-oppurtunity-icon.svg"
                 alt="Partnership Opportunity Icon"
@@ -166,13 +198,13 @@ export default function FsxConnect() {
                 height={60}
                 className={styles.cardIcon}
               />
-              <h5 className={styles.cardTitle}>Partnership Opportunities</h5>
+              <h4 className={styles.cardTitle}>Partnership Opportunities</h4>
               <p className={styles.cardDescription}>
                 Discover strategic partnership opportunities with corporations,
                 governments, and NGOs to scale your impact and reach.
               </p>
             </div>
-            <div className={styles.connectionCard}>
+            <div className="card2">
               <Image
                 src="/networkIcon.svg"
                 alt="Executive network Icon"
@@ -180,7 +212,7 @@ export default function FsxConnect() {
                 height={60}
                 className={styles.cardIcon}
               />
-              <h5 className={styles.cardTitle}>Executive Network</h5>
+              <h4 className={styles.cardTitle}>Executive Network</h4>
               <p className={styles.cardDescription}>
                 Connect with C-suite executives and senior leaders for
                 high-level strategic discussions and collaboration
@@ -190,7 +222,7 @@ export default function FsxConnect() {
           </div>
         </section>
 
-        <section className={styles.joinCommunitySection} id="joinCommunity" data-aos="fade-up">
+        <section id="joinCommunity" data-aos="fade-up">
           <h4 className={styles.joinCommunityTitle}>Our Network Communities</h4>
           <p className={styles.joinCommunityDescription}>
             Join specialized communities tailored to different professional
@@ -333,7 +365,7 @@ export default function FsxConnect() {
             objectFit="cover"
           />
         </section>
-      </section>
+      </div>
     </div>
   );
 }
