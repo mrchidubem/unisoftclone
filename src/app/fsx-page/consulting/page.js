@@ -51,14 +51,14 @@ const Consulting = () => {
             enterprises, helping them overcome challenges and unlock growth
             opportunities in Nigeria and across Africa.
           </p>
-          <div className={styles.heroBtns} >
-            <ButtonGroup
+          <div >
+            {/* <ButtonGroup
               filterKeys={['fsxConsulting1', 'ExploreConsulting']}
               onClickHandlers={{
                fsxConsulting1: scrollToContact,
                ExploreConsulting: scrollToConsultingService,
               }}
-            />
+            /> */}
           </div>
           <div className={styles.customers}>
             <Image
@@ -77,9 +77,9 @@ const Consulting = () => {
           <Image
             src="/heroConsulting.png"
             alt="error 404 image"
-            width={700}
+            width={600}
             height={400}
-            className={styles.responsiveImage}
+            
           />
         </div>
       </div>
@@ -173,13 +173,13 @@ const Consulting = () => {
             </div>
           </div>
 
-          <div>
+          <div className={styles.approachImage}>
             <Image
               src="/approachConsulting.png"
               alt="consulting approach image"
               width={500}
               height={500}
-              className={styles.responsiveImage}
+          
             />
           </div>
         </div>
@@ -272,8 +272,8 @@ const Consulting = () => {
             <Image
               src="/cExperience.png"
               alt="consulting approach image"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className={styles.responsiveImage}
             />
             <h3>Experience</h3>
@@ -284,8 +284,8 @@ const Consulting = () => {
             <Image
               src="/cData.png"
               alt="consulting approach image"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className={styles.responsiveImage}
             />
             <h3>Data Driven Insight</h3>
@@ -296,8 +296,8 @@ const Consulting = () => {
             <Image
               src="/cClient.png"
               alt="consulting approach image"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className={styles.responsiveImage}
             />
             <h3>Client Approach</h3>
