@@ -59,8 +59,10 @@ export default function AboutPage() {
             className={styles.heroImage}
           />
           <div className={styles.overlay}>
+             <div className='sectionHead'>
             <h1>About Fransunisoft</h1>
             <p>Innovation and Growth</p>
+            </div>
           </div>
         </div>
       </div>
@@ -69,6 +71,7 @@ export default function AboutPage() {
       <section className={styles.svmSection}>
         <div className={styles.textColumn}>
           <div className={styles.block}>
+            
             <h2>Our Story</h2>
             <p>
               Fransunisoft was founded with a simple belief; that technology should be a bridge, not a barrier, to growth. In Nigeria and across Africa, businesses and individuals often struggle with scalable, affordable, and reliable digital solutions. We started our journey to close this gap by building smarter systems, empowering entrepreneurs, and helping organizations embrace innovation. From humble beginnings, our story has always been about one thing: creating solutions that matter and driving digital transformation across Africa.
@@ -94,16 +97,18 @@ export default function AboutPage() {
           <Image
             src="/mission_vision.png"
             alt="FSX Story, Vision, Mission"
-            width={800}
-            height={1000}
+            width={100}
+            height={100}
             className={styles.responsiveImage}
           />
         </div>
       </section>
 
       {/* Core Values Section */}
-      <section className={styles.coreSection}>
-        <h2 className={styles.heading}>Our Core Values</h2>
+      <section>
+        <div className='sectionHead'>
+        <h2>Our Core Values</h2>
+        </div>
         <div className={styles.grid}>
           {values.map((value, index) => (
             <div key={index} className={styles.card}>
@@ -123,8 +128,10 @@ export default function AboutPage() {
       </section>
 
       {/* CEO Section */}
-      <section className={styles.ceoSection}>
-        <h2 className={styles.heading}>Meet Our CEO</h2>
+      <section>
+           <div className='sectionHead'>
+        <h2 >Meet Our CEO</h2>
+        </div>
         <div className={styles.content}>
      <div className={styles.imageWrapper}>
   <Image
