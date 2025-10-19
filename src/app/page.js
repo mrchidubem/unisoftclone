@@ -75,11 +75,10 @@ export default function HomePage() {
       {/* === WHAT MAKES US DIFFERENT === */}
       <section data-aos="fade-up">
         <div className={styles.fsxSection}>
-          <div className={styles.fsxHeading}>
+          
             <div className="sectionHead">
               <h2>What Makes Us Different</h2>
-              </div>
-                  <div className="sectionHead">
+              
             <h6>
               Beyond traditional boundaries – we integrate, execute, and
               transform
@@ -171,7 +170,7 @@ export default function HomePage() {
               <div className={styles.label}>Start Up Launched</div>
             </div>
           </div>
-        </div>
+       
       </section>
 
       {/* === BRAND FAMILY SECTION === */}
@@ -185,8 +184,7 @@ export default function HomePage() {
            </div>
 <div className="sectionHead">
           <h2 >The FSX Brand Family</h2>
-    </div>
-<div className="sectionHead">
+ 
           <h6 >
             Fransunisoft is more than one company <br />
             it’s a family of solutions tailored to help businesses and
@@ -333,7 +331,7 @@ export default function HomePage() {
             </div>
             <div className={styles.logoItem}>
               <Image
-                src="/F_trevauty.png"
+                src="/F_trevauty 1.png"
                 alt="SMIT"
                 width={220}
                 height={100}
@@ -352,7 +350,7 @@ export default function HomePage() {
             </div>
             <div className={styles.logoItem}>
               <Image
-                src="/F_Subtract.png"
+                src="/F_Subtract 2.png"
                 alt="SMIT"
                 width={200}
                 height={100}
