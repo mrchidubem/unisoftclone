@@ -192,6 +192,7 @@ section {
     justify-content: center;
   }
 
+ 
   .sectionHead h6 {
     color: #7C8084;
     font-weight: medium;
@@ -201,6 +202,13 @@ section {
     justify-content: center;
     
   }
+
+     .sectionHeadm {
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+  }
+
 
 
   .grid {
