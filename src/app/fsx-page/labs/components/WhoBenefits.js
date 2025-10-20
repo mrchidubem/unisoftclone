@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import styles from "./WhoBenefits.module.css";
+import styles from "../styles/WhoBenefits.module.css";
 
 // Data array for the benefit cards
 const benefitCards = [

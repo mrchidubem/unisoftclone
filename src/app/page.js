@@ -44,13 +44,13 @@ export default function HomePage() {
         <section className={styles.heroMain} data-aos="fade-up">
           <div className={styles.overlay}>
             <h1 className={styles.typewriter}>
-              <span className={styles.typingText}>
+           
                 Building Smarter, Scaling
                 <span className={styles.mobileBreak}></span> Faster
                 <span className={styles.desktopBreak}></span> <br /> Engineering
                 Experiences, <br />
                 and Empowering Growth
-              </span>
+             
             </h1>
 
             <p className={styles.description}>
@@ -77,10 +77,10 @@ export default function HomePage() {
         <div className={styles.fsxSection}>
           <div className={styles.fsxHeading}>
             <h2>What Makes Us Different</h2>
-            <p>
+            <h6>
               Beyond traditional boundaries – we integrate, execute, and
               transform
-            </p>
+            </h6>
           </div>
 
           <div className={styles.fsxRow}>
@@ -121,7 +121,7 @@ export default function HomePage() {
               <Image
                 src="/F_What.png"
                 alt="FSX Advantage"
-                width={1000}
+                width={500}
                 height={1000}
                 style={{ width: "100%", height: "auto" }}
                 className={styles.fsxImage}
@@ -177,16 +177,15 @@ export default function HomePage() {
         data-aos="fade-up"
       >
         <div className={styles.intro}>
-          <div className={styles.ecosystemBanner}>
-            <span>Our Ecosystem Services</span>
-          </div>
+          <h2 className={styles.ecosystemBanner}>Our Ecosystem Services</h2>
+          
 
           <h2 className={styles.heading}>The FSX Brand Family</h2>
-          <p className={styles.subText}>
+          <h6 className={styles.subText}>
             Fransunisoft is more than one company <br />
             it’s a family of solutions tailored to help businesses and
             individuals succeed.
-          </p>
+          </h6>
         </div>
 
         <div className={styles.grid}>
@@ -211,7 +210,7 @@ export default function HomePage() {
               Platforms, automation, and innovation programs for building
               scalable solutions from scratch.
             </p>
-            <Link href="/fsx-page/labs" className={styles.learnMoreBtn}>
+            <Link href="/fsx-page/labs" className="button2">
               Learn More
             </Link>
           </div>
@@ -223,7 +222,7 @@ export default function HomePage() {
               Computer accessories, gadgets, and electronics procurement
               providing reliable, affordable enterprise technology solutions.
             </p>
-            <Link href="/fsx-page/tech" className={styles.learnMoreBtn}>
+            <Link href="/fsx-page/tech" className="button2">
               Learn More
             </Link>
           </div>
@@ -235,7 +234,7 @@ export default function HomePage() {
               Brand activations, corporate events, and community programs with
               global-standard execution.
             </p>
-            <Link href="/fsx-page/events" className={styles.learnMoreBtn}>
+            <Link href="/fsx-page/events" className="button2">
               Learn More
             </Link>
           </div>
@@ -249,7 +248,7 @@ export default function HomePage() {
               Connecting communities and brands through digital platforms and
               strategic partnerships.
             </p>
-            <Link href="/fsx-page/connect" className={styles.learnMoreBtn}>
+            <Link href="/fsx-page/connect" className="button2">
               Learn More
             </Link>
           </div>
@@ -261,7 +260,7 @@ export default function HomePage() {
               Training and learning programs designed to empower individuals and
               teams with future-ready skills.
             </p>
-            <Link href="/fsx-page/academy" className={styles.learnMoreBtn}>
+            <Link href="/fsx-page/academy" className="button2">
               Learn More
             </Link>
           </div>
@@ -272,9 +271,9 @@ export default function HomePage() {
       <section className={styles.partnersSection} data-aos="fade-up">
         <div className={styles.partnersIntro}>
           <h2 className={styles.partnersHeading}>Our Partners</h2>
-          <p className={styles.partnersSubText}>
+          <h2 className={styles.partnersSubText}>
             Join Brands and Organisations <br /> That Partner With Us
-          </p>
+          </h2>
         </div>
 
         <div className={styles.logoScroller}>

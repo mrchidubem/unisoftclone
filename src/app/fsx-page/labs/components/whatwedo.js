@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./WhatWeDo.module.css";
+import styles from "../styles/WhatWeDo.module.css";
 
 const services = [
   {

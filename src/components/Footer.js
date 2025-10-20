@@ -137,30 +137,15 @@ export default function Footer() {
             updates. Sign up for our newsletter and join a community shaping the future of
             technology in Africa.
           </p>
-          <div>
-  {/* Email Collection Form */}
-  <form className={styles.form}>
-  <input
-    type="email"
-    name="email"
-    placeholder="Email: johndoe@email.com"
-    required
-  />
-
-  {/* LinkedIn Subscribe Button Styled as a Button */}
-  <a
-    href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7377090374336589825"
-    target="_blank"
-    rel="noopener noreferrer"
-    className={styles.subscribeButton}
-  >
-    Subscribe
-  </a>
-</form>
+        
+   <form className={styles.form}>
+            <input type="email" placeholder="Email: johndoe@email.com" required />
+            <button type="submit">Subscribe</button>
+          </form>
           </div>
 
 
-        </div>
+      
       </div>
 
       <div className={styles.bottomNote}>

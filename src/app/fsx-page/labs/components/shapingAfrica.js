@@ -1,5 +1,5 @@
 "use client";
-import styles from './shafrc.module.css';
+import styles from '../styles/shafrc.module.css';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
