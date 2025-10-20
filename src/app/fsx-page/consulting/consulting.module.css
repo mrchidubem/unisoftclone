@@ -1,9 +1,3 @@
-.consulting {
-  font-family: Bahnschrift, Arial, sans-serif;
-  line-height: 1.6;
-  color: #1a1a1a;
-}
-
 /* Hero Section */
 .hero {
   margin-top: 100px;
@@ -13,6 +7,7 @@
   padding: 2.5rem 7rem;
   background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
   color: white;
+  gap: 50px;
 }
 
 .heroText {
@@ -20,89 +15,46 @@
   flex-direction: column;
   gap: 1rem;
   max-width: 490px;
-
 }
 
 .heroBtns {
   margin-top: 1rem;
   display: flex;
+  flex-direction: row;
   gap: 1.5rem;
-  flex-wrap: wrap;
+  justify-self: start;
+
 }
 
-.btnPrimary {
-  background: #FF6B35;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  font-weight: bold;
-  border-radius: 0.5rem;
-  cursor: pointer;
-}
-
-.btnPrimary:hover {
-  background-color: #B54C26;
-}
-
-.btnSecondary {
-  background: none;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid;
-  font-weight: bold;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  width: fit-content;
-}
 
 .customer {
   display: flex;
   flex-direction: row;
 }
 
-.subNote {}
 
 .heroImg img {
-  width: 400px;
+  width: 100%;
   border-radius: 10px;
   max-width: 100%;
 }
 
-.sectionhead {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  text-align: center;
-}
-.missionSectionHead{
+
+.missionSectionHead {
   place-self: center;
-  
-}
 
-
-.sectionHead h2 {
-  font-size: 2rem;
-  color: #2C3E50;
-  margin-bottom: 10px;
-}
-
-.sectionHead p {
-  font-size: 1.1rem;
-  color: #7C8084;
-  margin-bottom: 1rem;
 }
 
 
 
 /* Services */
 .services {
-  padding: 2.5rem 7rem;
   text-align: center;
 }
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
@@ -123,7 +75,7 @@
   transform: translateY(-5px);
 }
 
-.card h3 {
+.card1head {
   color: #3D74AE;
 }
 
@@ -132,25 +84,26 @@
 }
 
 .card li {
+  list-style-position: inside;
   color: #2C3E50;
 
 }
 
 /* Approach */
 .approach {
-  padding: 2.5rem 7rem;
+  /* padding: 2.5rem 7rem; */
   text-align: center;
 }
 
-.sectionhead {
+/* .sectionhead {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   text-align: center;
-}
+} */
 
 
-.sectionHead h2 {
+/* .sectionHead h2  {
   font-size: 2rem;
   color: #2C3E50;
   margin-bottom: 10px;
@@ -160,13 +113,14 @@
   font-size: 1.1rem;
   color: #7C8084;
   margin-bottom: 1rem;
-}
+} */
 
 .approachStages {
   display: flex;
   flex-direction: row;
-  gap: 2.5rem;
+  gap: 2rem;
   width: 100%;
+  justify-content: center;
 }
 
 .approachStagesCardContainer {
@@ -183,16 +137,14 @@
   flex-direction: column;
   flex-wrap: wrap;
   border-radius: 20px;
-  padding: 0.5rem;
+  padding: 2rem;
   gap: 0.5rem;
   justify-content: center;
   transition: transform 0.3s ease;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.approachStagesCard h4 {
-  font-size: 1.3rem;
-}
+
 
 .approachStagesCard:hover {
   transform: translateY(-5px);
@@ -204,7 +156,14 @@
   border-radius: 13px;
   color: #FFF0EB;
   align-self: center;
-  width: 40px;
+  place-content: center;
+  width: 50px;
+  height: 50px;
+
+}
+
+.approachImage {
+  width: 50%;
 
 }
 
@@ -216,16 +175,8 @@
 }
 
 /* Mission */
-.mission {
-  padding: 2.5rem 7rem;
-}
 
-.sectionHead {
-  font-size: 2rem;
-  color: #2C3E50;
-  margin-bottom: 10px;
-  place-self: center;
-}
+
 .missionSectionHead {
   font-size: 2rem;
   color: #2C3E50;
@@ -257,19 +208,13 @@
   width: 100%;
 }
 
-.coreMissionText h3 {
-  font-size: 2rem;
-}
+
 
 .coreMissionText span {
   font-size: 25px;
   color: #555555;
 }
 
-
-.coreMissionText p {
-  color: #7F8C8D;
-}
 
 .coreMissionText p {
   color: #7F8C8D;
@@ -311,13 +256,12 @@
 }
 
 .stats div h3 {
-  font-size: 2.3rem;
   color: #2C3E50;
 }
 
 .stats div h6 {
   color: #2C3E50;
-  font-size: 20px;
+
 }
 
 .statp {
@@ -329,7 +273,6 @@
 
 /* Why Us */
 .whyUs {
-  padding: 2.5rem 7rem;
   text-align: center;
 }
 
@@ -349,7 +292,6 @@
 }
 
 .whyCard h3 {
-  font-size: 1.5rem;
   color: #2C3E50;
 }
 
@@ -373,57 +315,58 @@
 /* ------------------ */
 
 /* Tablets */
+
+@media (max-width: 1200px) {
+  .approachStages {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .approachImage {
+    width: 50%;
+    margin: auto;
+
+  }
+
+}
+
+.approachStagesCardContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+
 @media (max-width: 1024px) {
   .hero {
     margin-top: 30px;
-    flex-direction: column;
-    padding: 3rem 2rem;
+    padding: 3rem 3rem;
     text-align: center;
   }
 
   .heroText {
-    max-width: 90%;
-    margin-bottom: 2rem;
+    max-width: 58%;
     margin-top: 2rem;
+    text-align: left;
   }
 
-  .heroText h1 {
-    font-size: 2.2rem;
-  }
-
-  .heroText p {
-    font-size: 1rem;
-  }
-
-  .heroBtns {
-    justify-content: center;
-    place-items: center;
-  }
-
-  .btnPrimary {
-    width: fit-content;
-  }
-
-  .btnPrimary:hover {
-    background-color: #B54C26;
-  }
-
-  .btnSecondary {
-    width: fit-content;
-  }
 
   .heroImg img {
-    width: auto;
-    margin: 0 auto;
+    width: 100%;
+    margin: 2rem auto;
   }
 
-  .services {
-    padding: 2rem 2rem;
-  }
 
   .approachStages {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .approachImage {
+    width: auto;
+    margin: auto;
+
   }
 
   .approachStagesCardContainer {
@@ -433,18 +376,16 @@
 
   .coreMission {
     flex-direction: column;
-    gap: 2rem;
+
   }
 
   .coreMissionContainer {
-    width: 80%;
+    width: 60%;
     margin: -50px 50px auto;
   }
 
 
-  .whyGrid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
 }
 
 /* Mobile */
@@ -454,51 +395,49 @@
     flex-direction: column;
     padding: 2.5rem 1.5rem;
     text-align: center;
+    gap: 0px;
   }
 
   .heroText {
-    max-width: 100%;
+    max-width: 90%;
     margin-bottom: 1.5rem;
     margin-top: 5rem;
-  }
+    text-align: center;
 
-  .heroText h1 {
-    font-size: 1.8rem;
-  }
-
-  .heroText p {
-    font-size: 1rem;
   }
 
   .heroBtns {
     justify-content: center;
     flex-direction: column;
-    gap: 0.75rem;
-
+    width: 50%;
+    align-self: center;
   }
 
   .heroImg img {
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-
-  .services {
-    padding: 2rem 1rem;
+    max-width: auto;
+    margin: 0rem auto;
   }
 
   .servicesGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
   }
 
   .card {
     padding: 1.5rem;
-    text-align: center;
+    text-align: left;
   }
 
   .approachStages {
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .approachImage {
+    width: auto;
+    margin: auto;
+    justify-content: center;
+
   }
 
   .approachStagesCardContainer {
@@ -511,24 +450,43 @@
     gap: 2rem;
   }
 
-  .missionSectionHead{
+  .missionSectionHead {
     margin-bottom: 2rem;
     place-self: center;
   }
 
   .coreMissionContainer {
-    width: 100%;
-    margin: 0 auto;
-    padding: 1.5rem;
+    width: auto;
+    margin: -50px 50px auto;
+    padding: 30px;
   }
+
+  .coreMission img {
+    width: 100%;
+
+  }
+
+  .consultMissionAbout img {
+    width: 10%;
+
+  }
+
 
   .stats {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
+    margin-top: 50px;
   }
 
-  .whyGrid {
-    grid-template-columns: 1fr;
+
+}
+
+@media (min-width:481px) and (max-width: 590px) {
+  .approachImage img {
+    width: 25rem;
+    height: auto;
+    margin: 0 auto;
+
   }
 }
 
@@ -537,35 +495,30 @@
   .hero {
     margin-top: -10px;
     padding: 2rem 1rem;
+    text-align: center;
   }
 
-.heroImg img {
-    width: auto;
-    max-width: 300px;
-    margin: 0 1rem;
-    height: auto ;
-  }
+
 
   .heroText {
     max-width: 100%;
     margin-bottom: 1.5rem;
     margin-top: 5rem;
   }
-  
-  .heroText h1 {
-    font-size: 1.5rem;
-    line-height: 1.4;
-  }
 
-  .heroText p {
-    font-size: 0.95rem;
-  }
+
+.missionSectionHead {
+  font-size: 1.75rem;
+  color: #2C3E50;
+  margin-bottom: 10px;
+  place-self: center;
+}
 
   .btnPrimary,
   .btnSecondary {
-    width: fit-content;
+    width: 100%;
     text-align: center;
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .services {
@@ -577,27 +530,25 @@
 
   }
 
-  .approach {
-    padding: 1rem;
-    text-align: center;
-  }
 
-  .approach Img {
+  .approachImage img {
     width: 100%;
+    margin: auto;
+
   }
 
 
-  .approachStagesCard {
+  /* .approachStagesCard {
     margin: 20px 4rem;
     padding: 1rem 1.5rem;
-  }
+  } */
 
 
   .mission {
     margin: 2rem 1rem;
   }
 
-  .missionSectionHead{
+  .missionSectionHead {
     margin-bottom: 6rem;
   }
 
@@ -606,40 +557,113 @@
   }
 
 
-  .coreMissionImg  {
-    margin: 0rem 2rem;
+  .coreMission img {
+    width: 100%;
+
+  }
+
+  .consultMissionAbout img {
+    width: 10%;
+
   }
 
   .coreMissionContainer {
-    margin-top: -4rem;
-    margin-bottom: 6rem;
+    width: 70%;
+    margin: -60px auto;
   }
-  
+
   .stats {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 1rem;
     place-self: center;
     width: auto;
-    margin: 0px;
+    margin: 120px 0px 20px;
   }
-  
+
   .stats div {
-    width: 130%;
-    border-right: 0px solid #eaeaea;
+    width: 100%;
+    border-right: 1px solid #eaeaea;
   }
 
   .whyUs {
-  padding: 1rem;
-  text-align: center;
-  margin-bottom: 20px;
-}
 
-}
-
-@media (max-width: 375px) {
-
-  .missionSectionHead{
-    
+    text-align: center;
+    margin-bottom: 20px;
   }
+
+  .stats div {
+    margin-top: 50px;
+    width: 100%;
+    border-right: 0px solid #eaeaea;
+  }
+
+}
+
+
+
+  @media (max-width: 430px) {
+  .heroImg img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0rem auto;
+  }
+}
+  .coreMissionContainer {
+    width: 60%;
+    margin-bottom: 5px;
+  }
+
+
+  .coreMission img {
+    width: 100%;
+
+  }
+
+  .consultMissionAbout img {
+    width: 10%;
+
+  }
+
+  .approachImage img {
+    width: 100%;
+    margin: auto;
+
+  }
+
+  .stats div {
+    width: 100%;
+    border-right: 1px solid #eaeaea;
+  }
+
+
+@media (max-width: 390px) {
+
+  
+
+  .coreMission img {
+    width: 20rem;
+    height: auto;
+
+  }
+
+  .consultMissionAbout img {
+    width: 10%;
+
+  }
+
+  .approachImage {
+    width: auto;
+    margin: auto;
+
+  }
+}
+
+@media (max-width: 320px) {
+ .heroImg img {
+    width: auto;
+    margin: 0 auto;
+  }
+
 }

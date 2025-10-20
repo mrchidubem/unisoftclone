@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  width: 100%;
+  
 }
 
 .primaryButtons,
@@ -30,6 +30,7 @@
 .discover {
   background-color: #FF6B35;
   color: #F1F5F9;
+  
 }
 .discover:hover {
   background-color: #B54C26;
@@ -40,7 +41,7 @@
   color: #E1E7EF;
 }
 .start:hover {
-  color: #A0A5AA;
+  background-color: #e1e7ef30;
 }
 
 .fsxBranch {
@@ -146,7 +147,11 @@
     width: 100%;
   }
 
+  .buttons{
+    width: 100%;
+  }
   .btn {
+    width: 100%;
     width: 80%;
     text-align: center;
   }
@@ -154,7 +159,12 @@
 
 /* ≤640px (Large phones) */
 @media (max-width: 640px) {
+
+  .buttons{
+    width: 100%;
+  }
   .btn {
+    width: 100%;
     font-size: 1.2rem;
     padding: 1.1rem 1.1rem;
   }
@@ -169,8 +179,12 @@
 
 /* ≤480px (Medium phones) */
 @media (max-width: 480px) {
+
+  .buttons{
+    width: 100%;
+  }
   .btn {
-    width: auto;
+    width: 100%;
     font-size: 0.85rem;
   }
 
@@ -192,7 +206,11 @@
 
 /* ≤430px (Small phones) */
 @media (max-width: 430px) {
+  .buttons{
+    width: 100%;
+  }
   .btn {
+    width: 100%;
     font-size: 0.85rem;
     padding: 1rem 1rem;
   }

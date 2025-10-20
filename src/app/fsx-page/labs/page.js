@@ -1,13 +1,14 @@
-'use client';
+ 'use client';
 
 import Link from 'next/link';
 import Image from 'next/image';
-import styles from './labs.module.css';
-import Aboutus from './about';
-import WhatWeDo from './whatwedo';
-import ShapingAfrica from './shapingAfrica';
-import HowWeDo from './HowWeDo';
-import WhoBenefits from './WhoBenefits';
+import styles from './styles/labs.module.css';
+import Aboutus from './components/about';
+import WhatWeDo from './components/whatwedo';
+import ShapingAfrica from './components/shapingAfrica';
+import HowWeDo from './components/HowWeDo';
+import WhoBenefits from './components/WhoBenefits';
+import ButtonGroup from "@/app/components/ButtonGroup";
 
 
 // Scroll to Contact section
@@ -22,7 +23,7 @@ const scrollToContact = (e) => {
   // Scroll to Brand Family section
   const scrollToBrandFamily = (e) => {
     e.preventDefault();
-    const section = document.getElementById('brand-family');
+    const section = document.getElementById('what-we-do');
     if (section) {
       section.scrollIntoView({ behavior: 'smooth' });
     }
@@ -30,53 +31,41 @@ const scrollToContact = (e) => {
 
 export default function Labs() {
   return (
-    <>
-      {/* ===== Hero Section ===== */}
-      <section className={styles.hero}>
-        {/* Hero Content */}
-        <div className={styles.heroContent}>
-          <h1>FSX Lab</h1>
-          <p>
-            Every great idea needs a space to grow. FSX Labs is where research,
-            creativity, and technology meet. We help you transform ideas into
-            prototypes, strategies, and innovations for the future.
-          </p>
+  <>
+    {/* ===== Hero Section ===== */}
+    <div className="hero" data-aos="fade-up">
+      <div className="heroText">
+        <h1>FSX Lab</h1>
+        <p>
+          Every great idea needs a space to grow. FSX Labs is where research,
+          creativity, and technology meet. We help you transform ideas into
+          prototypes, strategies, and innovations for the future.
+        </p>
 
-          <div className={styles.buttons}>
-            <Link
-              href="#contact"
-              onClick={scrollToContact}
-              className={styles.startBtn}
-            >
-              <button className={styles.primaryBtn}>Tell Us Your Idea</button>
-            </Link>
-
-            <Link
-              href="#brand-family"
-              onClick={scrollToBrandFamily}
-              className={styles.startBtn}
-            >
-              <button className={styles.secondaryBtn}>
-                Back to Brand Family
-              </button>
-            </Link>
-          </div>
-        </div>
-
-        {/* Hero Image */}
-        <div className={styles.heroImage}>
-          <Image
-            src="/labs.png"
-            alt="FSX Lab Team"
-            fill={false}
-            width={0}
-            height={0}
-            sizes="100vw"
-            style={{ width: '100%', height: 'auto' }} // ✅ Keeps natural aspect ratio
-            priority
+        <div className={styles.heroBtns}>
+          <ButtonGroup
+            filterKeys={['fsxlabs1', 'ExploreLabs']}
+            onClickHandlers={{
+              fsxlabs1: scrollToContact,
+              ExploreLabs: scrollToBrandFamily,
+            }}
           />
         </div>
-      </section>
+      </div>
+
+      <div className={styles.heroImg}>
+        <Image
+          src="/heroConsulting.png"
+          alt="FSX Lab Team"
+          fill={false}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: 'auto' }}
+          priority
+        />
+      </div>
+    </div>
 
       {/* ===== About Us Section ===== */}
       <Aboutus />

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import styles from "./about.module.css";
+import styles from "../styles/about.module.css";
 import Image from "next/image";
 
 const AboutSection = () => {

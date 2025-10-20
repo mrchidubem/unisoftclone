@@ -4,16 +4,14 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './events.module.css';
 import OurProcess from './component';
+import { useCallback } from 'react';
+import ButtonGroup from "@/app/components/ButtonGroup";
 
-// --- DATA: Part 1 Hero Section ---
+
 const PAGE_TITLE = "FSX Events";
 const PAGE_DESCRIPTION = "We design and execute world-class events that combines cutting-edge technologies and creative storytelling. From intimate corporate gatherings to large-scale brand activations, we transform your vision into unforgettable experiences across Nigeria and Africa.";
 
-
-
-// --- DATA: Part 2 Event Services Section ---
 const ALL_CARDS = [
-  // Card 1: Product Launch
   { 
     id: 1, 
     title: "Product Launch",
@@ -27,7 +25,6 @@ const ALL_CARDS = [
         { text: "Digital and social integration" },
     ],
   }, 
-  
   { 
     id: 2, 
     title: "Coporate Mixers",
@@ -40,9 +37,7 @@ const ALL_CARDS = [
         { text: "Catering and entertainment options" },
         { text: "Brand-aligned theming" },
     ],
-     
   }, 
-  
   { 
     id: 3, 
     title: "Conferences",
@@ -55,9 +50,7 @@ const ALL_CARDS = [
         { text: "Networking opportunities" },
         { text: "Technology integration and live streaming" },
     ],
-
   },  
-
   { 
     id: 4, 
     title: "Award Ceremonies",
@@ -71,7 +64,6 @@ const ALL_CARDS = [
         { text: "Live entertainment and presentation" },
     ],
   },  
-  
   { 
     id: 5, 
     title: "Team Building Events",
@@ -84,9 +76,7 @@ const ALL_CARDS = [
         { text: "Indoor and outdoor options" },
         { text: "Post-event assessment and feedback" },
     ],
-
   },  
-  
   { 
     id: 6, 
     title: "Immersive Experiences",
@@ -102,143 +92,144 @@ const ALL_CARDS = [
   },  
 ];
 
-
-// --- INTERNAL COMPONENT: Service Card ---
+// --- ServiceCard Component ---
 function ServiceCard({ card, delay }) {
-    const servicesList = card.services; 
-
-    return (
-        // Add animated class and inline style for delayed animation
-        <div 
-            className={`${styles.serviceCard} ${styles.animated}`}
-            style={{ animationDelay: `${delay * 0.15}s` }}
-        >
-            <Image 
-                src={card.imageSrc} 
-                alt={card.title}
-                width={320}
-                height={163}
-                className={styles.cardImage}
-            />
-            
-            <div className={styles.cardContentVertical}>
-                {/* Section 1: Title and Description */}
-                <div className={styles.cardSection1}>
-                    <div className={styles.cardTextLayout1}>
-                        <h3 className={styles.cardTitle}>{card.title}</h3>
-                    </div>
-                    <div className={styles.cardTextLayout2}>
-                        <p className={styles.cardDescription}>{card.description}</p>
-                    </div>
-                </div>
-
-                {/* Section 2 */}
-                <div className={styles.cardSection2}>
-                    {servicesList.map((service, index) => (
-                        <div key={index} className={styles.serviceListItem}>
-                            {/* Checkmark Symbol */}
-                            <span className={styles.checkmarkIcon}>
-                                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M9.55005 17.5L4.55005 12.5L5.97505 11.075L9.55005 14.65L18.025 6.175L19.45 7.6L9.55005 17.5Z" fill="white"/>
-                                </svg>
-                            </span>
-                            {/* Service Text */}
-                            <p className={styles.serviceText}>{service.text}</p>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Section 3 & 4: Link and Arrow - Aligned at the bottom */}
-                <div className={styles.cardSection34}>
-                    <div className={styles.cardSection3}>
-                        <p className={styles.cardLinkText}>{card.linkText}</p>
-                    </div>
-                    {/* Arrow-Right Symbol */}
-                    <span className={styles.arrowIcon}>→</span>
-                </div>
-            </div>
+  return (
+    <div 
+      className={`${styles.serviceCard} ${styles.animated}`}
+      style={{ animationDelay: `${delay * 0.15}s` }}
+    >
+      <Image 
+        src={card.imageSrc} 
+        alt={card.title}
+        width={320}
+        height={163}
+        className={styles.cardImage}
+      />
+      <div className={styles.cardContentVertical}>
+        <div className={styles.cardSection1}>
+          <div className={styles.cardTextLayout1}>
+            <h3 className={styles.cardTitle}>{card.title}</h3>
+          </div>
+          <div className={styles.cardTextLayout2}>
+            <p className={styles.cardDescription}>{card.description}</p>
+          </div>
         </div>
-    );
+        <div className={styles.cardSection2}>
+          {card.services.map((service, i) => (
+            <div key={i} className={styles.serviceListItem}>
+              <span className={styles.checkmarkIcon}>
+                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.55005 17.5L4.55005 12.5L5.97505 11.075L9.55005 14.65L18.025 6.175L19.45 7.6L9.55005 17.5Z" fill="white"/>
+                </svg>
+              </span>
+              <p className={styles.serviceText}>{service.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className={styles.cardSection34}>
+          <div className={styles.cardSection3}>
+            <p className={styles.cardLinkText}>{card.linkText}</p>
+          </div>
+          <span className={styles.arrowIcon}>→</span>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-// Scroll to Contact section
-const scrollToContact = (e) => {
-  e.preventDefault();
-  const section = document.getElementById('contact');
-  if (section) {
-    section.scrollIntoView({ behavior: 'smooth' });
+
+// --- HeroSection Component ---
+function HeroSection() {
+  const scrollToContact = useCallback((e) => {
+    e.preventDefault();
+    const section = document.getElementById('contact');
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  const scrollToBrandFamily = useCallback((e) => {
+    e.preventDefault();
+    const section = document.getElementById('brand-family');
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  return (
+    <div className="hero" data-aos="fade-up">
+      <div className="heroText">
+        <h1>{PAGE_TITLE}</h1>
+        <p>{PAGE_DESCRIPTION}</p>
+
+        <div className={styles.heroBtns}>
+          <ButtonGroup
+            filterKeys={['fsxevents', 'ExploreEvents']}
+            onClickHandlers={{
+              fsxevents: scrollToContact,
+              ExploreEvents: scrollToBrandFamily,
+            }}
+          />
+        </div>
+      </div>
+
+      <div className={styles.heroImg}>
+        <Image
+          src="/event1.png"
+          alt="FSX Team"
+          fill={false}
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: '100%', height: '30%' }}
+          priority
+        />
+      </div>
+    </div>
+  );
+}
+
+// --- EventServicesSection Component ---
+function EventServicesSection() {
+  const cardsPerRow = 3;
+  const rows = [];
+
+  for (let i = 0; i < ALL_CARDS.length; i += cardsPerRow) {
+    rows.push(ALL_CARDS.slice(i, i + cardsPerRow));
   }
-};
+
+  return (
+    <section className={styles.servicesSection}>
+      <div className={`${styles.servicesInnerVertical} ${styles.animated}`} style={{ animationDelay: '0.1s' }}>
+        <div className={styles.layout2}>
+          <div className={styles.titleTextLayout}>
+            <h2 className={styles.sectionTitle}>Our Event Services</h2>
+          </div>
+          <div className={styles.subtitleTextLayout}>
+            <p className={styles.sectionSubtitle}>
+              <b>Comprehensive event solutions designed to elevate your brand and engage your audience.</b>
+            </p>
+          </div>
+        </div>
+
+        <div className={styles.layout3}>
+          {rows.map((row, rowIndex) => (
+            <div key={rowIndex} className={styles.cardHorizontalLayout}>
+              {row.map((card, index) => (
+                <ServiceCard key={card.id} card={card} delay={rowIndex * cardsPerRow + index + 1} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 // --- Main Page Component ---
 export default function EventHeroPage() {
   return (
-    <div className={styles.mainContainer}> 
-      
-      {/* 1. HERO SECTION (Part 1) */}
-      <section className={`${styles.heroSection} ${styles.animated}`}>
-        <div className={styles.innerBox1}>
-            <div className={styles.innerBox2}>
-                <div className={styles.innerBox3}>
-                    <div className={styles.horizontalLayout1}>
-                        <h1 className={styles.eventTitle}>{PAGE_TITLE}</h1>
-                    </div>
-                    <div className={styles.horizontalLayout2}>
-                        <p className={styles.eventDescription}>{PAGE_DESCRIPTION}</p>
-                    </div>
-                </div>
-                <div className={styles.buttonContainer}>
-                    <Link href="/events/booking" className={styles.bookEventBtn}>Book Your Events</Link>
-                    <Link href="#contact" onClick={scrollToContact} className={styles.backBtn}>Back To Brand Family</Link>
-                </div>
-            </div>
-            {/* Hero Image */}
-            <div className={styles.imageWrapper}>
-                <Image src="/event1.png" alt="Fransunisoft Events" width={600} height={450} className={styles.heroImage}/>
-            </div>
-        </div>
-      </section>
-
-      
-      {/* 2. EVENT SERVICES SECTION (Part 2) */}
-      <section className={styles.servicesSection}>
-        <div className={`${styles.servicesInnerVertical} ${styles.animated}`} style={{ animationDelay: '0.1s' }}>
-          
-          {/* Layout 2: Title and Subtitle */}
-          <div className={styles.layout2}>
-            <div className={styles.titleTextLayout}>
-              <h2 className={styles.sectionTitle}>Our Event Services</h2>
-            </div>
-            <div className={styles.subtitleTextLayout}>
-              <p className={styles.sectionSubtitle}> <b>
-                Comprehensive event solutions designed to elevate your brand and engage your audience. </b>
-              </p> 
-            </div>
-          </div>
-          
-          {/* Layout 3: Cards Container */}
-          <div className={styles.layout3}>
-            
-            {/* Horizontal Layout 1 (Cards 1, 2, 3) */}
-            <div className={styles.cardHorizontalLayout}>
-              <ServiceCard card={ALL_CARDS[0]} delay={1} />
-              <ServiceCard card={ALL_CARDS[1]} delay={2} />
-              <ServiceCard card={ALL_CARDS[2]} delay={3} />
-            </div>
-
-            {/* Horizontal Layout 2 (Cards 4, 5, 6) */}
-            <div className={styles.cardHorizontalLayout}>
-              <ServiceCard card={ALL_CARDS[3]} delay={4} />
-              <ServiceCard card={ALL_CARDS[4]} delay={5} />
-              <ServiceCard card={ALL_CARDS[5]} delay={6} />
-            </div>
-          </div>
-          
-        </div>
-      </section>
-      
-      {/* 3. THIRD SECTION will go here below Component for the slidng cards comes in here */}
-      <OurProcess/> 
+    <div className={styles.mainContainer}>
+      <HeroSection />
+      <EventServicesSection />
+      <OurProcess />
     </div>
   );
 }

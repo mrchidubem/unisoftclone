@@ -223,7 +223,7 @@
 
 /* What Makes Fransunisoft Different */
 .fsxSection {
-  padding: 40px 20px;
+ 
   background-color: #ffffff;
 
 }
@@ -316,7 +316,7 @@
 /* Image Block */
 .fsxImage {
   flex: 1.5;
-  min-width: 800px;
+  min-width: 700px;
   margin-top: 1.5rem;
   order: 3; /* For mobile stacking */
 }
@@ -383,7 +383,7 @@
 
 .plus {
   color: #0D519A; 
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
@@ -435,7 +435,7 @@
 
 
   .fsxList {
-    max-width: 350px;
+    max-width: 360px;
     line-height: 1rem; 
   }
 
@@ -443,14 +443,15 @@
   .fsxList p {
     margin-bottom: 0.3rem; 
   }
+}
 
 
 
   @media (max-width: 1024px) {
   .fsxContent {
     margin-left: 2rem; 
+    max-width: 360px;
   }
-}
 
   .fsxStats {
     order: 4;
@@ -465,6 +466,7 @@
   }
   .fsxImage img {
     width: 100%;
+    height: auto;
     max-width: 350px;
     margin: 0 auto;
     display: block;
@@ -472,7 +474,7 @@
 
   .fsxButton {
     order: 2;
-    width: 70%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     border-radius: 10px;
@@ -522,7 +524,7 @@
     font-size: 1.5rem;
   }
 .fsxStats .plus {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .fsxStats .label {
     font-size: 1rem;
@@ -592,7 +594,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
-  height: 350px;
+  height: auto;
   width: 90%;
   margin-top: 2rem;
 }
@@ -613,25 +615,12 @@
 
 .cardTagline {
   font-size: 0.95rem;
+  font-style: italic;
   color: #7C8084;
   margin-bottom: 1rem;
 }
 
-.learnMoreBtn {
-  background-color: #0D519A;
-  color: #F1F5F9;
-  padding: 0.85rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background 0.3s ease;
-  margin-top: 1rem;
-}
 
-.learnMoreBtn:hover {
-  background-color: #3D74AE;
-}
 
 /* 🌐 Responsive Styles */
 @media (max-width: 1024px) {
@@ -733,12 +722,12 @@
     text-align: left;
   }
 
-  .learnMoreBtn {
+/*   .learnMoreBtn {
     font-size: 1rem;
     padding: 0.75rem 1rem;
     margin-top: 1.5rem;
     display: inline-block;
-  }
+  } */
 }
 
 
@@ -858,8 +847,8 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    width: max-content; /* ✅ ensures full width for animation */
-    animation: scrollLogos 25s linear infinite; /* ✅ SAME animation name */
+    width: max-content; 
+    animation: scrollLogos 25s linear infinite; 
   }
 
   .logoItem {

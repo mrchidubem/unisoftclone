@@ -2,8 +2,8 @@
 .footer {
   position: relative;
   color: #F1F5F9;
-  padding: 3rem 6rem 2rem;
-  font-family: 'roboto', sans-serif;
+  padding: 4rem 2rem 2rem;
+  font-family: 'Inter', sans-serif;
   overflow: visible;
   
 }
@@ -139,7 +139,7 @@
   font-size: 0.95rem;
 }
 
-.subscribeButton {
+.form button {
   background-color: #FF6B35;
   color: #ffffff;
   border: none;
@@ -149,13 +149,9 @@
   cursor: pointer;
 }
 
-.subscribeButton:hover {
+.form button:hover {
   background-color: #fb923c;
 }
-
-
-
-
 
 .bottomNote {
   position: relative;
@@ -179,10 +175,6 @@
 
 /* 🌐 Small Tablets & Landscape Phones */
 @media (max-width: 768px) {
-
-  .footer{
-    padding: 2rem 3rem 2rem; ;
-  }
   .topSection {
     flex-direction: column;
     align-items: center;
@@ -201,7 +193,7 @@
   }
 
   .form input,
- .subscribeButton {
+  .form button {
     width: 100%;
   }
 
@@ -213,10 +205,6 @@
 
 /* 🌐 Medium Tablets (Surface Pro, iPad Air, iPad Mini) */
 @media (max-width: 1024px) {
-  .footer{
-    padding: 2rem 3rem 2rem;
-  }
-
   .topSection {
     flex-direction: column;
     align-items: flex-start;
@@ -259,7 +247,7 @@
     width: 90%;
   }
 
- .subscribeButton {
+  .form button {
     width: 50%;
     margin-bottom: 1.5rem;
   }
@@ -310,13 +298,6 @@
     align-items: flex-start;
   }
 
-  .socialIcons {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 2px;
-
-}
-
   .form {
     flex-direction: column;
     width: 100%;
@@ -326,7 +307,7 @@
     width: 80%;
   }
 
- .subscribeButton {
+  .form button {
     width: 40%;
     margin-bottom: 2rem;
   }

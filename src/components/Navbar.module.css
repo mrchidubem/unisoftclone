@@ -168,6 +168,16 @@
     display: block;
   }
 
+  .dropdownMenu li a {
+  color: #2C3E50;
+  font-weight: 500;
+  display: block;
+  padding: 0.3rem 0;
+  transition: color 0.25s ease;
+  text-decoration: none !important;
+  list-style: none !important;
+}
+
   .navLinks {
     display: none;
   }
@@ -194,6 +204,16 @@
     margin-right: 1rem;
     display: block;
   }
+
+  .dropdownMenu li a {
+  color: #2C3E50;
+  font-weight: 500;
+  display: block;
+  padding: 0.3rem 0;
+  transition: color 0.25s ease;
+  text-decoration: none !important;
+  list-style: none !important;
+}
 
   .navLinks {
     display: none;
