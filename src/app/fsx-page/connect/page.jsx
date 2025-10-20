@@ -88,35 +88,38 @@ export default function FsxConnect() {
               <button className={styles.joinBtn} onClick={(e) => scrollToSection(e, "contact")}>Join Community</button> 
             </div> */}
           </div>
-          <div className={styles.heroImageContainer}>
+          {/* <div className={styles.heroImageContainer}> */}
+          <div className={styles.heroImg}>
             <Image
-              src="/fsx_connect_hero_img.svg"
+              src="/fsx_connect_hero_img.png"
               alt="FSX Connect"
-              width={500}
-              height={500}
+              width={600}
+              height={330}
               //layout="fill" //When you use layout="fill" (Next.js <Image>), the image is set to absolutely position itself and fill its parent container. You do not set width or height on the <Image> itself. But you must give the parent container a size (width + height), otherwise the image has nothing to "fill".
-              className={styles.heroImage}
-              objectFit="cover"
+              // className={styles.heroImage}
+              // objectFit="cover"
             />
           </div>
         </div>
 
-        <section className={styles.cardParticipation} data-aos="fade-up">
-          <div className={styles.communityMem}>
-            <h3 className={styles.communityMemCount}> <CountUp end={5000} duration={2} separator="" enableScrollSpy />+</h3>
-            <p className={styles.communityMemTitle}>Community Members</p>
-          </div>
-          <div className={styles.communityMem}>
-            <h3 className={styles.successfulCount}><CountUp end={100} duration={2} separator="" enableScrollSpy />+</h3>
-            <p className={styles.successfulTitle}>Successful Partnerships</p>
-          </div>
-          <div className={styles.communityMem}>
-            <h3 className={styles.industryExpertsCount}><CountUp end={200} duration={2} separator="" enableScrollSpy />+</h3>
-            <p className={styles.industryExpertsTitle}>Industry Experts</p>
-          </div>
-          <div className={styles.communityMem}>
-            <h3 className={styles.countriesCount}><CountUp end={5} duration={2} separator="" enableScrollSpy />+</h3>
-            <p className={styles.countriesTitle}>Countries Represented</p>
+        <section  data-aos="fade-up">
+          <div className={styles.cardParticipation}>
+            <div className={styles.communityMem}>
+              <h2 className={styles.communityMemCount}> <CountUp end={5000} duration={2} separator="" enableScrollSpy className={styles.counts}/>+</h2>
+              <h6 className={styles.communityMemTitle}>Community Members</h6>
+            </div>
+            <div className={styles.communityMem}>
+              <h2 className={styles.successfulCount}><CountUp end={100} duration={2} separator="" enableScrollSpy className={styles.counts}/>+</h2>
+              <h6 className={styles.successfulTitle}>Successful Partnerships</h6>
+            </div>
+            <div className={styles.communityMem}>
+              <h2 className={styles.industryExpertsCount}><CountUp end={200} duration={2} separator="" enableScrollSpy className={styles.counts}/>+</h2>
+              <h6 className={styles.industryExpertsTitle}>Industry Experts</h6>
+            </div>
+            <div className={styles.communityMem}>
+              <h2><CountUp end={5} duration={2} separator="" enableScrollSpy className={styles.counts}/>+</h2>
+              <h6 className={styles.countriesTitle}>Countries Represented</h6>
+            </div>
           </div>
         </section>
 
@@ -132,7 +135,7 @@ export default function FsxConnect() {
           <div className='grid' id="connection" >
             <div className='card2'>
               <Image
-                src="/networkIcon.svg"
+                src="/networkIcon.png"
                 alt="Network Icon"
                 width={60}
                 height={60}
@@ -145,9 +148,9 @@ export default function FsxConnect() {
                 networking events and forums.
               </p>
             </div>
-            <div className="card1">
+            <div className="card2">
               <Image
-                src="/investor-relations-icon.svg"
+                src="/investor-relations-icon.png"
                 alt="Investor Relations Icon"
                 width={60}
                 height={60}
@@ -160,9 +163,9 @@ export default function FsxConnect() {
                 platform.
               </p>
             </div>
-            <div className="card1">
+            <div className="card2">
               <Image
-                src="/mentor-matching-icon.svg"
+                src="/mentor-matching-icon.png"
                 alt="Mentor Matching Icon"
                 width={60}
                 height={60}
@@ -175,9 +178,9 @@ export default function FsxConnect() {
                 development.
               </p>
             </div>
-            <div className="card1">
+            <div className="card2">
               <Image
-                src="/networkIcon.svg"
+                src="/start-up-ecosystem.png"
                 alt="Startup Ecosystem Icon"
                 width={60}
                 height={60}
@@ -190,9 +193,9 @@ export default function FsxConnect() {
                 across Africa.
               </p>
             </div>
-            <div className="card1">
+            <div className="card2">
               <Image
-                src="/partnership-oppurtunity-icon.svg"
+                src="/partnership-oppurtunity-icon.png"
                 alt="Partnership Opportunity Icon"
                 width={60}
                 height={60}
@@ -206,7 +209,7 @@ export default function FsxConnect() {
             </div>
             <div className="card2">
               <Image
-                src="/networkIcon.svg"
+                src="/networkIcon.png"
                 alt="Executive network Icon"
                 width={60}
                 height={60}
@@ -223,16 +226,18 @@ export default function FsxConnect() {
         </section>
 
         <section id="joinCommunity" data-aos="fade-up">
-          <h4 className={styles.joinCommunityTitle}>Our Network Communities</h4>
-          <p className={styles.joinCommunityDescription}>
-            Join specialized communities tailored to different professional
-            needs and interests.
-          </p>
+          <div className="sectionHead">
+            <h2>Our Network Communities</h2>
+            <h6>
+              Join specialized communities tailored to different professional
+              needs and interests.
+            </h6>
+          </div>
           <div className={styles.communityCardsContainer}>
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/tech-innovator-icon.svg"
+                  src="/tech-innovator-icon.png"
                   alt="tech innovator Icon"
                   width={400}
                   height={280}
@@ -241,9 +246,9 @@ export default function FsxConnect() {
                 />
               </div>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>
+                <h3 className={styles.communityCardTitle}>
                   Tech Innovators Circle
-                </h5>
+                </h3>
                 <p className={styles.communityCardDescription}>
                   A circle where tech enthusiast, founders, co-founders share
                   insights, challenges, opportunities and mentorships.
@@ -252,9 +257,9 @@ export default function FsxConnect() {
             </div>
             <div className={styles.communityCard}>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>
+                <h3 className={styles.communityCardTitle}>
                   Entrepreneurs Network
-                </h5>
+                </h3>
                 <p className={styles.communityCardDescription}>
                   A network where fellow entrepreneurs and investors extends
                   insights, resources, partnerships and opportunities to
@@ -263,7 +268,7 @@ export default function FsxConnect() {
               </div>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/enterpreneur-icon.svg"
+                  src="/enterpreneur-icon.png"
                   alt="entrepreneur Icon"
                   width={400}
                   height={280}
@@ -275,7 +280,7 @@ export default function FsxConnect() {
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/creative-mind-icon.svg"
+                  src="/creative-mind-icon.png"
                   alt="Creative Mind Icon"
                   width={400}
                   height={280}
@@ -284,9 +289,9 @@ export default function FsxConnect() {
                 />
               </div>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>
+                <h3 className={styles.communityCardTitle}>
                   Creative Minds Alliance
-                </h5>
+                </h3>
                 <p className={styles.communityCardDescription}>
                   An alliance where designers, artists, and creative
                   professionals collaborates.
@@ -294,22 +299,25 @@ export default function FsxConnect() {
               </div>
             </div>
           </div>
-          <button className={styles.joinCommunityButton} onClick={(e) => scrollToSection(e, "contact")}>Join community</button>
+          <button className={styles.joinCommunityButton} onClick={scrollToContact}>Join community</button>
         </section>
 
-        <section className={styles.whyJoinSection} data-aos="fade-up">
-          <h4 className={styles.whyJoinTitle}>Why Join FSX Connect?</h4>
-          <p className={styles.whyJoinDescription}>
-            Discover the unique advantages of being part of our growing
-            community of professionals and innovators.
-          </p>
-          <div className={styles.whyJoinCardsContainer}>
-            <div className={styles.whyJoinCard}>
+        <section data-aos="fade-up">
+          <div className="sectionHead">
+            <h2>Why Join FSX Connect?</h2>
+            <h6>
+              Discover the unique advantages of being part of our growing
+              community of professionals and innovators.
+            </h6>
+          </div>
+          <div className="grid">
+            <div className="card2">
               <Image
                 width={60}
                 height={60}
-                src="/accelerated-growth-icon.svg"
+                src="/start-up-ecosystem.png"
                 alt="Accelerated growth Icon"
+                className={styles.cardImg}
               />
               <h5 className={styles.whyJoinCardTitle}>Accelerated Growth</h5>
               <p className={styles.whyJoinCardDescription}>
@@ -317,12 +325,13 @@ export default function FsxConnect() {
                 career or business forward.
               </p>
             </div>
-            <div className={styles.whyJoinCard}>
+            <div className="card2">
               <Image
                 width={60}
                 height={60}
                 src="/diverse-community-icon.svg"
                 alt="Diverse Community Icon"
+                 className={styles.cardImg}
               />
               <h5 className={styles.whyJoinCardTitle}>Diverse Community</h5>
               <p className={styles.whyJoinCardDescription}>
@@ -331,12 +340,13 @@ export default function FsxConnect() {
               </p>
             </div>
 
-            <div className={styles.whyJoinCard}>
+            <div className="card2">
               <Image
                 width={60}
                 height={60}
-                src="/innovation-hub-icon.svg"
+                src="/innovation-hub-icon.png"
                 alt="Innovation Hub Icon"
+                 className={styles.cardImg}
               />
               <h5 className={styles.whyJoinCardTitle}>Innovation Hub</h5>
               <p className={styles.whyJoinCardDescription}>
@@ -353,15 +363,17 @@ export default function FsxConnect() {
               nation building, youth development, SDG support and innovation
               strategy?
             </p>
-            <button className={styles.ctaButton}  onClick={(e) => scrollToSection(e, "contact")}>Join Us Today</button> 
+            <button className={styles.ctaButton}  onClick={ scrollToContact}>Join Us Today</button> 
           </div>
           <Image
             // src="/ellipse-globe-icon.svg"
-            src="/globes-icon.svg"
+            src="/globes-icon.png"
             alt="Call to Action Image"
             className={styles.ctaImage}
-            width={550}
-            height={350}
+            // width={550}
+            // height={350}
+             width={600}
+            height={400}
             objectFit="cover"
           />
         </section>
