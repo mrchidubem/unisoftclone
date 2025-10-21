@@ -207,7 +207,7 @@ export default function HomePage() {
 
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Labs</h3>
-            <p className={styles.cardTagline}><em></em>
+            <p className={styles.cardTagline}>
               “Empowering innovators today, not tomorrow.”
             </p>
             <p className={styles.cardDescription}>
@@ -221,7 +221,7 @@ export default function HomePage() {
 
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Tech</h3>
-            <p className={styles.cardTagline}><em></em>“Smart Tech. Simplified.”</p>
+            <p className={styles.cardTagline}>“Smart Tech. Simplified.”</p>
             <p className={styles.cardDescription}>
               Computer accessories, gadgets, and electronics procurement
               providing reliable, affordable enterprise technology solutions.
@@ -233,7 +233,7 @@ export default function HomePage() {
 
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Events</h3>
-            <p className={styles.cardTagline}><em></em>“Where brands come to life.”</p>
+            <p className={styles.cardTagline}>“Where brands come to life.”</p>
             <p className={styles.cardDescription}>
               Brand activations, corporate events, and community programs with
               global-standard execution.
@@ -245,7 +245,7 @@ export default function HomePage() {
 
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Connect</h3>
-            <p className={styles.cardTagline}><em></em>
+            <p className={styles.cardTagline}>
               “Connecting Ideas, Empowering Impact.”
             </p>
             <p className={styles.cardDescription}>
@@ -259,7 +259,7 @@ export default function HomePage() {
 
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Academy</h3>
-            <p className={styles.cardTagline}><em></em>“From Learning to Leading.”</p>
+            <p className={styles.cardTagline}>“From Learning to Leading.”</p>
             <p className={styles.cardDescription}>
               Training and learning programs designed to empower individuals and
               teams with future-ready skills.
