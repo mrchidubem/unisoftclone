@@ -35,7 +35,7 @@ const Consulting = () => {
           duration: 1000,
           once: true,
         });
-      }, 100);
+      }, 100); 
     }, []);
 
 
