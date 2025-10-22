@@ -75,12 +75,15 @@ export default function HomePage() {
       {/* === WHAT MAKES US DIFFERENT === */}
       <section data-aos="fade-up">
         <div className={styles.fsxSection}>
-          <div className={styles.fsxHeading}>
-            <h2>What Makes Us Different</h2>
+          
+            <div className="sectionHead">
+              <h2>What Makes Us Different</h2>
+              
             <h6>
               Beyond traditional boundaries – we integrate, execute, and
               transform
             </h6>
+            </div>
           </div>
 
           <div className={styles.fsxRow}>
@@ -121,10 +124,10 @@ export default function HomePage() {
               <Image
                 src="/F_What.png"
                 alt="FSX Advantage"
-                width={500}
-                height={1000}
-                style={{ width: "100%", height: "auto" }}
-                className={styles.fsxImage}
+                width={100}
+                height={100}
+               
+           
               />
             </div>
           </div>
@@ -167,7 +170,7 @@ export default function HomePage() {
               <div className={styles.label}>Start Up Launched</div>
             </div>
           </div>
-        </div>
+       
       </section>
 
       {/* === BRAND FAMILY SECTION === */}
@@ -178,25 +181,26 @@ export default function HomePage() {
       >
         <div className={styles.intro}>
           <h2 className={styles.ecosystemBanner}>Our Ecosystem Services</h2>
-          
-
-          <h2 className={styles.heading}>The FSX Brand Family</h2>
-          <h6 className={styles.subText}>
+           </div>
+<div className="sectionHead">
+          <h2 >The FSX Brand Family</h2>
+ 
+          <h6 >
             Fransunisoft is more than one company <br />
             it’s a family of solutions tailored to help businesses and
             individuals succeed.
           </h6>
+       
         </div>
-
-        <div className={styles.grid}>
+        <div className="grid">
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Consulting</h3>
-            <p className={styles.cardTagline}>“Build Smarter. Scale Faster.”</p>
+            <p className={styles.cardTagline}><em></em> “Build Smarter. Scale Faster.”</p>
             <p className={styles.cardDescription}>
               Business consulting, digital transformation, and community
               programs that bridge strategy with real tech execution and impact.
             </p>
-            <Link href="/fsx-page/consulting" className={styles.learnMoreBtn}>
+            <Link href="/fsx-page/consulting" className="button2">
               Learn More
             </Link>
           </div>
@@ -271,9 +275,12 @@ export default function HomePage() {
       <section className={styles.partnersSection} data-aos="fade-up">
         <div className={styles.partnersIntro}>
           <h2 className={styles.partnersHeading}>Our Partners</h2>
+
+          <div className="sectionHead">
           <h2 className={styles.partnersSubText}>
             Join Brands and Organisations <br /> That Partner With Us
           </h2>
+          </div>
         </div>
 
         <div className={styles.logoScroller}>
@@ -324,7 +331,7 @@ export default function HomePage() {
             </div>
             <div className={styles.logoItem}>
               <Image
-                src="/F_trevauty.png"
+                src="/F_trevauty 1.png"
                 alt="SMIT"
                 width={220}
                 height={100}
@@ -343,7 +350,7 @@ export default function HomePage() {
             </div>
             <div className={styles.logoItem}>
               <Image
-                src="/F_Subtract.png"
+                src="/F_Subtract 2.png"
                 alt="SMIT"
                 width={200}
                 height={100}
