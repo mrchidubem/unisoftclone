@@ -111,13 +111,13 @@ export default function AboutPage() {
         </div>
         <div className={styles.grid}>
           {values.map((value, index) => (
-            <div key={index} className={styles.card}>
+            <div key={index} className="card2">
               <div className={styles.icon}>
                 <Image
                   src={value.icon}
                   alt={`${value.title} icon`}
-                  width={80}
-                  height={80}
+                  width={60}
+                  height={60}
                 />
               </div>
               <h3>{value.title}</h3>

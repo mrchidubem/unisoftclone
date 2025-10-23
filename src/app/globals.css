@@ -95,6 +95,16 @@ p, span, li {
 
 
 @media (max-width: 768px) {
+ h1{
+  font-size: 40px;
+}
+
+h1, .typewriter{
+ font-size: 40px;
+}
+h2{
+  font-size: 32px;
+}
   h1 {
     font-size: 40px;
     line-height: 1.25; /* 50px */
@@ -132,6 +142,78 @@ p, span, li {
 }
 
 @media (max-width: 430px) {
+ h1{
+  font-size: 32px;
+}
+
+h1, .typewriter{
+ font-size: 32px;
+}
+h2{
+  font-size: 28px;
+}
+
+h3{
+  font-size: 24px;
+}
+
+h4{
+  font-size: 20px;
+}
+
+h5{
+  font-size: 18px;
+}
+
+h6{
+  font-size: 16px;
+}
+
+p, span, li{
+  font-size: 14px;
+}
+}
+
+@media (max-width: 344px) {
+
+
+h1, .typewriter{
+ font-size: 32px;
+}
+}
+
+@media (max-width: 320px) {
+   h1{
+  font-size: 32px;
+}
+
+h1, .typewriter{
+ font-size: 32px;
+}
+h2{
+  font-size: 28px;
+}
+
+h3{
+  font-size: 24px;
+}
+
+h4{
+  font-size: 20px;
+}
+
+h5{
+  font-size: 18px;
+}
+
+h6{
+  font-size: 16px;
+}
+
+p, span, li{
+  font-size: 14px;
+}
+}
   h1 {
     font-size: 32px;
     line-height: 1.25; /* 40px */
@@ -166,7 +248,7 @@ p, span, li {
     font-size: 14px;
     line-height: 1.6; /* 22.4px */
   }
-}
+
 
 
  /* SECTIONS, GRID & CARD Responsiveness  */
@@ -203,6 +285,7 @@ section {
     
   }
 
+  
      .sectionHeadm {
     text-align: left;
     align-items: center;
@@ -584,6 +667,7 @@ section {
 .button2:hover {
   background-color: #3D74AE;
 }
+
 
 
 

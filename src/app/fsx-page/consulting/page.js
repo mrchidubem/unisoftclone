@@ -220,7 +220,7 @@ const Consulting = () => {
               </p>
             </div>
             <Link href="/about">
-              <button2 className="button2">Learn More</button2>
+              <div className="button2">Learn More</div>
             </Link>
           </div>
         </div>
