@@ -139,7 +139,7 @@ function ServiceCard({ card, delay }) {
 }
 
 
-// --- HeroSection Component ---
+// Scroll to Contact section
 function HeroSection() {
   const scrollToContact = useCallback((e) => {
     e.preventDefault();
@@ -147,9 +147,10 @@ function HeroSection() {
     if (section) section.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
-  const scrollToBrandFamily = useCallback((e) => {
+  // Scroll to Our Services section
+  const scrollToEventServices = useCallback((e) => {
     e.preventDefault();
-    const section = document.getElementById('brand-family');
+    const section = document.getElementById('ourservices');
     if (section) section.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
@@ -164,7 +165,7 @@ function HeroSection() {
             filterKeys={['fsxevents', 'ExploreEvents']}
             onClickHandlers={{
               fsxevents: scrollToContact,
-              ExploreEvents: scrollToBrandFamily,
+              ExploreEvents: scrollToEventServices,
             }}
           />
         </div>
@@ -196,7 +197,7 @@ function EventServicesSection() {
   }
 
   return (
-    <section className={styles.servicesSection}>
+    <section id="ourservices" className={styles.servicesSection}>
       <div className={`${styles.servicesInnerVertical} ${styles.animated}`} style={{ animationDelay: '0.1s' }}>
         <div className={styles.layout2}>
           <div className={styles.titleTextLayout}>

@@ -20,14 +20,13 @@ const scrollToContact = (e) => {
   }
 };
 
-  // Scroll to Brand Family section
-  const scrollToBrandFamily = (e) => {
-    e.preventDefault();
-    const section = document.getElementById('what-we-do');
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+// What we do Section Handler
+  const scrollToWhatWeDo = () => {
+  const element = document.getElementById('whatwedo');
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 export default function Labs() {
   return (
@@ -47,15 +46,15 @@ export default function Labs() {
             filterKeys={['fsxlabs1', 'ExploreLabs']}
             onClickHandlers={{
               fsxlabs1: scrollToContact,
-              ExploreLabs: scrollToBrandFamily,
+              ExploreLabs: scrollToWhatWeDo,
             }}
-          />
+          /> 
         </div>
       </div>
 
       <div className={styles.heroImg}>
         <Image
-          src="/heroConsulting.png"
+          src="/labs.png"
           alt="FSX Lab Team"
           fill={false}
           width={0}

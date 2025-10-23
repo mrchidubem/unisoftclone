@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "../styles/WhatWeDo.module.css";
 
-const services = [
+const services = [ 
   {
     title: "Software Development",
     description: "Scalable apps and platforms built to solve real problems.",
@@ -39,7 +39,7 @@ const services = [
 
 export default function WhatWeDo() {
   return (
-    <section className={styles.container}>
+    <section id="whatwedo" className={styles.container}>
       <h2 className={styles.title}>What We Do</h2>
       <p className={styles.subtitle}>
         FSX Labs provides businesses and institutions with the tools they need
