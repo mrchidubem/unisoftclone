@@ -195,7 +195,7 @@ export default function HomePage() {
         <div className="grid">
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Consulting</h3>
-            <p className={styles.cardTagline}>“Build Smarter. Scale Faster.”</p>
+            <p className={styles.cardTagline}><em></em> “Build Smarter. Scale Faster.”</p>
             <p className={styles.cardDescription}>
               Business consulting, digital transformation, and community
               programs that bridge strategy with real tech execution and impact.
@@ -333,6 +333,7 @@ export default function HomePage() {
               <Image
                 src="/F_trevauty 1.png"
                 alt="Travauty"
+              
                 width={220}
                 height={100}
               />
@@ -352,6 +353,7 @@ export default function HomePage() {
               <Image
                 src="/F_Subtract 2.png"
                 alt="Subtract"
+                
                 width={200}
                 height={100}
               />

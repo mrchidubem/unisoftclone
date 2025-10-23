@@ -21,8 +21,8 @@ const buttons = [
   { key: 'fsxconnect1', text: 'Join Community', href: '#contact', style: 'discover', group: 'primary' },
   { key: 'ExploreConnect', text: 'Explore Network', href: '#fsx-connect', style: 'start', group: 'primary' },
 
-  { key: 'fsxConsulting1', text: 'Book Consultation', href: '#contact', style: 'discover', group: 'primary' },
-  { key: 'ExploreConsulting', text: 'Explore Services', href: '#consulting-service', style: 'start', group: 'primary' },
+  { key: 'fsxConsulting1', text: 'Book Consultation', href: '#contact', style: 'fsxBranch', group: 'primary' },
+  { key: 'ExploreConsulting', text: 'Explore Services', href: '#consulting-service', style: 'Explore', group: 'primary' },
 ];
 
 export default function ButtonGroup({ filterKeys = [], onClickHandlers = {} }) {

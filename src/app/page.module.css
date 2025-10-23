@@ -606,7 +606,8 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
-  height: 350px;
+ 
+  height: auto;
   width: 90%;
   margin-top: 2rem;
 }
@@ -627,6 +628,7 @@
 
 .cardTagline {
   font-size: 0.95rem;
+  font-style: italic;
   color: #7C8084;
   margin-bottom: 1rem;
 }
