@@ -70,7 +70,7 @@ export default function AboutPage() {
       {/* Story, Vision, Mission Section */}
       <section className={styles.svmSection}>
         <div className={styles.textColumn}>
-          <div className="sectionHead">
+          <div className="sectionHeadm">
             
             <h2>Our Story</h2>
             <p>
@@ -78,14 +78,14 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="sectionHead">
+          <div className="sectionHeadm">
             <h2>Our Vision</h2>
             <p>
               To be Africa’s leading force in digital innovation, empowering businesses and individuals to work smarter, scale faster, and compete globally through technology-driven solutions.
             </p>
           </div>
 
-          <div className="sectionHead">
+          <div className="sectionHeadm">
             <h2>Our Mission</h2>
             <p>
               At Fransunisoft, our mission is to deliver reliable, user-focused, and scalable digital solutions that help our clients unlock opportunities, improve efficiency, and achieve sustainable growth. Through innovation, collaboration, and a deep understanding of the African business landscape, we make technology work for everyone.
@@ -111,13 +111,13 @@ export default function AboutPage() {
         </div>
         <div className={styles.grid}>
           {values.map((value, index) => (
-            <div key={index} className={styles.card}>
+            <div key={index} className="card2">
               <div className={styles.icon}>
                 <Image
                   src={value.icon}
                   alt={`${value.title} icon`}
-                  width={80}
-                  height={80}
+                  width={60}
+                  height={60}
                 />
               </div>
               <h3>{value.title}</h3>

@@ -223,6 +223,12 @@ section {
     justify-content: center;
   }
 
+       .sectionHeadm {
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+  }
+
 
   .grid {
   display: grid;

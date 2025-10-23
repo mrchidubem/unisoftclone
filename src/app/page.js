@@ -288,43 +288,7 @@ export default function HomePage() {
             <div className={styles.logoItem}>
               <Image
                 src="/F_3MTT Landscape_Logo.png"
-                alt="SMIT"
-                width={200}
-                height={100}
-              />
-            </div>
-            <div className={styles.logoItem}>
-              <Image
-                src="/F_trevauty.png"
-                alt="SMIT"
-                width={220}
-                height={100}
-              />
-            </div>
-            <div className={styles.logoItem}>
-              <Image src="/F_GDG.png" alt="GDG" width={200} height={100} />
-            </div>
-            <div className={styles.logoItem}>
-              <Image
-                src="/F_Andela2.png"
-                alt="Andela"
-                width={200}
-                height={100}
-              />
-            </div>
-            <div className={styles.logoItem}>
-              <Image
-                src="/F_Subtract.png"
-                alt="SMIT"
-                width={200}
-                height={100}
-              />
-            </div>
-
-            <div className={styles.logoItem}>
-              <Image
-                src="/F_3MTT Landscape_Logo.png"
-                alt="SMIT"
+                alt="3MTT"
                 width={200}
                 height={100}
               />
@@ -332,7 +296,7 @@ export default function HomePage() {
             <div className={styles.logoItem}>
               <Image
                 src="/F_trevauty 1.png"
-                alt="SMIT"
+                alt="Travauty"
                 width={220}
                 height={100}
               />
@@ -351,7 +315,43 @@ export default function HomePage() {
             <div className={styles.logoItem}>
               <Image
                 src="/F_Subtract 2.png"
-                alt="SMIT"
+                alt="Subtract"
+                width={200}
+                height={100}
+              />
+            </div>
+
+            <div className={styles.logoItem}>
+              <Image
+                src="/F_3MTT Landscape_Logo.png"
+                alt="3MTT"
+                width={200}
+                height={100}
+              />
+            </div>
+            <div className={styles.logoItem}>
+              <Image
+                src="/F_trevauty 1.png"
+                alt="Travauty"
+                width={220}
+                height={100}
+              />
+            </div>
+            <div className={styles.logoItem}>
+              <Image src="/F_GDG.png" alt="GDG" width={200} height={100} />
+            </div>
+            <div className={styles.logoItem}>
+              <Image
+                src="/F_Andela2.png"
+                alt="Andela"
+                width={200}
+                height={100}
+              />
+            </div>
+            <div className={styles.logoItem}>
+              <Image
+                src="/F_Subtract 2.png"
+                alt="Subtract"
                 width={200}
                 height={100}
               />
