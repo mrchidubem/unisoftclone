@@ -123,7 +123,7 @@ export default function AboutPage() {
               <h3>{value.title}</h3>
               <p>{value.description}</p>
             </div>
-          ))}
+          ))}      
         </div>
       </section>
 
