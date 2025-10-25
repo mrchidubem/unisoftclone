@@ -3,7 +3,7 @@
 .heroBackground {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(to right, #0D519A 35%, #0D519A 10%, #20A89F 125%);
+  background: linear-gradient(to right, #0D519A, #0D519A, #20A89F);
   overflow: hidden;
 }
 
@@ -95,7 +95,7 @@
   .typewriter {
     font-size: 3rem;
    
-  }
+  } 
   .description {
     font-size: 1.2rem;
   }
@@ -103,9 +103,9 @@
 
 /* ≥1024px */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .typewriter {
+ .typewriter {
     font-size: 2.5rem;
-  }
+  } 
 
   .heroMain {
     padding: 1.5rem;
@@ -121,7 +121,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .typewriter {
     font-size: 2rem;
-  }
+  } 
   .description {
     font-size: 1.1rem;
     
@@ -141,7 +141,7 @@
 /* ≤767px */
 @media (max-width: 767px) {
   .typewriter {
-    font-size: 1.2rem;
+   font-size: 1rem; 
     margin: 2rem auto;
      
   }
@@ -167,7 +167,7 @@
 
 @media (max-width: 480px) {
   .typewriter {
-    font-size: 1rem;
+  font-size: 1.3rem;
     margin: 100px auto 0 auto; 
     padding: 0 1rem; 
     max-width: 100%;
@@ -186,9 +186,21 @@
   }
 }
 
+/* @media (max-width: 430px) {
+  .typewriter {
+  font-size: 0.5rem;
+    margin: 100px auto 0 auto; 
+    padding: 0 1rem; 
+    max-width: 100%;
+    text-align: center; 
+    display: block;
+    box-sizing: border-box;
+  }
+} */
+
 @media (max-width: 375px) {
   .typewriter {
-      font-size: 0.85rem;
+    font-size: 1rem; 
     margin-top: 50px;
      margin: 100px auto 0 auto; 
     padding: 0 1rem; 
@@ -207,7 +219,7 @@
 /* ≤320px */
 @media (max-width: 320px) {
   .typewriter {
-    font-size: 0.85rem;
+     font-size: 0.85rem; 
       margin: 100px auto 0 auto;
     padding: 0 1rem;
       margin-top: 100px;
@@ -223,7 +235,7 @@
 
 /* What Makes Fransunisoft Different */
 .fsxSection {
-  padding: 40px 20px;
+ 
   background-color: #ffffff;
 
 }
@@ -383,14 +395,14 @@
 
 .plus {
   color: #0D519A; 
-  font-size: 2rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 
 .label {
   margin-top: 5px;
   font-size: 1rem;
-  color: #222;
+  color: #2C3E50;
   text-align: center;
 }
 
@@ -435,7 +447,7 @@
 
 
   .fsxList {
-    max-width: 350px;
+    max-width: 360px;
     line-height: 1rem; 
   }
 
@@ -443,14 +455,15 @@
   .fsxList p {
     margin-bottom: 0.3rem; 
   }
+}
 
 
 
   @media (max-width: 1024px) {
   .fsxContent {
     margin-left: 2rem; 
+    max-width: 360px;
   }
-}
 
   .fsxStats {
     order: 4;
@@ -465,6 +478,7 @@
   }
   .fsxImage img {
     width: 100%;
+    height: auto;
     max-width: 350px;
     margin: 0 auto;
     display: block;
@@ -472,12 +486,12 @@
 
   .fsxButton {
     order: 2;
-    width: 80%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     border-radius: 10px;
    margin-top: 1rem;
-   font-size: 0.75rem;
+   font-size: 0.95rem;
   }
 
   .fsxStats {
@@ -506,7 +520,7 @@
     max-width: 60%; 
     border-radius: 12px;
      width: 90%; 
-     margin-top: -50px;
+     margin-top: -60px;
      z-index: 10;
       position: relative;
   }
@@ -522,7 +536,7 @@
     font-size: 1.5rem;
   }
 .fsxStats .plus {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .fsxStats .label {
     font-size: 1rem;
@@ -586,15 +600,14 @@
 
 }
 
-
-
 .card {
   background-color: #ffffff;
   padding: 32px;
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
-  height: 380px;
+ 
+  height: auto;
   width: 90%;
   margin-top: 2rem;
 }
@@ -608,32 +621,19 @@
 .cardDescription {
   font-size: 1rem;
   color: #2C3E50;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   max-width: 320px;
   line-height: 1.6rem;
 }
 
 .cardTagline {
   font-size: 0.95rem;
+  font-style: italic;
   color: #7C8084;
   margin-bottom: 1rem;
 }
 
-.learnMoreBtn {
-  background-color: #0D519A;
-  color: #F1F5F9;
-  padding: 0.85rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background 0.3s ease;
-  margin-top: 1rem;
-}
 
-.learnMoreBtn:hover {
-  background-color: #3D74AE;
-}
 
 /* 🌐 Responsive Styles */
 @media (max-width: 1024px) {
@@ -734,16 +734,7 @@
     margin-bottom: 0.5rem;
     text-align: left;
   }
-
-  .learnMoreBtn {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-    margin-top: 1.5rem;
-    display: inline-block;
-  }
 }
-
-
 
 
 
@@ -860,8 +851,8 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    width: max-content; /* ✅ ensures full width for animation */
-    animation: scrollLogos 25s linear infinite; /* ✅ SAME animation name */
+    width: max-content; 
+    animation: scrollLogos 25s linear infinite; 
   }
 
   .logoItem {
