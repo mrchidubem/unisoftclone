@@ -138,33 +138,44 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-/* External Pagination - Clean row below slides, no overlap */
-.swiperPagination {
-  display: flex;
+/* Swiper Pagination - Forced under swiper-wrapper, no overlap with cards */
+.products .swiperContainer .swiper-wrapper {
+  margin-bottom: 40px !important;  /* Push wrapper up, create space for bullets below */
+}
+
+.products .swiperContainer .swiper-pagination {
+  position: absolute !important;
+  bottom: 0 !important;  /* Lock to absolute bottom of container */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  display: flex !important;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
-  gap: 8px;
+  gap: 8px !important;
+  z-index: 5 !important;
+  top: auto !important;  /* Override any top positioning */
 }
 
-.swiperPagination .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-  background: #ccc; 
-  border: 2px solid #0D519A;
-  border-radius: 50%;
-  opacity: 0.8; 
-  transition: all 0.3s ease;
+.products .swiperContainer .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: transparent !important;
+  border: 2px solid #0D519A !important;
+  border-radius: 50% !important;
+  opacity: 0.6 !important;
+  transition: all 0.3s ease !important;
   flex-shrink: 0;
+  margin: 0 !important;  /* No extra margins */
 }
 
-.swiperPagination .swiper-pagination-bullet-active {
-  opacity: 1;
-  background: #0D519A;
-  transform: scale(1.2);
+.products .swiperContainer .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #0D519A !important;
+  transform: scale(1.2) !important;
 }
 
-.swiperPagination .swiper-pagination-clickable .swiper-pagination-bullet {
+.products .swiperContainer .swiper-pagination-clickable .swiper-pagination-bullet {
   cursor: pointer;
 }
 
@@ -247,19 +258,22 @@
     width: 70%;
   }
 
-  .swiperPagination {
-    margin-top: 0.75rem;
-    gap: 6px;
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 30px !important;
   }
 
-  .swiperPagination .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
-    border-width: 1.5px;
+  .products .swiperContainer .swiper-pagination {
+    gap: 6px !important;
   }
 
-  .swiperPagination .swiper-pagination-bullet-active {
-    transform: scale(1.1);
+  .products .swiperContainer .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    border-width: 1.5px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination-bullet-active {
+    transform: scale(1.1) !important;
   }
 }
 
@@ -294,6 +308,10 @@
     height: 40px;
     left: -20px;
     right: -20px;
+  }
+
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 35px !important;
   }
 }
 
@@ -352,19 +370,22 @@
     height: 20px;
   }
 
-  .swiperPagination {
-    margin-top: 0.75rem;
-    gap: 6px;
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 35px !important;
   }
 
-  .swiperPagination .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
-    border-width: 1.5px;
+  .products .swiperContainer .swiper-pagination {
+    gap: 6px !important;
   }
 
-  .swiperPagination .swiper-pagination-bullet-active {
-    transform: scale(1.1);
+  .products .swiperContainer .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    border-width: 1.5px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination-bullet-active {
+    transform: scale(1.1) !important;
   }
 }
 
@@ -410,6 +431,10 @@
 
   .swiperButtonNext {
     right: -30px;
+  }
+
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 40px !important;
   }
 }
 

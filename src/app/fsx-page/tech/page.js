@@ -50,7 +50,7 @@ const FSXTech = () => {
   const handlePrev = () => swiperRef.current?.swiper.slidePrev();
   const handleNext = () => swiperRef.current?.swiper.slideNext();
 
-  // 4 unique products
+  // 4 unique products, duplicated for loop (total 8; clones hidden internally)
   const baseProducts = [
     { img: "/frame-384.png", title: "Laptops & Desktops", desc: "High-performance computing devices for modern business needs." },
     { img: "/cctv.png", title: "CCTV Security Systems", desc: "Comprehensive security camera solutions for business protection." },
@@ -190,19 +190,21 @@ const FSXTech = () => {
             pagination={{ el: paginationRef.current, clickable: true }}
           >
             {products.map((p, i) => (
-              <SwiperSlide key={i}>
-                <div className="card2">
-                  <Image src={p.img} alt={p.title} width={200} height={140} className={styles.responsiveImage} />
-                  <h4>{p.title}</h4>
-                  <p className={styles.productDesc}>{p.desc}</p>
-                </div>
-              </SwiperSlide>
+             <SwiperSlide key={i}>
+  <div className="card2">
+    <div className={styles.productCard}>  {/* New wrapper: Scoped fixes here */}
+      <Image src={p.img} alt={p.title} width={200} height={140} className={styles.responsiveImage} />
+      <h4>{p.title}</h4>
+      <p className={styles.productDesc}>{p.desc}</p>
+    </div>
+  </div>
+</SwiperSlide>
             ))}
           </Swiper>
           <button className={styles.swiperButtonNext} onClick={handleNext}>
             <ChevronRight />
           </button>
-          {/* External pagination container */}
+          {/* External pagination container - bullets render here, below slides */}
           <div ref={paginationRef} className={styles.swiperPagination}></div>
         </div>
 
