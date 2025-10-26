@@ -95,7 +95,7 @@
   .typewriter {
     font-size: 3rem;
    
-  }
+  } 
   .description {
     font-size: 1.2rem;
   }
@@ -103,9 +103,9 @@
 
 /* ≥1024px */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .typewriter {
+ .typewriter {
     font-size: 2.5rem;
-  }
+  } 
 
   .heroMain {
     padding: 1.5rem;
@@ -121,7 +121,7 @@
 @media (min-width: 768px) and (max-width: 1023px) {
   .typewriter {
     font-size: 2rem;
-  }
+  } 
   .description {
     font-size: 1.1rem;
     
@@ -141,7 +141,7 @@
 /* ≤767px */
 @media (max-width: 767px) {
   .typewriter {
-    font-size: 1.2rem;
+   font-size: 1rem; 
     margin: 2rem auto;
      
   }
@@ -167,7 +167,7 @@
 
 @media (max-width: 480px) {
   .typewriter {
-    font-size: 1rem;
+  font-size: 1.3rem;
     margin: 100px auto 0 auto; 
     padding: 0 1rem; 
     max-width: 100%;
@@ -186,9 +186,21 @@
   }
 }
 
+/* @media (max-width: 430px) {
+  .typewriter {
+  font-size: 0.5rem;
+    margin: 100px auto 0 auto; 
+    padding: 0 1rem; 
+    max-width: 100%;
+    text-align: center; 
+    display: block;
+    box-sizing: border-box;
+  }
+} */
+
 @media (max-width: 375px) {
   .typewriter {
-      font-size: 0.85rem;
+    font-size: 1rem; 
     margin-top: 50px;
      margin: 100px auto 0 auto; 
     padding: 0 1rem; 
@@ -207,7 +219,7 @@
 /* ≤320px */
 @media (max-width: 320px) {
   .typewriter {
-    font-size: 0.85rem;
+     font-size: 0.85rem; 
       margin: 100px auto 0 auto;
     padding: 0 1rem;
       margin-top: 100px;
@@ -269,7 +281,7 @@
 .fsxContent h3 {
   margin-top: 20px;
   margin-bottom: 15px;
-  font-size: 1.5rem;
+  font-size: 32px;
   color: #2C3E50;
 }
 
@@ -294,8 +306,8 @@
   padding-left: 50px;
 
   margin-top: 30px ;
-  font-size: 1rem;
-  line-height: 2.1rem;
+  font-size: 16px;
+  line-height: 1.6rem;
   color: #2C3E50;
 }
 
@@ -310,7 +322,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Image Block */
@@ -359,14 +371,14 @@
 }
 
 .stat {
-  font-size: 1rem;
+  font-size: 20px;
   color: #2C3E50;
   font-weight: bold;
   flex: 1 1 150px;
 }
 
 .count {
-  font-size: 2rem;
+  font-size: 32px;
   color: #0D519A;
   display: block;
 }
@@ -376,21 +388,20 @@
   align-items: baseline;
   justify-content: center;
   gap: 4px;
-  font-size: 2rem;
   font-weight: bold;
   color: #0D519A; 
 }
 
 .plus {
   color: #0D519A; 
-  font-size: 1rem;
+  font-size:32px;
   font-weight: bold;
 }
 
 .label {
   margin-top: 5px;
-  font-size: 1rem;
-  color: #222;
+ 
+  color: #2C3E50;
   text-align: center;
 }
 
@@ -432,6 +443,7 @@
     font-size: 1.2rem;
 
 }
+
 
 
   .fsxList {
@@ -520,14 +532,12 @@
     margin: 0 auto;
   }
 
-  .fsxStats .countBlock {
-    font-size: 1.5rem;
-  }
+
 .fsxStats .plus {
-    font-size: 1rem;
+    font-size: 32px;
   }
   .fsxStats .label {
-    font-size: 1rem;
+    color: #2C3E50;
     margin-top: 10px;
     text-align: center;
   }
@@ -594,6 +604,7 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
+ 
   height: auto;
   width: 90%;
   margin-top: 2rem;
@@ -721,16 +732,7 @@
     margin-bottom: 0.5rem;
     text-align: left;
   }
-
-/*   .learnMoreBtn {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-    margin-top: 1.5rem;
-    display: inline-block;
-  } */
 }
-
-
 
 
 
