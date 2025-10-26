@@ -74,7 +74,7 @@ export default function HomePage() {
 
       {/* === WHAT MAKES US DIFFERENT === */}
       <section data-aos="fade-up">
-        <div className={styles.fsxSection}>
+        <div className="">
           
             <div className="sectionHead">
               <h2>What Makes Us Different</h2>
