@@ -281,7 +281,7 @@
 .fsxContent h3 {
   margin-top: 20px;
   margin-bottom: 15px;
-  font-size: 1.5rem;
+  font-size: 32px;
   color: #2C3E50;
 }
 
@@ -306,8 +306,8 @@
   padding-left: 50px;
 
   margin-top: 30px ;
-  font-size: 1rem;
-  line-height: 2.1rem;
+  font-size: 16px;
+  line-height: 1.6rem;
   color: #2C3E50;
 }
 
@@ -322,7 +322,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Image Block */
@@ -371,14 +371,14 @@
 }
 
 .stat {
-  font-size: 1rem;
+  font-size: 20px;
   color: #2C3E50;
   font-weight: bold;
   flex: 1 1 150px;
 }
 
 .count {
-  font-size: 2rem;
+  font-size: 32px;
   color: #0D519A;
   display: block;
 }
@@ -388,20 +388,19 @@
   align-items: baseline;
   justify-content: center;
   gap: 4px;
-  font-size: 2rem;
   font-weight: bold;
   color: #0D519A; 
 }
 
 .plus {
   color: #0D519A; 
-  font-size: 1rem;
+  font-size:32px;
   font-weight: bold;
 }
 
 .label {
   margin-top: 5px;
-  font-size: 1rem;
+ 
   color: #2C3E50;
   text-align: center;
 }
@@ -444,6 +443,7 @@
     font-size: 1.2rem;
 
 }
+
 
 
   .fsxList {
@@ -532,14 +532,12 @@
     margin: 0 auto;
   }
 
-  .fsxStats .countBlock {
-    font-size: 1.5rem;
-  }
+
 .fsxStats .plus {
-    font-size: 1rem;
+    font-size: 32px;
   }
   .fsxStats .label {
-    font-size: 1rem;
+    color: #2C3E50;
     margin-top: 10px;
     text-align: center;
   }

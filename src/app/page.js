@@ -134,40 +134,50 @@ export default function HomePage() {
 
           <div className={styles.fsxStats}>
             <div className={styles.stat}>
-              <div className={styles.countBlock}>
-                <CountUp end={50} duration={2} separator="," enableScrollSpy />
-                <span className={styles.plus}>+</span>
-              </div>
-              <div className={styles.label}>Events Coordinated</div>
+              <h2 className={styles.countBlock}>
+                <CountUp 
+                end={50} 
+                duration={2} 
+                separator="," 
+                enableScrollSpy 
+                className={styles.plus}/>+</h2>
+              <h6 className={styles.label}>Events Coordinated</h6>
             </div>
 
             <div className={styles.stat}>
-              <div className={styles.countBlock}>
+              <h2 className={styles.countBlock}>
                 <CountUp
                   end={100000}
                   duration={2.5}
                   separator=","
                   enableScrollSpy
-                />
-                <span className={styles.plus}>+</span>
-              </div>
-              <div className={styles.label}>Youth Trained</div>
+               className={styles.plus}/>+
+              </h2>
+              <h6 className={styles.label}>Youth Trained</h6>
             </div>
 
             <div className={styles.stat}>
-              <div className={styles.countBlock}>
-                <CountUp end={3} duration={1.5} separator="," enableScrollSpy />
-                <span className={styles.plus}>+</span>
-              </div>
-              <div className={styles.label}>Community Managed</div>
+              <h2 className={styles.countBlock}>
+                <CountUp 
+                end={3} 
+                duration={1.5} 
+                separator="," 
+                enableScrollSpy
+                className={styles.plus}/>+
+              </h2>
+              <h6 className={styles.label}>Community Managed</h6>
             </div>
 
             <div className={styles.stat}>
-              <div className={styles.countBlock}>
-                <CountUp end={10} duration={2} separator="," enableScrollSpy />
-                <span className={styles.plus}>+</span>
-              </div>
-              <div className={styles.label}>Start Up Launched</div>
+              <h2 className={styles.countBlock}>
+                <CountUp 
+                end={10} 
+                duration={2} 
+                separator="," 
+                enableScrollSpy
+                className={styles.plus}/>+
+              </h2>
+              <h6 className={styles.label}>Start Up Launched</h6>
             </div>
           </div>
        
