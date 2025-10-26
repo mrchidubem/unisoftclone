@@ -11,59 +11,103 @@ import Link from 'next/link';
 import Image from "next/image";
 import ButtonGroup from "@/app/components/ButtonGroup";
 
+// Scroll Handlers
+const closeMobileMenu = () => {};
 
-// FSX Tech Landing Page
+const scrollToContact = (e) => {
+  e.preventDefault();
+  const contactSection = document.getElementById("contact");
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: "smooth" });
+  }
+  closeMobileMenu();
+};
+
+const scrollToExplore = (e) => {
+  e.preventDefault();
+  const section = document.getElementById('services');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+  closeMobileMenu();
+};
+
+/**
+ * FSX Tech Component - Cleaned and formatted for optimal rendering.
+ * Handles hero, about, services, and products sections with Swiper carousel.
+ */
+
 const FSXTech = () => {
   const swiperRef = useRef(null);
+  const paginationRef = useRef(null);
 
-  // Init AOS animations
   useEffect(() => {
     setTimeout(() => {
       AOS.init({ duration: 1000, once: true });
     }, 100);
   }, []);
 
-  // Swiper navigation
   const handlePrev = () => swiperRef.current?.swiper.slidePrev();
   const handleNext = () => swiperRef.current?.swiper.slideNext();
 
+  // 4 unique products
+  const baseProducts = [
+    { img: "/frame-384.png", title: "Laptops & Desktops", desc: "High-performance computing devices for modern business needs." },
+    { img: "/cctv.png", title: "CCTV Security Systems", desc: "Comprehensive security camera solutions for business protection." },
+    { img: "/frame-230.png", title: "Network Equipment", desc: "Routers, switches, and networking hardware for reliable connectivity." },
+    { img: "/printermain.png", title: "Printer and scanner", desc: "Routers, switches, and networking hardware for reliable connectivity." },
+  ];
+  const products = [...baseProducts, ...baseProducts];  // Double for seamless loop
+
   return (
     <div className={styles.tech}>
-      {/* HERO */}
+      {/* Hero */}
       <div className="hero" data-aos="fade-up">
-        <div className="heroText">
-          
-            <h1>FSX Tech</h1>
+        <div className={styles.heroText}>
+          <h1>FSX Tech </h1>
           <p>
-            Technology should simplify, not complicate. At FSX Tech, we design and deliver IT and digital solutions that help businesses in Nigeria and beyond run smoother, faster, and smarter.
-          </p>
-          
+            Technology should simplify, not complicate. 
+            At FSX Tech, we design and deliver IT and digital 
+            solutions both hard ware and software that help businesses in Nigeria and beyond run smoother,
+             faster, and smarter.
+             </p>
+
           <div className={styles.heroBtns}>
-            <Link href="#contact" legacyBehavior>
-              <a className={`${styles.button2} ${styles.accentButtonHero}`}>Get Started</a>
-            </Link>
-            <Link href="#services" legacyBehavior>
-              <a className={`${styles.button2} ${styles.variant8Button}`}>Explore Services</a>
-            </Link>
+            <ButtonGroup
+              filterKeys={['fsxtech1', 'ExploreTech']}
+              onClickHandlers={{
+                fsxtech1: scrollToContact,
+                ExploreTech: scrollToExplore,
+              }}
+            />
           </div>
         </div>
+
         <div className={styles.heroImg}>
-          <Image src="/frame-321.png" alt="Hero Image" width={600} height={400} />
+          <Image 
+            src="/frame-321.png" 
+            alt="Hero Image"
+            width={600} 
+            height={400} 
+          />
         </div>
       </div>
 
-      {/* ABOUT */}
+      {/* About */}
       <section className={styles.about} data-aos="fade-up">
+        
         <div className={styles.aboutText}>
-          <h3>About FSX Tech</h3>
+          <h3 className={styles.aboutfsxtech}>About FSX Tech</h3>
+          <p className={styles.aboutparagraph}>
+              At FSX Tech, We are a leading provider of smart digital and IT solutions in Nigeria, 
+              dedicated to helping businesses transform their operations through innovative technology.</p>
           <p>
-            We deliver innovative IT and digital solutions that help businesses transform operations through technology.
-          </p>
-          <p>
-            From laptops and CCTV systems to network infrastructure and consulting, FSX Tech provides complete digital solutions tailored to your needs.
-          </p>
+            Our mission is to deliver IT and digital solutions that help businesses run smoother, 
+            faster, and smarter. From laptops and CCTV systems to network infrastructure and digital transformation consulting,
+             we provide comprehensive technology solutions tailored to your business needs.         
+              </p>
 
-          <h3>Why Choose FSX Tech?</h3>
+          <h5 className={styles.aboutwhy}>Why Choose FSX Tech?</h5>
           <ul className={styles.featuresList}>
             {[
               "Simplify technology for business growth",
@@ -79,21 +123,29 @@ const FSXTech = () => {
             ))}
           </ul>
         </div>
+
         <div className={styles.aboutImage}>
-          <Image src="/workstation.png" alt="3D Workstation" width={600} height={400} />
+          <Image 
+            src="/workstation.png" 
+            alt="3D Workstation"
+            width={612} 
+            height={528} 
+            className={styles.responsiveImage}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            style={{ width: '100%', height: 'auto' }}
+          />
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* Services */}
       <section className={styles.services} id="services" data-aos="fade-up">
         <div className="sectionHead">
           <h2>Our Services</h2>
           <h6>
-            We offer IT and digital solutions that simplify operations and drive growth across Nigeria and beyond.
-          </h6>
+              We provide comprehensive IT solutions and smart technolofies designed to simplify operations and drive business growth across Nigeria and beyond.          </h6>
         </div>
 
-        <div className={styles.cardsGrid}>
+        <div className="grid">
           {[
             { img: "/Core value section Icon (2).png", title: "Security Solution", desc: "CCTV systems, access control, and monitoring to protect your assets." },
             { img: "/monitor (1).png", title: "IT Equipment Supply", desc: "Laptops, printers, smart office automation, and conference cameras." },
@@ -103,7 +155,7 @@ const FSXTech = () => {
             { img: "/innovation-hub-icon.svg", title: "Digital Solutions", desc: "Custom software and digital tools to enhance productivity." },
           ].map((s, i) => (
             <div className="card3" key={i}>
-              <Image src={s.img} alt={s.title} width={60} height={60} className={styles.responsiveImage} />
+              <Image src={s.img} alt={s.title} width={60} height={60} />
               <h3>{s.title}</h3>
               <p>{s.desc}</p>
             </div>
@@ -111,56 +163,62 @@ const FSXTech = () => {
         </div>
       </section>
 
-      {/* PRODUCTS */}
+      {/* Products */}
       <section className={styles.products} data-aos="fade-up">
+        
         <div className="sectionHead">
           <h2>Featured Products</h2>
-          <h6>Premium IT equipment and technology for Nigerian businesses.</h6>
+          <h6>Premium IT equipment and technology solutions tailored for Nigerian businesses.</h6>
         </div>
 
         <div className={styles.swiperContainer}>
-          <button className={styles.swiperButtonPrev} onClick={handlePrev}><ChevronLeft /></button>
+          <button className={styles.swiperButtonPrev} onClick={handlePrev}>
+            <ChevronLeft />
+          </button>
           <Swiper
             ref={swiperRef}
             modules={[Pagination, Autoplay]}
-            spaceBetween={20}
-            slidesPerView={3}
+            spaceBetween={24}
+            slidesPerView={4}
             loop
             autoplay={{ delay: 2000, disableOnInteraction: false, pauseOnMouseEnter: true }}
             breakpoints={{
-              0: { slidesPerView: 1, spaceBetween: 16 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 24 },
+              0: { slidesPerView: 1, spaceBetween: 24 },
+              768: { slidesPerView: 2, spaceBetween: 24 },
+              1024: { slidesPerView: 4, spaceBetween: 24 },
             }}
-            pagination={{ clickable: true }}
+            pagination={{ el: paginationRef.current, clickable: true }}
           >
-            {[
-              { img: "/frame-384.png", title: "Laptops & Desktops", desc: "High-performance devices for modern business." },
-              { img: "/cctv.png", title: "CCTV Security Systems", desc: "Complete surveillance solutions for protection." },
-              { img: "/frame-230.png", title: "Network Equipment", desc: "Routers, switches, and hardware for stable connectivity." },
-              { img: "/printermain.png", title: "Printers", desc: "Reliable printing for office environments." },
-            ].map((p, i) => (
+            {products.map((p, i) => (
               <SwiperSlide key={i}>
                 <div className="card2">
-                  <Image src={p.img} alt={p.title} width={300} height={200} className={styles.responsiveImage} />
+                  <Image src={p.img} alt={p.title} width={200} height={140} className={styles.responsiveImage} />
                   <h4>{p.title}</h4>
                   <p className={styles.productDesc}>{p.desc}</p>
                 </div>
               </SwiperSlide>
             ))}
           </Swiper>
-          <button className={styles.swiperButtonNext} onClick={handleNext}><ChevronRight /></button>
+          <button className={styles.swiperButtonNext} onClick={handleNext}>
+            <ChevronRight />
+          </button>
+          {/* External pagination container */}
+          <div ref={paginationRef} className={styles.swiperPagination}></div>
         </div>
 
         <div className={styles.productsFooter}>
           <p><em>Need custom configurations or bulk orders?</em></p>
-          <Link href="#contact" legacyBehavior>
-            <a className={styles.accentButton}>Request Custom Quote</a>
-          </Link>
+          <a 
+            href="#" 
+            className={styles.accentButton} 
+            onClick={scrollToContact}
+          >
+            Request Custom Quote
+          </a>
         </div>
       </section>
 
-      {/* CONTACT ANCHOR */}
+      {/* Contact Anchor */}
       <div id="contact"></div>
     </div>
   );
