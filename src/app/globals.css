@@ -174,14 +174,6 @@ p, span, li{
 }
 }
 
-@media (max-width: 344px) {
-
-
-h1, .typewriter{
- font-size: 32px;
-}
-}
-
 @media (max-width: 320px) {
    h1{
   font-size: 32px;

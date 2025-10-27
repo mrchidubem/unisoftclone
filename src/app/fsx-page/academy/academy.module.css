@@ -91,14 +91,14 @@
   gap: 50px;
  }
 
-  .heroBtns {
+  /* .heroBtns {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
   justify-self: start;
   
-}
+} */
 .heroImageContainer{
     /* position: relative; */
     width: 100%;
@@ -575,6 +575,7 @@
   }
 
   .heroImageContainer{
+    margin:2rem auto;
      width: 100%;
     max-width: 500px;
   }
@@ -603,13 +604,19 @@
     
   }
 
+   .heroImageContainer{
+    margin:0rem auto;
+     /* width: 100%;
+    max-width: 500px; */
+  }
 
-  .heroBtns {
+
+  /* .heroBtns {
     justify-content: center;
     flex-direction: column;
     width: 50%;
     align-self: center;
-  }
+  } */
 
   .heroImg img {
     width: 100%;
