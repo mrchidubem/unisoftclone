@@ -59,14 +59,14 @@ font-size: 2.5rem;
   gap: 1rem;
   max-width: 490px;
 }
-.heroBtns {
+/* .heroBtns {
   margin-top: 1rem;
   display: flex;
   flex-direction: row;
   gap: 1.5rem;
   justify-self: start;
   
-}
+} */
 .heroImg img {
   width: 100%;
   border-radius: 10px;
@@ -406,12 +406,12 @@ font-size: 2.5rem;
 
   }
 
-  .heroBtns {
+  /* .heroBtns {
     justify-content: center;
     flex-direction: column;
     width: 50%;
     align-self: center;
-  }
+  } */
 
   .heroImg img {
     width: 100%;
@@ -450,13 +450,13 @@ font-size: 2.5rem;
 
 }
 
-@media (max-width: 820px) {
+/* @media (max-width: 820px) {
  .heroBtns {
-    /* width: auto; */
+   
     margin: 0 auto;
   }
 
-}
+} */
 
 
 
