@@ -70,10 +70,11 @@ export default function HomePage() {
 
       {/* === WHAT MAKES US DIFFERENT === */}
       <section data-aos="fade-up">
-        <div className={styles.fsxSection}>
-          <div className="sectionHead">
-            <h2>What Makes Us Different</h2>
-
+        <div className="">
+          
+            <div className="sectionHead">
+              <h2>What Makes Us Different</h2>
+              
             <h6>
               Beyond traditional boundaries – we integrate, execute, and
               transform
@@ -124,7 +125,9 @@ export default function HomePage() {
             />
           </div>
         </div>
+      {/*   </section> */}
 
+{/*     <section data-aos="fade-up"> */}
         <div className={styles.fsxStats}>
           <div className={styles.stat}>
             <h2 className={styles.countBlock}>
@@ -182,11 +185,12 @@ export default function HomePage() {
             <h6 className={styles.label}>Start Up Launched</h6>
           </div>
         </div>
+      
       </section>
 
       {/* === BRAND FAMILY SECTION === */}
-      <section
-        id="brand-family"
+      <section data-aos="fade-up">
+        <div
         className={styles.brandFamily}
         data-aos="fade-up"
       >
@@ -281,6 +285,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+             </div>
       </section>
 
       {/* === PARTNERS === */}
