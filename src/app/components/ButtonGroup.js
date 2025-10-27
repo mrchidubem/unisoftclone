@@ -22,6 +22,10 @@ const buttons = [
 
   { key: 'fsxconnect1', text: 'Join Community', href: '#contact', style: 'discovers', group: 'primary' },
   { key: 'ExploreConnect', text: 'Explore Network', href: '#fsx-connect', style: 'starts', group: 'primary' },
+// =======
+//   { key: 'fsxconnect1', text: 'Join Community', href: '#contact', style: 'discover', group: 'secondary' },
+//   { key: 'ExploreConnect', text: 'Explore Network', href: '#fsx-connect', style: 'start', group: 'secondary' },
+// >>>>>>> f7ca78c68dbe70c6582c53f3d45d179904563dbe
 
   // { key: 'fsxConsulting1', text: 'Book Consultation', href: '#contact', style: 'fsxBranch', group: 'primary' },
   { key: 'fsxConsulting1', text: 'Book Consultation', href: '#contact', style: 'discovers', group: 'primary' },

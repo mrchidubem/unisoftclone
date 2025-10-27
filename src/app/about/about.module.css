@@ -68,13 +68,7 @@
     height: 400px;
   }
 
-  .overlay h1 {
-    font-size: 1.75rem;
-  }
 
-  .overlay p {
-    font-size: 1rem;
-  }
 }
 .mainContent {
   max-width: 1200px;
