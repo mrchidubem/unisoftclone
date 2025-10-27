@@ -88,7 +88,7 @@ export default function FsxAcademy() {
             <ButtonGroup
               filterKeys={['fsxacademy1', 'ExploreAcademy']}
               onClickHandlers={{
-               fsxConsulting1: scrollToContact,
+               fsxacademy1: scrollToContact,
                ExploreAcademy: scrollToAcademyService,
               }}
             />

@@ -1,1543 +1,458 @@
-/* FSXTech.module.css */
+/* FSX Tech Styles - Responsive, organized by section. */
 
-/* =============================================================================
-   SMOOTH SCROLLING GLOBAL
-   ============================================================================= */
-
-/* Enables smooth scrolling for all anchor links - makes button clicks glide professionally */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Optional: Override for better performance on some browsers */
-@media (prefers-reduced-motion: no-preference) {
-  html {
-    scroll-behavior: smooth;
-  }
-}
-
-/* =============================================================================
-   LAYOUT UTILITIES
-   ============================================================================= */
-
-/* Main container: Centers content with max-width and side padding for readability on wide screens. */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box; /* Global: Ensures padding/margins don't break widths */
-}
-
-/* =============================================================================
-   HEADER
-   ============================================================================= */
-
-/* Fixed header with subtle shadow for depth. Spans full width. */
-.header {
-    background: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-
-/* Align header content: Flexbox for logo and nav spacing. */
-.header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 20px;
-}
-
-/* Logo: Bold text with icon, using brand color. */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #2563eb;
-}
-
-/* Logo icon: Gradient background circle for visual appeal. */
-.logo-icon {
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #2563eb, #06b6d4);
-    border-radius: 6px;
-}
-
-/* NAV / MENU STYLES REMOVED (per request) */
-/* Removed selectors:
-   .nav
-   .nav a
-   .nav a:hover
-   .dropdown
-   .dropdown a
-*/
-
-/* =============================================================================
-   HERO SECTION
-   ============================================================================= */
-
-/* Hero background: Gradient overlay for visual impact, full viewport height, centered content. */
-.hero {
-  background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
-    color: #FFFFFF;
-    min-height: 516px; /* Changed to min-height for flexibility without altering Figma intent */
-    margin-top: 0;
-    margin-bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transform: rotate(0deg);
-    /* Mobile: Respect safe areas for notched devices */
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
-}
-
-/* Hero container: Wider max-width with generous padding for desktop. */
-.hero .container {
-    max-width: 1440px;
-    padding: 40px 121px;
-    box-sizing: border-box;
-    width: 100%;
-}
-
-/* Hero content grid: Two-column layout for text and image alignment. */
-.heroContent {
-    display: grid;
-    grid-template-columns: 1fr 560px;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-}
-
-/* Hero text: White text on gradient background. */
+/* Hero Section */
 .heroText {
-    color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 50%;
 }
 
-/* Hero headline: Large, bold font with specific sizing for impact. */
-.heroText h1 {
-    width: 193px;
-    height: 58px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 48px;
-    line-height: 57.6px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-    background: transparent;
-    color: #FFFFFF;
-    margin: 2.5rem 0 1rem 0;
-    padding: 0;
-    display: block;
-    leading-trim: none;
-    box-sizing: border-box;
-    white-space: nowrap;
+.heroBtns {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-self: start;
 }
 
-/* Hero image: Right-aligned with rounded corners and object-fit for responsiveness. */
-.heroImage {
-    justify-self: end;
-    align-self: center;
+.heroImg img {
+  width: 100%;
+  border-radius: 10px;
+  max-width: 100%;
 }
 
-.heroImage img {
-    width: 100%;
-    max-width: 560px;
-    height: auto;
-    display: block;
-    border-radius: 24px;
-    object-fit: cover;
-}
-
-/* Hero supporting text: Subtle color, multi-line paragraph below headline. */
-.heroText p {
-    width: 549px;
-    height: auto; 
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0%;
-    color: #ECF0F5;
-    margin: 1rem 0 2rem 0;
-    padding: 0;
-    display: block;
-    overflow: hidden;
-}
-
-/* =============================================================================
-   ABOUT SECTION
-   ============================================================================= */
-
-/* About section: Light background with vertical padding for breathing room. */
+/* About Section - Side-by-side flex; stack <1024px */
 .about {
-    padding: 80px 0; /* Standardized to 80px for consistency */
-    background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
 }
 
-/* About content: Two-column grid for text and image balance. */
-.aboutContent {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+.aboutText {
+  flex: 1 1 auto;
+  width: auto;
+  max-width: 570px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-sizing: border-box;
 }
 
-/* Section headings: Consistent bold font for H2 across site. */
-.about h2 {
-    width: 570px;
-    height: 39px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 38.4px;
-    letter-spacing: 0%;
-    color: #0D519A;
-    margin: 0 0 1rem 0;
-    padding: 0;
-    display: block;
+.aboutImage {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 612px;
+  width: auto;
 }
 
-/* About subtitle: Slightly smaller H3 for hierarchy. */
-.about h3 {
-    width: 354px;
-    height: 29px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 1;
-    letter-spacing: 0%;
-    color: #0D519A;
-    margin: 1.5rem 0 0.7rem 0;
-    padding: 0;
-    display: block;
+.aboutfsxtech,
+.aboutwhy {
+  color: #0D519A;
 }
 
-/* First about paragraph: Descriptive text with normal line height. */
-.aboutText p:first-of-type {
-    width: 531px;
-    height: 72px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    color: #2C3E50;
-    margin: 0 0 0.5rem 0;
-    padding: 0;
-    display: block;
-    overflow: hidden;
+.aboutparagraph {
+  color: #2C3E50;
 }
 
-/* Second about paragraph: Follow-up text with more vertical space. */
-.aboutText p:nth-of-type(2) {
-    width: 531px;
-    height: 92px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    color: #2C3E50;
-    margin: 0 0 2rem 0;
-    padding: 0;
-    display: block;
-    overflow: hidden;
-}
-
-/* Features list: Unstyled list for clean bullet-point alternatives. */
+/* Features List */
 .featuresList {
-    list-style: none;
-    margin-top: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-/* Feature items: Flex alignment for icon + text. */
 .featuresList li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    color: #2C3E50;
-    margin-bottom: 1rem;
-    padding: 0;
-    white-space: normal;
-    overflow: visible;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Prevent wrapping in feature item children for tight alignment. */
-.featuresList li > * {
-    white-space: nowrap;
+.aboutText h3 + ul {
+  margin-top: 16px;
 }
 
-/* Feature icons: Small SVG with brand color offset. */
 .featuresList svg {
-    width: 15.83px;
-    height: 15.83px;
-    transform: rotate(0deg);
-    opacity: 1;
-    color: #0D519A;
-    margin-top: 1.58px;
-    margin-left: 1.58px;
-    flex-shrink: 0;
+  color: #0D519A;
+  flex-shrink: 0;
+  stroke-width: 2;
 }
 
-/* About image: Full-width with subtle rounding. */
-.aboutImage img {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
+/* Services Section - Grid: 3-col desktop, scales down */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-/* =============================================================================
-   SERVICES SECTION
-   ============================================================================= */
-
-/* Services section: Pale blue background with asymmetric padding. */
-.services {
-    padding: 80px 0; /* Standardized bottom to match top for consistency */
-    background: #FAFDFF;
-    margin-bottom: 0;
-    padding-bottom: 40px !important; /* Down from 80px; top stays 80px for section start */
-
+/* Base for responsive images (used in About, Services, Products) */
+.responsiveImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-/* Services heading: Centered H2 with neutral color. */
-.services h2 {
-    width: 185px;
-    height: 39px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 600;
-    font-size: 32px;
-    line-height: 38.4px;
-    letter-spacing: 0%;
-    color: #2C3E50;
-    text-align: center;
-    margin: 0 auto 0.5rem;
-    padding: 0;
-    display: block;
-}
-
-/* Services lead text: Centered introductory paragraph with light color. */
-.services .servicesLead {
-    max-width: 1107px;
-    width: 100%;
-    height: auto;
-    opacity: 1;
-    font-family: "Bahnschrift", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1.2;
-    letter-spacing: 0;
-    text-align: center;
-    color: #7F8C8D;
-    margin: 0 auto 1rem;
-    padding: 8px 12px;
-    display: block;
-    box-sizing: border-box;
-    white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
-    word-break: normal;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Services grid: Responsive columns with auto-fit for varying screen sizes. */
-.servicesGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 36px; /* 24px all around for consistent, airy spacing */
-    row-gap: 20px;
-    max-width: 1200px;
-    margin: 1.3rem auto 0 auto;
-    margin-bottom: 0 !important;
-
-}
-
-/* Service card: Rounded, shadowed box with hover lift effect. */
-.serviceCard {
-    width: 383px;
-    height: 275px;
-    transform: rotate(0deg);
-    opacity: 1;
-    border-radius: 20px;
-    border: 0.5px solid #A0A5AA;
-    padding: 32px;
-    background: #ECF0F5;
-    box-shadow: 0px 8px 16px 0px #00000014, 0px 0px 4px 0px #0000000A;
-    text-align: center;
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 0;
-    box-sizing: border-box; /* Ensures padding fits within width */
-}
-
-.serviceCard:hover {
-    transform: translateY(-5px);
-}
-
-/* Service icon: Circular brand-colored background for icons. */
-.serviceIcon {
-    width: 60px !important;
-    height: 60px !important;
-    transform: rotate(0deg) !important;
-    opacity: 1 !important;
-    border-radius: 20px !important; /* Soft rounded square— exact Figma */
-    background: #0D519A !important; /* Blue bg */
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    margin: 0 auto 0.5rem !important;
-    color: #FFFFFF !important; /* White icon */
-    flex-shrink: 0 !important;
-    box-sizing: border-box !important;
-    position: relative !important; /* Ensures border draws on div, not child */
-}
-
-/* Ensure icon SVG inherits (no image override) */
-.serviceIcon svg {
-    width: 40px !important;
-    height: 40px !important;
-    color: #FFFFFF !important;
-    fill: currentColor !important; /* Forces white if needed */
-}
-
-
-/* Service card heading: Medium size, dark text. */
-.serviceCard h3 {
-    font-size: 1.3rem;
-    margin-bottom: 0rem;
-    color: #1e293b;
-}
-
-/* Service card description: Centered, multi-line text. */
-.serviceCard p {
-    width: 319px;
-    height: 72px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #555555;
-    margin: 0 auto;
-    padding: 0;
-    display: block;
-}
-
-/* =============================================================================
-   PRODUCTS SECTION
-   ============================================================================= */
-
-/* Products section: Variable background with padding for carousel. */
-.products {
-   padding-top: 40px !important; /* Down from 80px; bottom stays 80px for footer */
-    background: var(--section-bg, #FAFDFF);
-    margin-bottom: 0;
-    margin-top: 0;
-    overflow: visible;
-  
-}
-
-/* Products heading: Centered H2 with neutral color. */
-.products h2 {
-    width: 265px;
-    height: auto; /* Changed: Flex to fit one line—no clip on wrap */
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 32px;
-    line-height: 38.4px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #2C3E50;
-    margin: 0 auto 0;
-    padding: 0;
-    display: block;
-    white-space: nowrap; /* Added: Force one line—fixes border split like mobile */
-    leading-trim: none;
-    box-sizing: border-box;
-    max-width: 100%; /* Added: Safety if container shrinks */
- 
-}
-
-/* Products lead text: Centered introductory line. */
-.productsLead {
-    width: 728px;
-    height: 24px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 1;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #7F8C8D;
-    margin: 1.1rem auto 1rem;
-    padding: 0;
-    display: block;
-}
-
-/* Swiper container: Centers the carousel with padding. */
+/* Products Section - Swiper carousel */
 .swiperContainer {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 16px 0 16px;
+  position: relative;
+  margin-top: 2rem;
+  background: transparent;
+  overflow: visible;
 }
 
-/* Custom Swiper wrapper: Adds bottom padding for bullets. */
-.swiperCustom {
-    padding-bottom: 20px;
-}
-
-/* Swiper navigation buttons: Positioned arrows with hover effects. */
 .swiperButtonPrev,
 .swiperButtonNext {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    border-radius: 50%;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 10;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 .swiperButtonPrev {
-    left: -24px;
+  left: -24px;
 }
 
 .swiperButtonNext {
-    right: -24px;
+  right: -24px;
 }
 
 .swiperButtonPrev:hover,
 .swiperButtonNext:hover {
-    background: white;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-50%) scale(1.1);
 }
 
-/* Arrow icons: Brand color for consistency. */
-.swiperButtonPrev svg,
-.swiperButtonNext svg {
-    color: #2563eb;
+/* Swiper Pagination - Forced under swiper-wrapper, no overlap with cards */
+.products .swiperContainer .swiper-wrapper {
+  margin-bottom: 40px !important;  /* Push wrapper up, create space for bullets below */
 }
 
-/* Custom pagination: Bottom-centered bullets with active state. */
-.swiperPaginationCustom {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+.products .swiperContainer .swiper-pagination {
+  position: absolute !important;
+  bottom: 0 !important;  /* Lock to absolute bottom of container */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px !important;
+  z-index: 5 !important;
+  top: auto !important;  /* Override any top positioning */
 }
 
-.swiper-pagination-bullet {
-    background: #7F8C8D;
-    opacity: 0.5;
-    width: 12px;
-    height: 12px;
-    transition: all 0.3s;
-    margin: 0 4px;
+.products .swiperContainer .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+  background: transparent !important;
+  border: 2px solid #0D519A !important;
+  border-radius: 50% !important;
+  opacity: 0.6 !important;
+  transition: all 0.3s ease !important;
+  flex-shrink: 0;
+  margin: 0 !important;  /* No extra margins */
 }
 
-.swiperCustom .productCard {
-  padding-bottom: 32px !important; /* Forces bottom space despite Swiper reset */
+.products .swiperContainer .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background: #0D519A !important;
+  transform: scale(1.2) !important;
 }
 
-.swiperCustom .swiper-slide .productCard {
-  padding: 32px 32px 32px 32px !important; /* Full padding control: 48px bottom for breathing room */
+.products .swiperContainer .swiper-pagination-clickable .swiper-pagination-bullet {
+  cursor: pointer;
 }
 
-.swiper-pagination-bullet-active {
-    background: #2563eb;
-    opacity: 1;
-    transform: scale(1.2);
-}
-
-/* Product card: White rounded card with shadow and flex layout. */
-.productCard {
-    width: 384px;
-  
-    min-height: 405px; /* Keeps desktop size, but allows growth for padding/content */
-    height: auto;
-    gap: 36px;
-    transform: rotate(0deg);
-    opacity: 1;
-    border-radius: 25px;
-    padding: 32px;
-    background: #FFFFFF;
-    box-shadow:
-        0px 8px 16px 0px rgba(0, 0, 0, 0.08),
-        0px 0px 4px 0px rgba(0, 0, 0, 0.04);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-/* Product image: Fixed height with cover fit and rounding. */
-.productCard .productImage {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    margin-bottom: 16px;
-}
-
-/* Product meta: Centered flex column for title and description. */
-.productCard .productMeta {
-    width: 298px;
-    height: 98px;
-    gap: 16px;
-    transform: rotate(0deg);
-    opacity: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-/* Product title: Bold, large font for emphasis. */
-.productCard .productMeta h3 {
-    margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.15;
-    color: var(--heading, #0f172a);
-}
-
-.productTitle {
-    width: auto;
-    height: auto;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: "Bahnschrift", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 28px;
-    line-height: 33.6px;
-    letter-spacing: 0;
-    color: #0f172a;
-    display: block;
-    padding: 0;
-    box-sizing: border-box;
-    white-space: nowrap;
-}
-
-/* Product description: Wrappable text below title. */
-.productDesc {
-    width: auto;
-    height: auto;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0;
-    text-align: center;
-    color: #555555;
-    margin: 8px 0 0 0;
-    padding: 0;
-    box-sizing: border-box;
-    display: block;
-    white-space: normal;
-    overflow: visible;
-}
-
-/* Products footer: Centered flex layout for the call-to-action text and button at the bottom of the section. */
-.productsFooter {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 0 0 2rem 0;
-    padding: 0;
-}
-
-/* Footer paragraph: Italic, centered prompt text with subtle gray color and precise sizing for a low-key nudge toward the quote button. */
-.productsFooter p {
-    width: 265px;
-    height: 16px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-style: italic;
-    font-size: 14px;
-    line-height: 1; /* Matches 100% line-height */
-    letter-spacing: 0%;
-    text-align: center;
-    color: #7C8084;
-    margin: 0 0 0.5rem 0; /* Bottom margin for space below the text (above the button); adjust as needed */
-    padding: 0;
-    display: block;
-    background: transparent; /* No background fill; text-only */
-    white-space: nowrap; /* Forces single-line display—no wrapping */
-}
-
-/* =============================================================================
-   BUTTONS AND ACTIONS
-   ============================================================================= */
-
-/* Primary accent button: Brand color with shadow and hover transition. */
 .accentButton {
-    width: 206px;
-    height: 48px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 20px;
-    background: #0D519A;
-    color: #ffffff;
-    border-radius: 15px;
-    border: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    box-shadow:
-        0px 2px 4px 0px rgba(0,0,0,0.08),
-        0px 0px 6px 0px rgba(0,0,0,0.02);
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    font-style: normal; /* "Medium" likely refers to weight; use normal unless italic intended */
-    line-height: 24px; /* Exact match */
-    letter-spacing: 0%; /* No spacing */
-    text-align: center;
-    transform: none;
-    vertical-align: middle;
-    transform: rotate(0deg); /* Matches angle */
-    opacity: 1;
-    margin: 0;
-    padding: 10px 20px; /* Inner padding ensures text fits with height */
-    outline: none;
-    transition: transform .12s ease, box-shadow .12s ease;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-    white-space: nowrap; /* Forces single-line display—no wrapping */
-    margin-bottom: 28px !important; /* Added: 20px space below button (increases gap to next section/end) */
-
+  background: var(--primary-blue);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 12px;
 }
 
-/* If you want to target just the text content (e.g., via a span wrapper in React), add this: */
-.accentButton span,
-.accentButton::before,
-.accentButton::after {
-    width: 166px; /* Applies to text container if wrapped */
-    height: 24px;
-    background: transparent; /* Text itself has no bg; button handles it */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
 }
 
-/* Hero-specific accent button: Orange variant for calls-to-action. */
-.accentButtonHero {
-     width: 175px;
-    height: 48px;
-    transform: rotate(0deg);
-    opacity: 1;
-    gap: 10px;
-    border-radius: 15px;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    box-shadow: 
-        0px 2px 4px 0px #00000014,
-        0px 0px 6px 0px #00000005;
-    background: #FF6B35;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-    transition: transform .12s ease, box-shadow .12s ease;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-
-
+.productsFooter {
+  margin-top: 2rem;
+  max-width: 414px;
+  width: 100%;
+  opacity: 1;
+  gap: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Variant button: Outlined transparent button for secondary actions. */
-.variant8Button {
-    width: 194px;
-    height: 48px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    padding: 10px 20px;
-    border-radius: 15px;
-    border: 1px solid #E1E7EF;
-    background: transparent;
-    color: #FFFFFF;
-    box-shadow:
-        0px 2px 4px 0px rgba(0,0,0,0.08),
-        0px 0px 6px 0px rgba(0,0,0,0.02);
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
+.products .card2 {
+  padding: 1.5rem;
+  gap: 0.75rem;
+  max-width: 100%;
+  min-width: 250px;
 }
 
-/* Global override for variant8Button to ensure transparency. */
-.variant8Button {
-    background: transparent !important;
-    border: 1px solid #E1E7EF !important;
+.productDesc {
+  font-size: 0.875rem;
+  line-height: 1.4;
 }
 
-/* Variant button text: Medium weight, light color. */
-.variant8Text {
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0;
-    text-align: center;
-    color: #F1F5F9;
-    display: inline-block;
-    white-space: nowrap;
-    box-sizing: border-box;
-}
+/* Consolidated Responsive Media Queries - Mobile-first */
 
-/* Get started text: Compact inline element for button labels. */
-.getStartedText {
-    width: 82px;
-    height: 24px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0;
-    text-align: center;
-    color: #F1F5F9;
-    box-sizing: border-box;
-    white-space: nowrap;
-}
-
-/* Hero actions: Flex row for multiple buttons with spacing. */
-.heroActions {
-    display: inline-flex;
-    align-items: center;
-    gap: 25px;
-}
-
-/* =============================================================================
-   WEBSITE WRAPPER (New: To fix header overlap)
-   ============================================================================= */
-.website {
-    padding-top: 80px; /* Reserves space for fixed header height (~1rem padding top/bottom + content); adjust if header height changes */
-}
-
-/* =============================================================================
-   RESPONSIVE DESIGN - MOBILE FIRST APPROACH
-   ============================================================================= */
-
-/* Ultra-Mobile (320px - 480px): Extra tweaks for smallest phones */
-@media (max-width: 480px) {
-  .container {
-    padding: 0 12px; /* Tighter sides for tiny screens */
-  }
-
-  .featuresList li {
-    font-size: 14px; /* Slight further reduce for ultra-small readability */
-    gap: 8px; /* Tighter gap to save horizontal space */
-  }
-
-  .featuresList li span {
-    white-space: normal; /* Allow full wrap on tiny screens */
-  }
-
-  .services {
-    padding: 32px 0 16px 0; /* Even tighter vertical for short viewports */
-  }
-
-  .servicesGrid {
-    gap: 0.75rem; /* Minimal gap for stack */
-    margin: 1.5rem auto 0 auto;
-  }
-
-  .serviceCard {
-    padding: 24px; /* Reduce inner padding slightly to fit more content vertically */
-    gap: 16px;
-  }
-
-  .serviceCard p {
-    font-size: 15px; /* Minor size tweak for mobile flow, keeps Figma line-height */
-  }
-}
-
-/* Mobile styles (up to 768px) - Stack layouts, reduce font sizes, adjust paddings */
-@media (max-width: 768px) {
-  .container {
-    padding: 0 16px;
-  }
-
-   .contactHeading {
-    font-size: 24px;
-    margin-top: 0;
-    line-height: 28.8px;
-    font-weight: 700;
-    width: 100%;
-    max-width: 300px;
-    height: auto;
-    margin: 0 auto;
-    text-align: center;
-    vertical-align: middle;
-    background: transparent;
-    opacity: 1;
-    transform: rotate(0deg);
-  }
-
-  /* FIX 1: Reduce website padding-top for snug header-hero connection; hero container top to 0 for zero-gap */
-  .website {
-    padding-top: 0; /* Reduced from 80px—hugs mobile header height */
-  }
-
-  /* Hero Mobile */
-  .hero {
-    min-height: calc(100vh - 70px); /* Adjusted for new padding-top */
-    padding: 16px 0; /* Tightened to 16px top/bottom for snappier feel */
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero .container {
-    padding: 0px 16px 16px 16px; /* Top reduced to 0px (was 8px)—eliminates extra gap; sides 16px for container */
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .heroContent {
-    grid-template-columns: 1fr;
-    gap: 1.5rem; /* Slightly reduced gap for tighter stack */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-   .heroText {
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-  }
-
- /* Hero h1: FSX Tech - Fix alignment & width for natural centering */
-  .heroText h1 {
-    width: auto; /* Changed: Let text size naturally instead of fixed 129px */
-    max-width: 100%;
-    height: 39px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 32px;
-    line-height: 38.4px;
-    letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
-    background: transparent; /* Changed: Likely not meant as box bg; use color for text */
-    color: #FFFFFF; /* Hero contrast on gradient */
-    margin: 0.5rem 0 1rem 0;
-    padding: 0;
-    display: block;
-    white-space: nowrap; /* Added: Prevent any wrap */
-    leading-trim: none;
-    box-sizing: border-box;
-  }
-  
-
-  .heroText p {
-    width: 391px;
-    height: 84px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 14px;
-    line-height: 21px;
-    letter-spacing: 0%;
-    text-align: center;
-    vertical-align: middle;
-    color: #ECF0F5;
-    margin: 0 0 1.5rem 0;
-    padding: 0;
-    display: block;
-    overflow: hidden;
-    leading-trim: none;
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-
-  .heroActions {
-    flex-direction: column;
-    justify-content: center;
-    gap: 1.5rem; /* Airy stack */
-    width: 100%;
-    display: flex;
-    align-items: center;
-  }
-
-  .accentButtonHero,
-  .variant8Button {
-    width: 100%;
-    max-width: 250px;
-    justify-content: center;
-    width: 100%;
-
-  }
-
-   .variant8Button {
-    width: 144px;
-    height: 48px;
-    transform: rotate(0deg);
-    opacity: 1;
-    gap: 10px;
-    border-radius: 15px;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    border: 1px solid #E1E7EF;
-    box-shadow: 
-        0px 2px 4px 0px #00000014,
-        0px 0px 6px 0px #00000005;
-    background: transparent;
-    color: #FFFFFF;
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    outline: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: transform .12s ease, box-shadow .12s ease;
-    -webkit-tap-highlight-color: transparent;
-  }
-
-    .accentButtonHero {
-    width: 175px;
-    height: 48px;
-    transform: rotate(0deg);
-    opacity: 1;
-    gap: 10px;
-    border-radius: 15px;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    box-shadow: 
-        0px 2px 4px 0px #00000014,
-        0px 0px 6px 0px #00000005;
-    background: #FF6B35;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1;
-    transition: transform .12s ease, box-shadow .12s ease;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-  }
-
-  .heroImage {
-    justify-self: center;
-    order: unset;
-    margin-top: 0.5rem; /* Reduced for closer flow */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .heroImage img {
-    width: 391px;
-    height: 317px;
-    max-width: 100%;
-    border-radius: 30px;
-    background: #FFFFFF;
-    object-fit: cover;
-  }
-
-  /* About Mobile */
+/* Ultra-Small Mobile: <360px */
+@media (max-width: 359px) {
   .about {
-    padding: 40px 0;
+    padding: 1.5rem 0.5rem;
+    gap: 1rem;
   }
 
-  .aboutContent {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .aboutImage {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 -1.5rem;
   }
 
-  .about h2 {
-    font-size: 28px;
-    text-align: left;
-    width: auto;
-  }
-
-  .about h3 {
-    font-size: 20px;
-    text-align: left;
-    width: auto;
-  }
-
-  .aboutText p:first-of-type,
-  .aboutText p:nth-of-type(2) {
-    width: 100%;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  /* FIX 2: Features list—allow wrap on mobile for better text flow, keep icon tight */
-  .featuresList li {
-    font-size: 15px; /* Slight reduce from 16px—fits longest text without overflow */
-    justify-content: flex-start;
-    gap: 12px; /* Increased for icon-text breathing room */
-    flex-wrap: wrap; /* Changed: Allow wrap—text flows naturally on narrow screens */
-    overflow: visible; /* Changed: No hidden overflow; let it breathe */
-    align-items: flex-start; /* Align top for wrapped lines */
-  }
-
-  .featuresList li span { /* Target text via span in JSX */
-    white-space: normal; /* Changed: Allow wrapping for readability */
-    text-overflow: clip; /* No ellipsis; full text shows */
-    flex: 1; /* Grow to fill space */
-  }
-
-  .featuresList svg {
-    min-width: 20px;
-    flex-shrink: 0; /* Icon stays fixed */
-  }
-
-  .aboutImage img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-  }
-
-  /* Services Mobile */
-  .services {
-    padding: 40px 0 20px 0;
-    padding-bottom: 20px !important; /* Tightens services end */
-
-  }
-
-  .services h2 {
-    font-size: 28px;
-    width: auto;
-  }
-
-  .services .servicesLead {
-    font-size: 16px;
-    padding: 0;
-    width: 100%;
-  }
-
-  /* FIX 3: Services grid—full responsive cards, tighter gap, explicit centering */
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    gap: 1rem; /* Reduced from 1.5rem—tighter without crowding */
-    margin: 2rem auto 0 auto;
-    margin-bottom: 0 !important; /* No extra after cards */
-    justify-items: center; /* Ensures single card centers perfectly */
-  }
-
-   .serviceCard {
-    width: 100%; /* Changed: Full width for mobile responsiveness */
-    max-width: 383px; /* Respects Figma desktop max */
-    height: auto; /* Changed: Auto height to fit content without squish */
-    transform: rotate(0deg);
-    opacity: 1;
-    gap: 24px;
-    border-radius: 20px;
-    border: 0.5px solid #A0A5AA;
-    padding: 32px;
-    background: #ECF0F5;
-    box-shadow: 
-        0px 8px 16px 0px #00000014,
-        0px 0px 4px 0px #0000000A;
-    text-align: center;
-    transition: transform 0.3s;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto; /* Explicit center within grid cell */
-    margin-bottom: 0;
-    box-sizing: border-box; /* Padding fits inside width */
-  }
-
-.serviceIcon {
-    width: 60px;
-    height: 60px;
-    transform: rotate(0deg);
-    opacity: 1;
-    border-radius: 20px; /* Changed: Perfect circle (equiv to 30px radius for 60px size) */
-    background: #0D519A;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 0.5rem;
-    color: #FFFFFF;
-    flex-shrink: 0; /* Prevents squish on narrow layouts */
-    box-sizing: border-box;
-}
-
-  .serviceCard h3 {
-    font-size: 1.2rem;
-  }
-
-  .serviceCard p {
-    width: 100%; /* Full width for text on mobile */
-    height: auto;
-    line-height: 1.4;
-    margin: 0; /* No auto margin; full flex */
-  }
-
-  /* Products Mobile */
- .products {
-    padding: 20px 0 40px 0; /* Top 20px (down from 40px); bottom 40px for footer */
-    padding-top: 20px !important; /* Tightens products start */
-    margin-bottom: 0;
-  }
-  
- /* Products h2: Force zero top margin for border test (prevents any phantom) */
-  .products h2 {
-    width: 232px;
-    height: auto;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 28px;
-    line-height: 33.6px;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #2C3E50;
-    background: transparent;
-    margin: 0 auto 1rem auto !important; /* Top: 0 forced; bottom for lead text space */
-    padding: 0;
-    display: block;
-    white-space: nowrap;
-    leading-trim: none;
-    box-sizing: border-box;
-    max-width: 100%;
-    margin-top: 0 !important; /* Zero for h2 itself */
-
-  }
-
- .productsLead {
-    width: 292px;
-    height: 57px;
-    transform: rotate(0deg);
-    opacity: 1;
-    font-family: Bahnschrift, sans-serif;
-    font-weight: 600;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 1;
-    letter-spacing: 0%;
-    text-align: center;
-    color: #7F8C8D;
-    background: transparent;
-    margin: 1rem auto;
-    padding: 0;
-    display: block;
-    leading-trim: none;
-    box-sizing: border-box;
-    max-width: 100%;
-  }
-  
-  /* FIX 4: Swiper—enhance mobile slide centering with full width flex */
-  /* Swiper tweaks for better mobile centering (reduce peek/space for full center swipe) */
-  .swiperContainer {
-    padding: 0;
-    overflow: hidden; /* Added: Hide overflow for clean swipe */
+  .products .card2 {
+    min-width: 220px;
+    padding: 1.25rem;
   }
 
   .swiperButtonPrev {
-    left: 8px; /* Inset for thumb room */
+    left: -20px;
   }
 
   .swiperButtonNext {
-    right: 8px; /* Inset for thumb room */
+    right: -20px;
+  }
+
+  .heroText {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: 5rem;
+  }
+
+  .heroBtns {
+    width: 70%;
+  }
+
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 30px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination {
+    gap: 6px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    border-width: 1.5px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination-bullet-active {
+    transform: scale(1.1) !important;
+  }
+}
+
+/* Small Mobile: 360px-479px */
+@media (max-width: 479px) {
+  .about {
+    flex-direction: column !important;
+    align-items: stretch;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .aboutText {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .aboutImage {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 -1rem;
+    order: 1;
+  }
+
+  .products .card2 {
+    min-width: 240px;
   }
 
   .swiperButtonPrev,
   .swiperButtonNext {
     width: 40px;
     height: 40px;
+    left: -20px;
+    right: -20px;
   }
 
-  .swiper-pagination-bullet {
-    width: 10px;
-    height: 10px;
-  }
-
-  .swiperCustom {
-    padding-bottom: 20px;
-  }
-
-/* Ensure slide width matches card for precise centering */
-  .swiper-slide {
-    display: flex;
-    justify-content: center; /* Added: Centers content in slide */
-    align-items: center;
-    width: 100%; /* Added: Full width on mobile for exact center snap */
-  }
-
-   .productCard {
-    width: 382px;
-    height: 405px;
-    transform: rotate(0deg);
-    opacity: 1;
-    gap: 10px;
-    border-radius: 25px;
-    padding: 32px;
-    background: #FFFFFF;
-    box-shadow: 
-        0px 8px 16px 0px #00000014,
-        0px 0px 4px 0px #0000000A;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-    overflow: hidden;
-    max-width: 100%; /* Added: Prevents overflow beyond viewport for better swipe centering */
-    margin: 0 auto; /* Added: Centers card in slide if needed */
-  }
-
-  .productCard .productImage {
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-    margin: 0 auto;
-  }
-
-  .productTitle {
-    font-size: 24px;
-    line-height: 1.2;
-    white-space: normal;
-  }
-
-  .productDesc {
-    font-size: 14px;
-    line-height: 1.4;
-  }
-
-  .productsFooter {
-    gap: 0.5rem;
-  margin-bottom: 0.5rem; /* Reduced from 2rem—tighter flow without squish */
-
-  }
-
-  .productsFooter p {
-    font-size: 14px;
-    white-space: normal; /* Allow wrap on mobile */
-    width: 100%;
-    text-align: center;
-  }
-
-  .accentButton {
-    width: 100%;
-    max-width: 250px;
-  }
-
-    .accentButton {
-    width: 206px;
-    height: 48px;
-    transform: rotate(0deg);
-    opacity: 1;
-    gap: 10px;
-    border-radius: 15px;
-    padding-top: 10px;
-    padding-right: 20px;
-    padding-bottom: 10px;
-    padding-left: 20px;
-    background: #0D519A;
-    box-shadow: 
-        0px 2px 4px 0px #00000014,
-        0px 0px 6px 0px #00000005;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    box-sizing: border-box;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    letter-spacing: 0%;
-    text-align: center;
-    transition: transform .12s ease, box-shadow .12s ease;
-    -webkit-tap-highlight-color: transparent;
-    outline: none;
-    white-space: nowrap;
-  }
-  /* General Mobile Adjustments */
-  /* .featuresList li > * { white-space: normal; } */ /* Removed—now handled by span nowrap */
-
-  /* Mobile-specific section padding consistency */
-  .about,
-  .services,
-  .products,
-  .contact {
-    padding: 40px 0;
-  }
-
-  /* Mobile: Add top padding to hero for smooth scroll offset if header is fixed */
-  .hero {
-    scroll-margin-top: 70px; /* Offsets for fixed header during smooth scroll */
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 35px !important;
   }
 }
 
- /* General: Ensure all relevant elements respect box-sizing (paddings/margins inside width) */
-  .services,
-  .products,
-  .servicesGrid,
-  .products h2 {
-    box-sizing: border-box;
+/* Mid Mobile/Tablet: 480px-767px */
+@media (max-width: 767px) {
+  .grid {
+    grid-template-columns: 1fr;
   }
 
-/* Tablet styles (769px to 1023px) - Intermediate adjustments */
-@media (min-width: 769px) and (max-width: 1023px) {
-  .heroContent {
-    grid-template-columns: 1fr 400px;
+  .about {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 1.5rem;
   }
 
-  .hero .container {
-    padding: 40px 40px;
+  .aboutText {
+    max-width: 100%;
+    order: -1;
   }
 
-  .heroText p {
+  .aboutImage {
     width: 100% !important;
-    max-width: none;
+    max-width: 100% !important;
+    margin: 0 -0.75rem;
+    order: 1;
   }
 
-  .heroText h1 {
-    font-size: 40px;
+  .heroText {
+    max-width: 100%;
+    margin-top: 1.5rem;
   }
 
-  .heroImage img {
-    max-width: 400px;
+  .heroBtns {
+    width: 70%;
+    margin: 0 auto;
   }
 
-  .aboutContent {
-    gap: 3rem;
+  .products {
+    padding: 2rem 0;
   }
 
-  .about h2 {
-    font-size: 30px;
+  .products .card2 {
+    min-width: 230px;
   }
 
-  .servicesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  .swiperButtonPrev {
+    left: -25px;
   }
 
-  .productCard {
-    width: 350px;
+  .swiperButtonNext {
+    right: -25px;
   }
 
-  /* Fix for hero paragraph cutoff on medium screens */
-  .heroText p {
-    width: 100%;
-    height: auto;
-    overflow: visible;
-    font-size: 16px;
-    line-height: 1.4;
-    white-space: normal;
+  .featuresList svg {
+    width: 20px;
+    height: 20px;
   }
 
-  /* Tablet section padding: Intermediate between mobile/desktop */
-  .about,
-  .services,
-  .products,
-  .contact {
-  padding: 60px 0;
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 35px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination {
+    gap: 6px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination-bullet {
+    width: 8px !important;
+    height: 8px !important;
+    border-width: 1.5px !important;
+  }
+
+  .products .swiperContainer .swiper-pagination-bullet-active {
+    transform: scale(1.1) !important;
+  }
+}
+
+/* Large Tablet: 768px-1024px */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+  }
+
+  .aboutText {
+    max-width: 100%;
+    order: -1;
+  }
+
+  .aboutImage {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0;
+    order: 1;
+  }
+
+  .heroImg {
+    max-width: 420px;
+  }
+
+  .products {
+    padding: 3rem 0;
+  }
+
+  .products .card2 {
+    min-width: 250px;
+  }
+
+  .swiperButtonPrev {
+    left: -30px;
+  }
+
+  .swiperButtonNext {
+    right: -30px;
+  }
+
+  .products .swiperContainer .swiper-wrapper {
+    margin-bottom: 40px !important;
+  }
+}
+
+/* Desktop Enforcement: Prevent shrink on wide screens */
+@media (min-width: 1025px) {
+  .aboutImage {
+    min-width: 612px;
+  }
+
+  .products .card2 {
+    min-width: 260px;
+  }
+
+  .swiperButtonPrev {
+    left: -35px;
+  }
+
+  .swiperButtonNext {
+    right: -35px;
   }
 }

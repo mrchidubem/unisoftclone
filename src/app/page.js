@@ -41,24 +41,20 @@ export default function HomePage() {
     <main>
       {/* === HERO === */}
       <div className={styles.heroBackground}>
-        <section className={styles.heroMain} data-aos="fade-up">
+        <div className={styles.heroMain} data-aos="fade-up">
           <div className={styles.overlay}>
             <h1 className={styles.typewriter}>
-           
-                Building Smarter, Scaling
-                <span className={styles.mobileBreak}></span> Faster
-                <span className={styles.desktopBreak}></span> <br /> Engineering
-                Experiences, <br />
-                and Empowering Growth
-             
+              Building Smarter, Scaling Faster Engineering Experiences, and
+              Empowering Growth
             </h1>
 
             <p className={styles.description}>
               Fransunisoft is a Nigeria-based ecosystem designed to fuel
               innovation, empower brands, and connect communities. With six
-              dynamic branches and Experiences — FSX Events, FSX Consulting, FSX Tech, FSX
-              Academy, FSX Labs, and FSX Connect. We provide solutions that help
-              businesses and individuals thrive in today’s fast-changing world.
+              dynamic branches and Experiences — FSX Events, FSX Consulting, FSX
+              Tech, FSX Academy, FSX Labs, and FSX Connect. We provide solutions
+              that help businesses and individuals thrive in today’s
+              fast-changing world.
             </p>
 
             <ButtonGroup
@@ -69,7 +65,7 @@ export default function HomePage() {
               }}
             />
           </div>
-        </section>
+        </div>
       </div>
 
       {/* === WHAT MAKES US DIFFERENT === */}
@@ -83,104 +79,110 @@ export default function HomePage() {
               Beyond traditional boundaries – we integrate, execute, and
               transform
             </h6>
-            </div>
+          </div>
+        </div>
+
+        <div className={styles.fsxRow}>
+          <div className={styles.fsxContent}>
+            <h3>The FSX Advantage</h3>
+            <p>
+              Unlike traditional consulting firms or tech companies that focus
+              on one area,
+              <span style={{ color: "#0D519A", fontWeight: "bold" }}>
+                {" "}
+                Fransunisoft{" "}
+              </span>
+              integrates strategy, technology, learning, community, and
+              industries under one ecosystem (FSX).
+              <br />
+              We deliver holistic solutions on short and long-term execution,
+              focusing on outcomes for individuals, communities, businesses, and
+              industries.
+            </p>
+
+            <h3>How We Deliver Results</h3>
+            <ul className={styles.fsxList}>
+              <li>
+                Integrated ecosystem – strategy, tech, training, and community
+                partnerships with continuous support
+              </li>
+              <li>End-to-end execution with hands-on implementation</li>
+              <li>Long-term partnerships with continuous support</li>
+              <li>Outcome-driven execution with measurable value</li>
+              <li>Deep African market expertise with global standards</li>
+            </ul>
+            <a href="/about" className={styles.fsxButton}>
+              Learn More About Our Journey
+            </a>
           </div>
 
-          <div className={styles.fsxRow}>
-            <div className={styles.fsxContent}>
-              <h3>The FSX Advantage</h3>
-              <p>
-                Unlike traditional consulting firms or tech companies that focus
-                on one area,
-                <span style={{ color: "#0D519A", fontWeight: "bold" }}>
-                  {" "}
-                  Fransunisoft{" "}
-                </span>
-                integrates strategy, technology, learning, community, and
-                industries under one ecosystem (FSX).
-                <br />
-                We deliver holistic solutions on short and long-term execution,
-                focusing on outcomes for individuals, communities, businesses,
-                and industries.
-              </p>
+          <div className={styles.fsxImage}>
+            <Image
+              src="/F_What.png"
+              alt="FSX Advantage"
+              width={100}
+              height={100}
+            />
+          </div>
+        </div>
 
-              <h3>How We Deliver Results</h3>
-              <ul className={styles.fsxList}>
-                <li>
-                  Integrated ecosystem – strategy, tech, training, and community
-                  partnerships with continuous support
-                </li>
-                <li>End-to-end execution with hands-on implementation</li>
-                <li>Long-term partnerships with continuous support</li>
-                <li>Outcome-driven execution with measurable value</li>
-                <li>Deep African market expertise with global standards</li>
-              </ul>
-              <a href="/about" className={styles.fsxButton}>
-                Learn More About Our Journey
-              </a>
-            </div>
-
-            <div className={styles.fsxImage}>
-              <Image
-                src="/F_What.png"
-                alt="FSX Advantage"
-                width={100}
-                height={100}
-               
-           
+        <div className={styles.fsxStats}>
+          <div className={styles.stat}>
+            <h2 className={styles.countBlock}>
+              <CountUp
+                end={50}
+                duration={2}
+                separator=","
+                enableScrollSpy
+                className={styles.plus}
               />
-            </div>
+              +
+            </h2>
+            <h6 className={styles.label}>Events Coordinated</h6>
           </div>
 
-          <div className={styles.fsxStats}>
-            <div className={styles.stat}>
-              <h2 className={styles.countBlock}>
-                <CountUp 
-                end={50} 
-                duration={2} 
-                separator="," 
-                enableScrollSpy 
-                className={styles.plus}/>+</h2>
-              <h6 className={styles.label}>Events Coordinated</h6>
-            </div>
-
-            <div className={styles.stat}>
-              <h2 className={styles.countBlock}>
-                <CountUp
-                  end={100000}
-                  duration={2.5}
-                  separator=","
-                  enableScrollSpy
-               className={styles.plus}/>+
-              </h2>
-              <h6 className={styles.label}>Youth Trained</h6>
-            </div>
-
-            <div className={styles.stat}>
-              <h2 className={styles.countBlock}>
-                <CountUp 
-                end={3} 
-                duration={1.5} 
-                separator="," 
+          <div className={styles.stat}>
+            <h2 className={styles.countBlock}>
+              <CountUp
+                end={100000}
+                duration={2.5}
+                separator=","
                 enableScrollSpy
-                className={styles.plus}/>+
-              </h2>
-              <h6 className={styles.label}>Community Managed</h6>
-            </div>
-
-            <div className={styles.stat}>
-              <h2 className={styles.countBlock}>
-                <CountUp 
-                end={10} 
-                duration={2} 
-                separator="," 
-                enableScrollSpy
-                className={styles.plus}/>+
-              </h2>
-              <h6 className={styles.label}>Start Up Launched</h6>
-            </div>
+                className={styles.plus}
+              />
+              +
+            </h2>
+            <h6 className={styles.label}>Youth Trained</h6>
           </div>
-       
+
+          <div className={styles.stat}>
+            <h2 className={styles.countBlock}>
+              <CountUp
+                end={3}
+                duration={1.5}
+                separator=","
+                enableScrollSpy
+                className={styles.plus}
+              />
+              +
+            </h2>
+            <h6 className={styles.label}>Community Managed</h6>
+          </div>
+
+          <div className={styles.stat}>
+            <h2 className={styles.countBlock}>
+              <CountUp
+                end={10}
+                duration={2}
+                separator=","
+                enableScrollSpy
+                className={styles.plus}
+              />
+              +
+            </h2>
+            <h6 className={styles.label}>Start Up Launched</h6>
+          </div>
+        </div>
       </section>
 
       {/* === BRAND FAMILY SECTION === */}
@@ -191,21 +193,22 @@ export default function HomePage() {
       >
         <div className={styles.intro}>
           <h2 className={styles.ecosystemBanner}>Our Ecosystem Services</h2>
-           </div>
-<div className="sectionHead">
-          <h2 >The FSX Brand Family</h2>
- 
-          <h6 >
+        </div>
+        <div className="sectionHead">
+          <h2>The FSX Brand Family</h2>
+
+          <h6>
             Fransunisoft is more than one company <br />
             it’s a family of solutions tailored to help businesses and
             individuals succeed.
           </h6>
-       
         </div>
         <div className="grid">
           <div className={styles.card}>
             <h3 className={styles.cardTitle}>FSX Consulting</h3>
-            <p className={styles.cardTagline}><em></em> “Build Smarter. Scale Faster.”</p>
+            <p className={styles.cardTagline}>
+              <em></em> “Build Smarter. Scale Faster.”
+            </p>
             <p className={styles.cardDescription}>
               Business consulting, digital transformation, and community
               programs that bridge strategy with real tech execution and impact.
@@ -287,9 +290,9 @@ export default function HomePage() {
           <h2 className={styles.partnersHeading}>Our Partners</h2>
 
           <div className="sectionHead">
-          <h2 className={styles.partnersSubText}>
-            Join Brands and Organisations <br /> That Partner With Us
-          </h2>
+            <h2 className={styles.partnersSubText}>
+              Join Brands and Organisations <br /> That Partner With Us
+            </h2>
           </div>
         </div>
 
@@ -343,7 +346,6 @@ export default function HomePage() {
               <Image
                 src="/F_trevauty 1.png"
                 alt="Travauty"
-              
                 width={220}
                 height={100}
               />
@@ -363,7 +365,6 @@ export default function HomePage() {
               <Image
                 src="/F_Subtract 2.png"
                 alt="Subtract"
-                
                 width={200}
                 height={100}
               />
