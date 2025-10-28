@@ -237,17 +237,17 @@
 .fsxRow {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 30px;
   align-items: flex-start;
   justify-content: space-between;
+  
 }
 
 /* Content Block */
 .fsxContent {
   padding: 20px 0;
   flex: 10;
-  margin-left: 4rem;
+  margin-left: 0rem;
 }
 
 .fsxContent h2 {
@@ -506,7 +506,6 @@
   .fsxStats .stat {
     width: 90%; 
     text-align: center;
-    margin-bottom: 4px;
     margin: 0 auto;
   }
 
@@ -537,7 +536,7 @@
 }
 .ecosystemBanner {
   display: inline-block;
-  margin: 0 auto 2rem;
+  margin: auto;
   padding: 0.3rem 1rem;
   max-width: 170px;
   border: 1px solid #3D74AE;; 
@@ -555,37 +554,25 @@
 }
 
 
-.heading {
-  font-size: 2.2rem;
-  color: #2C3E50;
-  margin-bottom: 1rem;
-}
-
-.subText {
-  font-size: 1.1rem;
-  color: #7C8084;
-}
-
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  justify-content: center;
-  margin-top: 3rem;
-  margin-left: 3rem;
-
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .card {
+
+    flex-direction: column;
   background-color: #ffffff;
-  padding: 32px;
+  padding: 2rem;
   border-radius: 20px;
+   transition: transform 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
- 
+ gap: 0.5rem;
   height: auto;
-  width: 90%;
-  margin-top: 2rem;
+  width: 100%;
+
 }
 
 .cardTitle {
@@ -644,6 +631,7 @@
 
   .card {
     text-align: center;
+        padding: 2rem;
   }
 
 
@@ -651,9 +639,10 @@
     margin: 0 auto;
   }
 
-  .learnMoreBtn{
+ /*  .learnMoreBtn{
     margin-top: 1rem;
   }
+*/
 }
 
 @media (max-width: 430px) {
@@ -684,8 +673,8 @@
   .card {
     width: 100%;
     max-width: 383px;
-    height: auto; /* Let content define height */
-    padding: 32px;
+    height: auto; 
+    padding: 1.5rem;
     border-radius: 20px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     text-align: left;

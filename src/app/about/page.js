@@ -67,65 +67,67 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Story, Vision, Mission Section */}
-      <section className={styles.svmSection}>
-        <div className={styles.textColumn}>
-          <div className="sectionHeadm">
-            
-            <h2>Our Story</h2>
-            <p>
-              Fransunisoft was founded with a simple belief; that technology should be a bridge, not a barrier, to growth. In Nigeria and across Africa, businesses and individuals often struggle with scalable, affordable, and reliable digital solutions. We started our journey to close this gap by building smarter systems, empowering entrepreneurs, and helping organizations embrace innovation. From humble beginnings, our story has always been about one thing: creating solutions that matter and driving digital transformation across Africa.
-            </p>
-          </div>
+     {/* Story, Vision, Mission Section */}
+<section data-aos="fade-up">
+  <div className={styles.svmSection}> 
+    <div className={styles.textColumn}>
+      <div className="sectionHeadm">
+        <h2>Our Story</h2>
+        <p>
+          Fransunisoft was founded with a simple belief; that technology should be a bridge, not a barrier, to growth. In Nigeria and across Africa, businesses and individuals often struggle with scalable, affordable, and reliable digital solutions. We started our journey to close this gap by building smarter systems, empowering entrepreneurs, and helping organizations embrace innovation. From humble beginnings, our story has always been about one thing: creating solutions that matter and driving digital transformation across Africa.
+        </p>
+      </div>
 
-          <div className="sectionHeadm">
-            <h2>Our Vision</h2>
-            <p>
-              To be Africa’s leading force in digital innovation, empowering businesses and individuals to work smarter, scale faster, and compete globally through technology-driven solutions.
-            </p>
-          </div>
+      <div className="sectionHeadm">
+        <h2>Our Vision</h2>
+        <p>
+          To be Africa’s leading force in digital innovation, empowering businesses and individuals to work smarter, scale faster, and compete globally through technology-driven solutions.
+        </p>
+      </div>
 
-          <div className="sectionHeadm">
-            <h2>Our Mission</h2>
-            <p>
-              At Fransunisoft, our mission is to deliver reliable, user-focused, and scalable digital solutions that help our clients unlock opportunities, improve efficiency, and achieve sustainable growth. Through innovation, collaboration, and a deep understanding of the African business landscape, we make technology work for everyone.
-            </p>
-          </div>
-        </div>
+      <div className="sectionHeadm">
+        <h2>Our Mission</h2>
+        <p>
+          At Fransunisoft, our mission is to deliver reliable, user-focused, and scalable digital solutions that help our clients unlock opportunities, improve efficiency, and achieve sustainable growth. Through innovation, collaboration, and a deep understanding of the African business landscape, we make technology work for everyone.
+        </p>
+      </div>
+    </div>
 
-        <div className={styles.imageColumn}>
+    <div className={styles.imageColumn}>
+      <Image
+        src="/mission_vision.png"
+        alt="FSX Story, Vision, Mission"
+        width={800}
+        height={480}
+        className={styles.responsiveImage}
+      />
+    </div>
+  </div>
+</section>
+
+{/* Core Values Section */}
+<section>
+  <div className="sectionHead">
+    <h2>Our Core Values</h2>
+  </div>
+  <div className={styles.grid}>
+    {values.map((value, index) => (
+      <div key={index} className="card2">
+        <div className={styles.icon}>
           <Image
-            src="/mission_vision.png"
-            alt="FSX Story, Vision, Mission"
-            width={100}
-            height={100}
-            className={styles.responsiveImage}
+            src={value.icon}
+            alt={`${value.title} icon`}
+            width={60}
+            height={60}
           />
         </div>
-      </section>
+        <h3>{value.title}</h3>
+        <p>{value.description}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
-      {/* Core Values Section */}
-      <section>
-        <div className='sectionHead'>
-        <h2>Our Core Values</h2>
-        </div>
-        <div className={styles.grid}>
-          {values.map((value, index) => (
-            <div key={index} className="card2">
-              <div className={styles.icon}>
-                <Image
-                  src={value.icon}
-                  alt={`${value.title} icon`}
-                  width={60}
-                  height={60}
-                />
-              </div>
-              <h3>{value.title}</h3>
-              <p>{value.description}</p>
-            </div>
-          ))}      
-        </div>
-      </section>
 
       {/* CEO Section */}
       <section>

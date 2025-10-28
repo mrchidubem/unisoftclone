@@ -80,14 +80,12 @@
 
 .svmSection {
   display: flex;
-  flex-wrap: wrap;
+ flex-direction: row;
   gap: 2rem;
   padding: 2rem;
-  max-width: 1340px;
   margin: 0 auto;
   align-items: flex-start;
-  padding-top: 40px;
-  padding-bottom: 40px;
+ 
 
 }
 
