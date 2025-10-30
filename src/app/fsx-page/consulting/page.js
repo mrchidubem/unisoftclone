@@ -6,6 +6,7 @@ import styles from "./consulting.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import AOS from "aos";
+import ButtonGroup from "@/app/components/ButtonGroup";
 
 
 
@@ -18,6 +19,15 @@ const scrollToContact = (e) => {
     closeMobileMenu();
   };
 
+  const scrollToConsultingService = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('consulting-service');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+
 const Consulting = () => {
   useEffect(() => {
       setTimeout(() => {
@@ -25,15 +35,15 @@ const Consulting = () => {
           duration: 1000,
           once: true,
         });
-      }, 100);
+      }, 100); 
     }, []);
 
 
   return (
     <div className={styles.consulting}>
       {/* Hero Section */}
-      <section className={styles.hero} data-aos="fade-up">
-        <div className={styles.heroText}>
+      <div className="hero" data-aos="fade-up">
+        <div className="heroText">
           <h1>FSX Consulting</h1>
           <p>
             Businesses don’t just need advice they need strategies that work.
@@ -41,12 +51,15 @@ const Consulting = () => {
             enterprises, helping them overcome challenges and unlock growth
             opportunities in Nigeria and across Africa.
           </p>
-          <div className={styles.heroBtns}>
-            <Link href="#contact" onClick={scrollToContact}><button className={styles.btnPrimary}>Book Consultation</button></Link>
-            <button className={styles.btnSecondary}>
-              Back to Brand Family
-            </button>
-          </div>
+          {/* <div >
+            <ButtonGroup
+              filterKeys={['fsxConsulting1', 'ExploreConsulting']}
+              onClickHandlers={{
+               fsxConsulting1: scrollToContact,
+               ExploreConsulting: scrollToConsultingService,
+              }}
+            />
+          </div> */}
           <div className={styles.customers}>
             <Image
               src="/customerConsulting.png"
@@ -64,27 +77,27 @@ const Consulting = () => {
           <Image
             src="/heroConsulting.png"
             alt="error 404 image"
-            width={700}
+            width={600}
             height={400}
-            className={styles.responsiveImage}
+            
           />
         </div>
-      </section>
+      </div>
 
       {/* Services */}
-      <section className={styles.services} data-aos="fade-up">
-        <div className={styles.sectionHead}>
+      <section id="consulting-service" data-aos="fade-up" >
+        <div className="sectionHead">
           <h2>Our Consulting Services</h2>
-          <p>
+          <h6>
             We bridge the gap between business strategy and technology
             execution, delivering comprehensive solutions that drive sustainable
             growth for Nigerian businesses.
-          </p>
+          </h6>
         </div>
 
-        <div className={styles.servicesGrid}>
-          <div className={styles.card}>
-            <h3>Business Consulting</h3>
+        <div className="grid">
+          <div className="card1">
+            <h4 className={styles.card1head}>Business Consulting</h4>
             <p>
               Strategic guidance to optimize operations, improve efficiency, and
               drive growth.
@@ -96,8 +109,8 @@ const Consulting = () => {
               <li>Competitive Intelligence</li>
             </ul>
           </div>
-          <div className={styles.card}>
-            <h3>Digital Transformation</h3>
+          <div className="card1">
+            <h4 className={styles.card1head}>Digital Transformation</h4>
             <p>
               Modernize your business with cutting-edge technology solutions and
               digital strategies.
@@ -109,8 +122,8 @@ const Consulting = () => {
               <li>Automation</li>
             </ul>
           </div>
-          <div className={styles.card}>
-            <h3>Community Programs</h3>
+          <div className="card1">
+            <h4 className={styles.card1head}>Community Programs</h4>
             <p>
               Build engaged communities around your brand and foster meaningful
               connections.
@@ -126,54 +139,54 @@ const Consulting = () => {
       </section>
 
       {/* Approach */}
-      <section className={styles.approach} data-aos="fade-up">
-        <div className={styles.sectionHead}>
+      <section data-aos="fade-up">
+        <div className="sectionHead">
           <h2>Our Proven Approach</h2>
-          <p>
+          <h6>
             We follow a systematic methodology that bridges strategic thinking
             with practical execution, ensuring every project delivers measurable
             results and sustainable growth.
-          </p>
+          </h6>
         </div>
 
         <div className={styles.approachStages}>
           <div className={styles.approachStagesCardContainer}>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>1</p>
               <h4>Strategic Analysis</h4>
               <p>Deep dive into your business goals and challenges</p>
             </div>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>2</p>
               <h4>Solution Design</h4>
               <p>Deep dive into your business goals and challenges</p>
             </div>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>3</p>
               <h4>Implementation</h4>
               <p>Deep dive into your business goals and challenges</p>
             </div>
-            <div className={styles.approachStagesCard}>
+            <div className="card2">
               <p className={styles.approachStagesCount}>4</p>
               <h4>Optimization</h4>
               <p>Deep dive into your business goals and challenges</p>
             </div>
           </div>
 
-          <div>
+          <div className={styles.approachImage}>
             <Image
               src="/approachConsulting.png"
               alt="consulting approach image"
               width={500}
-              height={400}
-              className={styles.responsiveImage}
+              height={500}
+          
             />
           </div>
         </div>
       </section>
 
       {/* Mission */}
-      <section className={styles.mission} data-aos="fade-up">
+      <section data-aos="fade-up">
         <h2 className={styles.missionSectionHead}>Our Mission</h2>
         <div className={styles.coreMission}>
           <Image
@@ -191,7 +204,7 @@ const Consulting = () => {
                 alt="consulting coremission icon"
                 width={16}
                 height={16}
-                className={styles.responsiveImage}
+                className={styles.coreMissionPic}
               />
               <p>About us</p>
             </div>
@@ -199,7 +212,7 @@ const Consulting = () => {
             <div className={styles.coreMissionText}>
               <h3>
                 The Core Mission Behind
-                <span > all our work</span>
+                <span> all our work</span>
               </h3>
               <p>
                 Equips startups and enterprises with smart strategies to build
@@ -207,7 +220,7 @@ const Consulting = () => {
               </p>
             </div>
             <Link href="/about">
-              <button className={styles.LearnMoreBtn}>Learn More</button>
+              <div className="button2">Learn More</div>
             </Link>
           </div>
         </div>
@@ -216,17 +229,23 @@ const Consulting = () => {
           <div>
             <h3>12+</h3>
             <h6>Years in Business</h6>
-            <span className={styles.statp}>A decade of trusted consulting experience.</span>
+            <span className={styles.statp}>
+              A decade of trusted consulting experience.
+            </span>
           </div>
           <div>
             <h3>30+</h3>
             <h6>Projects Delivered</h6>
-            <span className={styles.statp}>Real-world solution that achieved measurable results</span>
+            <span className={styles.statp}>
+              Real-world solution that achieved measurable results
+            </span>
           </div>
           <div>
             <h3>95%</h3>
             <h6>Client Retention Rate</h6>
-            <span className={styles.statp}>Our clients comes back, which says everything</span>
+            <span className={styles.statp}>
+              Our clients comes back, which says everything
+            </span>
           </div>
           <div>
             <h3>5+</h3>
@@ -239,46 +258,46 @@ const Consulting = () => {
       </section>
 
       {/* Why Us */}
-      <section className={styles.whyUs} data-aos="fade-up">
-        <div className={styles.sectionHead}>
+      <section  data-aos="fade-up">
+        <div className="sectionHead">
           <h2>Why Our Expertise Matters</h2>
-          <p>
+          <h6>
             Empowering businesses with expert insights to thrive, adapt, and
             grow.
-          </p>
+          </h6>
         </div>
 
         <div className={styles.whyGrid}>
-          <div className={styles.whyCard}>
+          <div className="card3">
             <Image
               src="/cExperience.png"
               alt="consulting approach image"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className={styles.responsiveImage}
             />
             <h3>Experience</h3>
             <p>Decade of insight fuel smarter decisions and faster execution</p>
           </div>
-          
-          <div className={styles.whyCard}>
+
+          <div className="card3">
             <Image
               src="/cData.png"
               alt="consulting approach image"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className={styles.responsiveImage}
             />
             <h3>Data Driven Insight</h3>
             <p>Decade of insight fuel smarter decisions and faster execution</p>
           </div>
 
-          <div className={styles.whyCard}>
+          <div className="card3">
             <Image
               src="/cClient.png"
               alt="consulting approach image"
-              width={40}
-              height={40}
+              width={60}
+              height={60}
               className={styles.responsiveImage}
             />
             <h3>Client Approach</h3>

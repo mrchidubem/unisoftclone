@@ -1,0 +1,97 @@
+.aboutSection {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  background: #fff;
+}
+
+.aboutContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  max-width: 1220px;
+  width: 100%;
+  gap: 3rem;
+  flex-wrap: wrap; /* ensures responsiveness */
+}
+
+/* === Text Column === */
+.aboutText {
+  flex: 1;
+  min-width: 300px;
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease-in-out;
+}
+
+.aboutText.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.aboutText h2 {
+  font-family: "Bahnschrift", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38.4px;
+  margin-bottom: 1rem;
+  color: #0D519A;
+}
+
+.aboutText h3 {
+  font-family: "Bahnschrift", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  text-align : left;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  color: #0D519A;
+}
+
+.aboutText p {
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #2C3E50;
+  margin-bottom: 1rem;
+}
+
+/* === Image Column === */
+.aboutImage {
+  flex: 1;
+  min-width: 300px;
+  opacity: 0;
+  transform: translateX(40px);
+  transition: all 0.8s ease-in-out;
+}
+
+.aboutImage.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* === Mobile Styles === */
+@media (max-width: 768px) {
+  .aboutContent {
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .aboutText {
+    transform: translateY(40px);
+  }
+
+  .aboutImage {
+    transform: translateY(40px);
+  }
+}

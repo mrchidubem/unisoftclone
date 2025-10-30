@@ -1,14 +1,14 @@
-:root {
+/* :root {
   --font-bahns: "Bahnschrift", sans-serif;
 
-}
+} */
 
-html {
+/* html {
   font-size: 18px;
   background-color: white;
   line-height: 24px;
-}
-.fsxSection {
+} */
+/* .fsxSection {
   display: flex !important;
   justify-content: center !important;
   flex-direction: column !important;
@@ -17,18 +17,18 @@ html {
   font-family: var(--font-roboto) !important;
   color: #2c3e50;
   margin-top: 100px;
-}
+} */
 
-.heroSection{
-display: flex;
+/* .heroSection{
+    display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2.5rem 7rem;
   background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
   color: white;
   gap: 2rem;
-}
-.heroTextContainer{
+} */
+/* .heroTextContainer{
     width: 100%;
     max-width: 520px;
 }
@@ -36,7 +36,7 @@ display: flex;
 .heroTitle{
     font-size: 2.5rem;
     font-weight: 700;
-    font-family: var(--font-bahns);
+  
     
 }
 
@@ -45,7 +45,7 @@ display: flex;
     font-weight: 500;
     margin-bottom: 1rem;
     margin-top: 1.5rem;
-    /* font-family: var(--font-bahns); */
+
 }
 .heroBtnContainer{
     display: flex;
@@ -63,7 +63,7 @@ display: flex;
   cursor: pointer;
   width: 100%;
   max-width: 11rem;
-  font-family: var(--font-roboto);
+  
   font-weight: 500;
 }
 .exploreBtn{
@@ -79,24 +79,47 @@ display: flex;
 }
 .joinBtn:hover {
   background-color: #3D74AE;
-}
+} */
+ .hero{
+  margin-top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2.5rem 7rem;
+  background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
+  color: white;
+  gap: 50px;
+ }
+
+  /* .heroBtns {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  justify-self: start;
+  
+} */
 .heroImageContainer{
+    /* position: relative; */
     width: 100%;
-    max-width: 560px;
-    margin: auto;
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 397px;
     background-color: #90AFD1;
-    padding-left: 1rem;
-    /* padding: 2rem 1rem; */
     border-radius: 1rem;
 }
+/* .heroImage{
+    position: absolute;
+} */
 
 .whatWeDoSection{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2.5rem 7rem;
     gap: 2rem;
+    /* background-color: green; */
     /* flex-wrap: wrap; */
 }
 .whatWeDoTextContainer{
@@ -104,80 +127,86 @@ display: flex;
     max-width: 500px;
 }
 .whatWeDoTitle{
-    font-size: 1.77rem;
-    font-weight: 600;
+    /* font-size: 1.77rem; */
+    /* font-weight: 600; */
     color: #2C3E50;
-    font-family: var(--font-bahns);  
+    
 }
 .whatWeDoDescription{
-    font-size: 0.88rem;
-    font-weight: 400;
+    /* font-size: 0.88rem;
+    font-weight: 400; */
     margin-bottom: 1.2rem;
     color: #2C3E50;
     margin-top: 1rem;
 }
 .whatWeDoSubTitle{
     color: #0D519A;
-    font-weight: 600;
-    font-style: 1.33rem;
-    font-family: var(--font-bahns);
+    /* font-weight: 600;
+    font-style: 1.33rem; */
+  
 }
 
 .whatWeDoSubDescription{
-    font-size: 0.88rem;
-    font-weight: 400;
+    /* font-size: 0.88rem;
+    font-weight: 400; */
     margin-bottom: 0.3rem;
     color: #2C3E50;
     margin-top: 0.1rem;
 }
 
 .valuePropSection{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 0rem 7rem;
-    gap: 1.3rem;
+    flex-direction: column; */
+    /* gap: 1.3rem; */
+    /* background-color: green; */
 }
 
 .valuePropBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
     background: transparent;
     color: #3D74AE;
     padding: 0 20px;
     border: 1px solid #3D74AE;
-    font-weight: bold;
-    font-size: 0.88rem;
     border-radius: 0.5rem;
     cursor: pointer;
     outline: none;
-    font-family: var(--font-roboto);
-    font-weight: 500;
+    font-family: inherit;
+    margin-bottom: 1rem;
 }
 
 .valuePropTitle{
-    font-size: 1.55rem;
-    font-weight: 600;
-    color: #2C3E50;
-    font-family: var(--font-bahns);  
+    /* font-size: 1.55rem;
+    font-weight: 600; */
+    /* color: #2C3E50; */
+    
 }
 .valuePropDescription{
-    font-size: 0.88rem;
+    /* font-size: 0.88rem;
     font-weight: 400;
-    margin-bottom: 1.2rem;
-    color: #7C8084;
-    margin-top: 1rem;
-    text-align: center;
+    margin-bottom: 1.2rem; */
+    /* color: #7C8084; */
+    /* margin-top: 1rem; */
+    /* text-align: center; */
 }
 
-.valuePropCardsContainer{
+/* .valuePropCardsContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
     gap: 1rem;
     flex-wrap: wrap;
+} */
+
+.cardImg{
+    margin: 0 auto;
 }
-.valuePropCard{
+/* .valuePropCard{
     box-shadow: 0 8px 16px #00000014;
     border-radius: 0.5rem;
     padding: 32px;
@@ -186,104 +215,116 @@ display: flex;
     align-items: center;
     flex-direction: column;
     text-align: center;
-}
+} */
 
-.valuePropCardTitle{
+/* .valuePropCardTitle{
     margin: 1rem 0;
-    font-family: var(--font-bahns);
+  
     font-size: 1.78rem;
     font-weight: 600;
     line-height: 38.4px;
     
-}
+} */
 
-.valuePropCardDescription{
+/* .valuePropCardDescription{
     font-size: 0.88rem;
     font-weight: 400;
     color: #7C8084;
-}
+} */
 
 .whoBenefitSection{
-    margin-top: 4rem;
+    /* margin-top: 4rem;
     padding: 0rem 7rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem; */
 }
 .whoBenefitTitle{
-    font-family: var(--font-bahns);
-    font-size: 2.22rem;
+  
+    /* font-size: 2.22rem;
     font-weight: 700;
-    
+     */
 }
 
 .whoBenefitDescription{
-    font-size: 0.88rem;
+    /* font-size: 0.88rem;
     font-weight: 400;
-    color: #7C8084;
+    color: #7C8084; */
 }
 
 .communityCardsContainer{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: column; */
+    width: 100%;
 }
 .communityCard{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-content: space-between;   
-    gap: 8rem;
+    gap: 10rem;
+}
+.communityCardImage{
+    width: 100%;
+    object-fit: cover;
+    /* background-color: green; */
+}
+.communityImg{
+    width: 100%;
+    max-width: 100%;
+    object-fit: cover;
 }
 .communityCardTitle{
-    font-size: 1.77rem;
+    /* font-size: 1.77rem; */
     color: #0D519A;
-    font-weight: 600;
-    margin-bottom: 1.3rem;
-    font-family: var(--font-bahns);
+    /* font-weight: 600; */
+    margin-bottom: 0.5rem;
+  
 }
 
 .communityCardDescription{
     color: #2C3E50;
-    font-weight: 400;
-    font-size: 0.88rem;
+    /* font-weight: 400;
+    font-size: 0.88rem; */
     
 }
 
 
 .whatYouGetSection{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     padding: 2.5rem 7rem;
-    flex-direction: column;
+    flex-direction: column; */
 }
 .whatYouGetTitle{
-    font-family: var(--font-bahns);
+/*   
     font-size: 2.22rem;
-    font-weight: 700;
+    font-weight: 700; */
     
 }
 
 .whatYouGetDescription{
-    font-size: 0.88rem;
+    /* font-size: 0.88rem;
     font-weight: 400;
     color:#7F8C8D;
-    font-family: var(--font-bahns);
-    margin: 1rem 0;
+  
+    margin: 1rem 0; */
 }
 
-.whatGetContainer{
+/* .whatGetContainer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: center;
     justify-content: center;
-}
+} */
 
-.whatGetCard{
+/* .whatGetCard{
     box-shadow: 0 8px 16px #00000014;
     border-radius: 0.5rem;
     border: 0.5px solid #A0A5AA;
@@ -294,68 +335,68 @@ display: flex;
     flex-direction: column;
     text-align: center;
     background-color: #ECF0F5;
-}
+} */
 
-.whatGetCardTitle{
-    font-family: var(--font-bahns);
+/* .whatGetCardTitle{
+  
     font-weight: 600;
     font-size: 1.777rem;
     margin-top: 1.5rem;
     color: #2C3E50;
     line-height: 38.4px;
-}
+} */
 
 .trainningSection{
     background-color: #E7EEF5;
-    margin-top: 3rem;
+    /* margin-top: 3rem;
     padding: 2.5rem 7rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem; */
 }
 
 .trainningTitle{
-    font-family: var(--font-bahns);
-    font-size: 2.22rem;
+  
+    /* font-size: 2.22rem;
     font-weight: 700;
     line-height: 33.6px;
-    text-align: center;
+    text-align: center; */
     
 }
 
 .trainningDescription{
-    font-size: 0.88rem;
+    /* font-size: 0.88rem;
     font-weight: 400;
     color:#7F8C8D;
-    text-align: center;
+    text-align: center; */
   
 }
 
 .trainingCardsContainer{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
 }
 .trainingCard{
-    height: 366px;
-    background-color: #FFFFFF;
-    padding: 1.5rem;
-    border-radius: 1.2rem;
+    /* height: 366px; */
+    /* background-color: #FFFFFF; */
+    /* padding: 1.5rem;
+    border-radius: 1.2rem; */
 }
 .trainingCardTitle{
-    font-size: 1.7rem;
-    font-weight: 700;
+    /* font-size: 1.7rem;
+    font-weight: 700; */
     color: #20A89F;
-    font-family: var(--font-bahns);
-    line-height: 38.4px;
+  
+    /* line-height: 38.4px; */
 }
 .trainingListItem, .trainingCardDescription{
-    font-size: 0.88rem;
-    font-weight: 400;
+    /* font-size: 0.88rem;
+    font-weight: 400; */
     color:#5F6165;
   
 }
@@ -371,99 +412,102 @@ display: flex;
 }
 
 .progressSection{
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: center;
     padding: 4rem 7rem;
     gap: 2rem;
-    flex-direction: column;
+    flex-direction: column; */
 }
 
 .progressTitle{
-    font-family: var(--font-bahns);
-    font-size: 2.22rem;
-    font-weight: 700;
+  
+    /* font-size: 2.22rem;
+    font-weight: 700; */
     color: #2C3E50;
 }
 .progressDescription{
-    font-size: 0.88rem;
+    /* font-size: 0.88rem;
     font-weight: 400;
     color:#7F8C8D;
-    text-align: center;
+    text-align: center; */
 }
 
 .progressCardsContainer{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
 }
 .progressCard{
-    box-shadow: 0 8px 16px #00000014;
+    /* box-shadow: 0 8px 16px #00000014;
     border-radius: 0.5rem;
     padding: 32px;
     height: 13.9rem;
     display: flex;
     align-items: center;
     flex-direction: column;
-    text-align: center;
+    text-align: center; */
 }
 
 .progressCardTitle{
-    margin: 1rem 0;
-    font-family: var(--font-bahns);
+    /* margin: 1rem 0;
+  
     font-size: 1.78rem;
     font-weight: 600;
-    line-height: 38.4px;
+    line-height: 38.4px; */
     
 }
 .progressCardDescription{
-    font-size: 0.88rem;
-    font-weight: 400;
+    /* font-size: 0.88rem;
+    font-weight: 400; */
     color: #7C8084;
+}
+.progressImg{
+    margin: 0 auto;
 }
 
 .connectSection{
     /* background-color: #E7EEF5; */
-    padding: 2.5rem 7rem;
+    /* padding: 2.5rem 7rem;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1rem; */
 }
 
 .connectTitle{
-    font-family: var(--font-bahns);
-    font-size: 2.22rem;
+  
+    /* font-size: 2.22rem;
     font-weight: 700;
     line-height: 48px;
-    text-align: center;
+    text-align: center; */
 }
 .connectDescription{
-    font-size: 0.88rem;
+    /* font-size: 0.88rem;
     font-weight: 400;
     color:#7F8C8D;
-    text-align: center;
+    text-align: center; */
   
 }
 
 .connectCardsContainer{
-    display: grid;
+    /* display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; */
 }
 
 .connectCard{
     box-shadow: 0 8px 16px #00000014;
     border-radius: 0.5rem;
     padding: 25px;
-    height: 180px;
+    height: 200px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -477,7 +521,6 @@ display: flex;
     outline: none;
     border-radius: 8px;
     padding: 0px 20px;
-    font-family: var(--font-roboto);
     font-weight: 400;
     font-size: 16px;
     color: white;
@@ -485,7 +528,7 @@ display: flex;
 
 .connectCardTitle{
     margin: 1rem 0;
-    font-family: var(--font-bahns);
+  
     font-size: 1.78rem;
     font-weight: 700;
 }
@@ -501,87 +544,258 @@ display: flex;
     width: 100%;
 }
 
+@media (max-width: 1260px) {
+  .heroImageContainer{
+     width: 100%;
+    max-width: 500px;
+  }
+  .heroImage{
+    width: 100%;
+    max-width: 450px;
+  }
+  
+}
+@media (max-width: 1024px) {
+  .hero {
+    margin-top: 30px;
+    padding: 3rem 3rem;
+    text-align: center;
+  }
+
+  .heroText {
+    max-width: 58%;
+    margin-top: 2rem;
+    text-align: left;
+  }
+
+
+  .heroImg img {
+    width: 100%;
+    margin:2rem auto;
+  }
+
+  .heroImageContainer{
+    margin:2rem auto;
+     width: 100%;
+    max-width: 500px;
+  }
+  .heroImage{
+    width: 100%;
+    max-width: 450px;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 20px;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    gap: 0px;
+  }
+
+  .heroText {
+    max-width: 90%;
+    margin-bottom: 1.5rem;
+    margin-top: 5rem;
+    text-align: center;
+    
+  }
+
+   .heroImageContainer{
+    margin:0rem auto;
+     /* width: 100%;
+    max-width: 500px; */
+  }
+
+
+  /* .heroBtns {
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+  } */
+
+  .heroImg img {
+    width: 100%;
+    max-width: auto;
+    min-width: 400px;
+    margin: 2rem auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    margin-top: -10px;
+    padding: 2rem 1rem;
+    text-align: center;
+  }
+
+.heroImg img {
+    width: auto;
+    max-width: 300px;
+    margin: 0 1rem;
+    height: auto ;
+  }
+
+  .heroText {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+    margin-top: 5rem;
+  }
+  
+.heroBtns{
+ width: 70%;
+}
+
+
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1280px) {
-  .whatGetContainer{
+  /* .whatGetContainer{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
 }
-    
+     */
 }
 
 @media screen and (max-width: 1250px) {
     
-.connectCardsContainer{
+/* .connectCardsContainer{
   
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     justify-content: space-between;
    
-}
+} */
     
 }
 
 @media screen and (max-width: 1124px) {
-.communityCard{
+/* .communityCard{
     display: flex;
     align-items: center;
     justify-content: space-between;   
     gap: 4rem;
-}
+} */
     
 }
 
+
+/* come back */
 @media screen and (max-width: 1066px) {
-     /* .fsxSection{
-        margin-top: 30px;
-    } */
-.heroImageContainer{
+   
+/* .heroImageContainer{
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     margin: auto;
     height: 300px;
     background-color: #90AFD1;
     padding-left: 1rem;
-    /* padding: 2rem 1rem; */
     border-radius: 1rem;
-}
-.heroImage{
-    width: 350px;
-    margin-top: -30px;
-}
+} */
+/* .heroImage{
+    width: 400px;
+    height: 280px;
+} */
     
+}
+
+/* comebackto it */
+@media screen and (max-width: 1040px) {
+   
+/* .heroImageContainer{
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    height: 300px;
+    background-color: #90AFD1;
+    padding-left: 1rem;
+    border-radius: 1rem;
+} */
+/* .heroImage{
+    width: 400px;
+    height: 280px;
+  
+} */
+
+/* #heroContainer{
+    margin-top: 80px !important;
+}
+.heroTextContainer{
+  
+}
+#heroContainer #heroText{
+    width: 100%;
+    max-width: 100% !important;
+} */
 }
 
 @media screen and (max-width: 1020px) {
-     .fsxSection{
-        margin-top: 30px;
-    }
-.heroSection, .whatWeDoSection, .valuePropSection, .whoBenefitSection, .whatYouGetSection, .trainningSection, .progressSection, .connectSection{
+    
+/* .heroSection, .valuePropSection, .whoBenefitSection, .whatYouGetSection, .trainningSection, .progressSection, .connectSection{
         padding-left: 1.5rem;
         padding-right: 1.5rem;
-    }
+    } */
 }
 
 @media screen and (max-width: 976px) {
-    .fsxSection{
+    /* .fsxSection{
         margin-top: 20px;
+    } */
+    .whatWeDoImageContainer{
+        width: 100%;
+        max-width: 100%;
     }
-    
+    .whatWeDoImage{
+        width: 100%;
+        max-width: 450px;
+        height: 450px;
+        /* object-fit: cover; */
+    }
 }
 
 @media screen and (max-width: 898px) {
-    .fsxSection{
+    /* .fsxSection{
         margin-top: 20px;
-    }
+    } */
 
-    .communityImg{
-        width: 350px;
-    }
+    /* .communityImg{
+        width: 100%;
+        object-fit: cover;
+    } */
     
 }
 @media screen and (max-width: 784px) {
-    .heroSection, .whatWeDoSection, .valuePropSection{
+    /* .heroSection, .whatWeDoSection, .valuePropSection{
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -592,48 +806,90 @@ display: flex;
     }
     .valuePropCardsContainer, .whatGetContainer, .trainingCardsContainer, .progressCardsContainer, .connectCardsContainer{
         grid-template-columns: 1fr;
-    }
+    } */
      .communityCard{
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: 1fr;
+        /* flex-direction: column; */
+        justify-content: center;
         align-items: start;
-        gap: 1rem;
+        width: 100%;
+        /* object-fit:cover ; */
+        gap: 20px;
+        margin-top: 40px;
+     }
+     .communityCardImage{
+        width: 100%;
+        max-width: 100%;
+        /* object-fit: cover; */
+        /* background-color: green; */
+     }
+
+     .communityImg{
+        width: 100% !important; 
+        max-width: 100% !important;
+        object-fit: cover !important;
      }
      .communityCardTitle{
-    font-size: 1.77rem;
+    /* font-size: 1.77rem;
     color: #0D519A;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    font-family: var(--font-bahns);
+    margin-bottom: 0.5rem; */
+  
 }
      .communityCardContent{
         order: 1;
      }
         .communityCardImage{
             order: 2;
-            height: 250px;
-            margin-bottom: 1rem;
+            /* height: 250px;
+            margin-bottom: 1rem; */
         }
-        .communityImg{
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-        .whoBenefitTitle, .whatYouGetTitle{
+       
+        /* .whoBenefitTitle, .whatYouGetTitle{
             line-height: 33.6px;
             text-align: center;
-        }
+        } */
 }
-
-@media screen and (max-width: 462px) {
-.whatWeDoImage{
+@media screen and (max-width: 833px) {
+    .heroBtns{
+        margin: 0 auto;
+    }
+}
+/* @media screen and (max-width: 765px) {
+    .heroBtns{
+        margin: 0 auto;
+    }
+} */
+@media screen and (max-width: 685px) {
+/* .whatWeDoImage{
     width: 300px;
     object-fit: contain;
+} */
+ .whatWeDoSection{
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+ }
+ .whatWeDoTextContainer{
+    text-align: start;
+ }
 }
+@media screen and (max-width: 485px) {
+    /* .heroImage{
+        width: 350px;
+    } */
+}
+@media screen and (max-width: 462px) {
+/* .whatWeDoImage{
+    width: 300px;
+    object-fit: contain;
+} */
 }
 
 @media screen and (max-width: 414px) {
-.heroImageContainer{
+/* .heroImageContainer{
     width: 250px;
     height: 150px;
 }
@@ -649,11 +905,8 @@ display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
-.valuePropCard{
-    height: auto;
-    padding: 20px;
-}
+} */
+
 .trainingCard{
     height: auto;
 }
@@ -662,19 +915,24 @@ display: flex;
 }
 }
 
-@media screen and (max-width: 345px) {
-    .whatWeDoImage{
-    width: 200px;
-    /* height: 100px; */
-    object-fit: contain;
+@media screen and (max-width: 388px) {
+    .whatWeDoImageContainer{
+        /* background-color: green; */
     }
-    /* .communityCardImage{
-        width: 100px;
+    .whatWeDoImage{
+        /* width: 300px;
+        object-fit: cover; */
+    }
+    /* .whatWeDoImage{
+    width: 200px;
+   
+    object-fit: contain;
     } */
+    
     .communityImg{
-        width: 300px;
+        /* width: 300px;
         height: 200px;
-        object-fit: contain;
+        object-fit: contain; */
 
     }
 }

@@ -27,12 +27,10 @@
 
 .typewriter {
   text-align: center;
-  font-size: 3rem;
   font-weight: bold;
   line-height: 1.5;
   color: #F1F5F9;
   overflow: hidden;
-  white-space: nowrap;
   border-right: 1px solid #F1F5F9;
   width: fit-content;
   margin: 2rem auto;
@@ -92,10 +90,7 @@
 
 /* ≥1200px */
 @media (min-width: 1200px) {
-  .typewriter {
-    font-size: 3rem;
-   
-  }
+
   .description {
     font-size: 1.2rem;
   }
@@ -103,9 +98,7 @@
 
 /* ≥1024px */
 @media (min-width: 1024px) and (max-width: 1199px) {
-  .typewriter {
-    font-size: 2.5rem;
-  }
+
 
   .heroMain {
     padding: 1.5rem;
@@ -119,9 +112,7 @@
 
 /* ≥768px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .typewriter {
-    font-size: 2rem;
-  }
+
   .description {
     font-size: 1.1rem;
     
@@ -139,9 +130,9 @@
 }
 
 /* ≤767px */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .typewriter {
-    font-size: 1.2rem;
+
     margin: 2rem auto;
      
   }
@@ -167,13 +158,11 @@
 
 @media (max-width: 480px) {
   .typewriter {
-    font-size: 1rem;
     margin: 100px auto 0 auto; 
-    padding: 0 1rem; 
+    padding: 0rem; 
     max-width: 100%;
     text-align: center; 
     display: block;
-    box-sizing: border-box;
   }
 
 
@@ -181,52 +170,53 @@
     font-size: 0.85rem;
   }
   .heroMain {
-    padding: 1rem;
+    padding: 0rem;
     min-height: 60vh;
   }
 }
 
-@media (max-width: 375px) {
+/* @media (max-width: 430px) {
   .typewriter {
-      font-size: 0.85rem;
-    margin-top: 50px;
-     margin: 100px auto 0 auto; 
+  font-size: 0.5rem;
+    margin: 100px auto 0 auto; 
     padding: 0 1rem; 
     max-width: 100%;
     text-align: center; 
     display: block;
     box-sizing: border-box;
   }
+} */
 
-  .description {
-    font-size: 0.8rem;
+@media (max-width: 375px) {
+  .typewriter {
+   
+    margin-top: 50px;
+     margin: 100px auto 0 auto; 
+    padding: 0 1rem; 
+    max-width: 100%;
+    text-align: center; 
+    display: block;
   }
+
 }
 
 
 /* ≤320px */
 @media (max-width: 320px) {
   .typewriter {
-    font-size: 0.85rem;
+    
       margin: 100px auto 0 auto;
     padding: 0 1rem;
       margin-top: 100px;
       text-align: center;
        max-width: 100%;
   }
-  .description {
-    font-size: 0.75rem;
-  }
 }
 
 
 
 /* What Makes Fransunisoft Different */
-.fsxSection {
-  padding: 40px 20px;
-  background-color: #ffffff;
 
-}
 
 .fsxHeading {
   text-align: center;
@@ -269,7 +259,7 @@
 .fsxContent h3 {
   margin-top: 20px;
   margin-bottom: 15px;
-  font-size: 1.5rem;
+  font-size: 32px;
   color: #2C3E50;
 }
 
@@ -294,8 +284,8 @@
   padding-left: 50px;
 
   margin-top: 30px ;
-  font-size: 1rem;
-  line-height: 2.1rem;
+  font-size: 16px;
+  line-height: 1.6rem;
   color: #2C3E50;
 }
 
@@ -310,13 +300,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   border-radius: 50%;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 /* Image Block */
 .fsxImage {
   flex: 1.5;
-  min-width: 800px;
+  min-width: 700px;
   margin-top: 1.5rem;
   order: 3; /* For mobile stacking */
 }
@@ -355,18 +345,18 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); 
-  margin-left: 4rem;
+  
 }
 
 .stat {
-  font-size: 1rem;
+  font-size: 20px;
   color: #2C3E50;
   font-weight: bold;
   flex: 1 1 150px;
 }
 
 .count {
-  font-size: 2rem;
+  font-size: 32px;
   color: #0D519A;
   display: block;
 }
@@ -376,21 +366,20 @@
   align-items: baseline;
   justify-content: center;
   gap: 4px;
-  font-size: 2rem;
   font-weight: bold;
   color: #0D519A; 
 }
 
 .plus {
   color: #0D519A; 
-  font-size: 2rem;
+  font-size:32px;
   font-weight: bold;
 }
 
 .label {
   margin-top: 5px;
-  font-size: 1rem;
-  color: #222;
+ 
+  color: #2C3E50;
   text-align: center;
 }
 
@@ -434,8 +423,9 @@
 }
 
 
+
   .fsxList {
-    max-width: 350px;
+    max-width: 360px;
     line-height: 1rem; 
   }
 
@@ -443,14 +433,15 @@
   .fsxList p {
     margin-bottom: 0.3rem; 
   }
+}
 
 
 
   @media (max-width: 1024px) {
   .fsxContent {
     margin-left: 2rem; 
+    max-width: 360px;
   }
-}
 
   .fsxStats {
     order: 4;
@@ -465,6 +456,7 @@
   }
   .fsxImage img {
     width: 100%;
+    height: auto;
     max-width: 350px;
     margin: 0 auto;
     display: block;
@@ -472,7 +464,7 @@
 
   .fsxButton {
     order: 2;
-    width: 70%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     border-radius: 10px;
@@ -518,14 +510,12 @@
     margin: 0 auto;
   }
 
-  .fsxStats .countBlock {
-    font-size: 1.5rem;
-  }
+
 .fsxStats .plus {
-    font-size: 1.5rem;
+    font-size: 32px;
   }
   .fsxStats .label {
-    font-size: 1rem;
+    color: #2C3E50;
     margin-top: 10px;
     text-align: center;
   }
@@ -592,7 +582,8 @@
   border-radius: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   text-align: left;
-  height: 350px;
+ 
+  height: auto;
   width: 90%;
   margin-top: 2rem;
 }
@@ -613,25 +604,12 @@
 
 .cardTagline {
   font-size: 0.95rem;
+  font-style: italic;
   color: #7C8084;
   margin-bottom: 1rem;
 }
 
-.learnMoreBtn {
-  background-color: #0D519A;
-  color: #F1F5F9;
-  padding: 0.85rem;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  transition: background 0.3s ease;
-  margin-top: 1rem;
-}
 
-.learnMoreBtn:hover {
-  background-color: #3D74AE;
-}
 
 /* 🌐 Responsive Styles */
 @media (max-width: 1024px) {
@@ -732,16 +710,7 @@
     margin-bottom: 0.5rem;
     text-align: left;
   }
-
-  .learnMoreBtn {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-    margin-top: 1.5rem;
-    display: inline-block;
-  }
 }
-
-
 
 
 
@@ -858,8 +827,8 @@
     display: flex;
     align-items: center;
     gap: 2rem;
-    width: max-content; /* ✅ ensures full width for animation */
-    animation: scrollLogos 25s linear infinite; /* ✅ SAME animation name */
+    width: max-content; 
+    animation: scrollLogos 25s linear infinite; 
   }
 
   .logoItem {

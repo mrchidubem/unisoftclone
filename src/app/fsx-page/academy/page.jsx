@@ -1,11 +1,12 @@
-'use client'
+"use client";
 import Image from "next/image";
 import styles from "./academy.module.css";
 import { Roboto } from "next/font/google";
 import Link from "next/link";
 import AOS from "aos";
-import 'aos/dist/aos.css';
-import { useEffect } from "react"
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+import ButtonGroup from "@/app/components/ButtonGroup";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -27,98 +28,142 @@ const roboto = Roboto({
 //     // closeMobileMenu();
 //   };
 
-const scrollToSection = (id) => {
-  const section = document.getElementById(id);
-  if (section) {
-    section.scrollIntoView({ behavior: "smooth" });
-  }
-};
+// const scrollToSection = (id) => {
+//   const section = document.getElementById(id);
+//   if (section) {
+//     section.scrollIntoView({ behavior: "smooth" });
+//   }
+// };
+
+const scrollToContact = (e) => {
+    e.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+    closeMobileMenu();
+  };
+
+  const scrollToAcademyService = (e) => {
+    e.preventDefault();
+    const section = document.getElementById('fsx-academy');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 export default function FsxAcademy() {
   useEffect(() => {
-      setTimeout(() => {
-        AOS.init({
-          duration: 1000,
-          once: false,
-        });
-      }, 100);
-    }, []);
+    setTimeout(() => {
+      AOS.init({
+        duration: 1000,
+        once: false,
+      });
+    }, 100);
+  }, []);
 
   return (
     <div
-      className={`${roboto.variable} ${styles.fsxSection} ${styles.fsxAcademyPage}`}
+      className=""
     >
-      <section className={styles.fsxAcademyContainer}>
-        <section className={styles.heroSection} data-aos="fade-up" data-aos-once="true">
-          <div className={styles.heroTextContainer}>
-            <h2 className={styles.heroTitle}>FSX Academy</h2>
-            <p className={styles.heroDescription}>
-              Education is only powerful when it connects to real-world skills.
-              FSX Academy equips entrepreneurs, professionals, and students in
-              Nigeria with the knowledge they need to succeed from tech to
-              strategy to leadership.
-            </p>
-            <section className={styles.heroBtnContainer}>
-              <button className={styles.exploreBtn} onClick={() => scrollToSection("contact")} 
->Join Us</button> 
-              <button className={styles.joinBtn} onClick={() => scrollToSection("academy")} >Explore All Benefits</button>
-            </section>
+      <div className={styles.fsxAcademyContainer}>
+        <div
+          className="hero"
+          data-aos="fade-up"
+          data-aos-once="true"
+          // id={styles.heroContainer}
+          // className={styles.heroContainer}
+        >
+          {/* <div className={styles.heroTextContainer}> */}
+            <div className="heroText">
+            {/* <div className="" id={styles.heroText}> */}
+              <h1>FSX Academy</h1>
+              <p>
+                Education is only powerful when it connects to real-world skills.
+                FSX Academy equips entrepreneurs, professionals, and students in
+                Nigeria with the knowledge they need to succeed from tech to
+                strategy to leadership.
+              </p>
+            {/* </div> */}
+            <div className={styles.heroBtns} >
+            <ButtonGroup
+              filterKeys={['fsxacademy1', 'ExploreAcademy']}
+              onClickHandlers={{
+               fsxacademy1: scrollToContact,
+               ExploreAcademy: scrollToAcademyService,
+              }}
+            />
           </div>
+          </div>
+          {/* <div className={styles.heroImg}> */}
           <div className={styles.heroImageContainer}>
             <Image
-              src="/fsx-academy-hero-icon.svg"
+              src="/fsx-academy-hero-icon.png"
               alt="FSX Connect"
-              width={460}
+              width={581}
               height={382}
               //layout="fill" //When you use layout="fill" (Next.js <Image>), the image is set to absolutely position itself and fill its parent container. You do not set width or height on the <Image> itself. But you must give the parent container a size (width + height), otherwise the image has nothing to "fill".
               className={styles.heroImage}
               objectFit="cover"
             />
           </div>
-        </section>
+        </div>
 
         <section className={styles.whatWeDoSection} data-aos="fade-up">
-          <div className={styles.whatWeDoTextContainer}>
-            <h2 className={styles.whatWeDoTitle}>What We Do</h2>
-            <p className={styles.whatWeDoDescription}>
-              At FSX Academy, we believe learning is more than theory — it’s
-              mentorship, application, and connection. From companies staff
-              upskilling to enterprise-wide training programs, we deliver
-              growth-focused experiences that prepare people for tomorrow’s
-              opportunities.
-            </p>
-            <h4 className={styles.whatWeDoSubTitle}>Organizational Training</h4>
-            <p className={styles.whatWeDoSubDescription}>Customized programs to empower teams and drive growth.</p>
-
-            <h4 className={styles.whatWeDoSubTitle}>Mentorship Programs</h4>
-            <p className={styles.whatWeDoSubDescription}>Guided by industry experts who’ve walked the path.</p>
-
-            <h4 className={styles.whatWeDoSubTitle}>Tech & Career Upskilling</h4>
-            <p className={styles.whatWeDoSubDescription}>Practical, future-ready skills for real-world impact.</p>
-          </div>
-          <div className={styles.whatWeDoImageContainer}>
-            <Image
-              src="/academy-what-we-do-icon.svg"
-              alt="What We Do"
-              width={400}
-              height={400}
-              className={styles.whatWeDoImage}
-              objectFit="cover"
-            />
-          </div>
-        </section>
+  
+            <div className={styles.whatWeDoTextContainer}>
+              <h3 className={styles.whatWeDoTitle}>What We Do</h3>
+              <p className={styles.whatWeDoDescription}>
+                At FSX Academy, we believe learning is more than theory — it’s
+                mentorship, application, and connection. From companies staff
+                upskilling to enterprise-wide training programs, we deliver
+                growth-focused experiences that prepare people for tomorrow’s
+                opportunities.
+              </p>
+              <h5 className={styles.whatWeDoSubTitle}>Organizational Training</h5>
+              <p className={styles.whatWeDoSubDescription}>
+                Customized programs to empower teams and drive growth.
+              </p>
+              <h5 className={styles.whatWeDoSubTitle}>Mentorship Programs</h5>
+              <p className={styles.whatWeDoSubDescription}>
+                Guided by industry experts who’ve walked the path.
+              </p>
+              <h5 className={styles.whatWeDoSubTitle}>
+                Tech & Career Upskilling
+              </h5>
+              <p className={styles.whatWeDoSubDescription}>
+                Practical, future-ready skills for real-world impact.
+              </p>
+            </div>
+            <div className={styles.whatWeDoImageContainer}>
+              <Image
+                src="/academy-what-we-do-icon.png"
+                alt="What We Do"
+                width={501}
+                height={501}
+                className={styles.whatWeDoImage}
+                objectFit="cover"
+              />
+            </div>
+          </section>
+      
 
         <section className={styles.valuePropSection} data-aos="fade-up">
-          <button className={styles.valuePropBtn}>Our Value Proposition</button>
-          <h2 className={styles.valuePropTitle}>Why Learn with FSX Academy?</h2>
-          <p className={styles.valuePropDescription}>
-            Traditional education often stops at theory. FSX Academy takes it
-            further by focusing on hands-on, applicable skills that drive real
-            impact
-          </p>
-          <div className={styles.valuePropCardsContainer}>
-            <div className={styles.valuePropCard}>
+         
+            <button className={styles.valuePropBtn}>
+              <p>Our Value Proposition</p>
+              </button>
+               <div className="sectionHead">
+            <h2 className={styles.valuePropTitle}>Why Learn with FSX Academy?</h2>
+            <h6 className={styles.valuePropDescription}>
+              Traditional education often stops at theory. FSX Academy takes it
+              further by focusing on hands-on, applicable skills that drive real
+              impact
+            </h6>
+          </div>
+          <div className="grid">
+            <div className="card2">
               <Image
-                src="/mentors--icon.svg"
+                src="/mentors--icon.png"
                 alt="What We Do"
                 width={60}
                 height={60}
@@ -131,9 +176,9 @@ export default function FsxAcademy() {
               </p>
             </div>
 
-            <div className={styles.valuePropCard}>
+            <div className="card2">
               <Image
-                src="/innovation-trainning-icon.svg"
+                src="/innovation-trainning-icon.png"
                 alt="Innovation Training"
                 width={60}
                 height={60}
@@ -142,20 +187,23 @@ export default function FsxAcademy() {
               />
               <h3 className={styles.valuePropCardTitle}>Innovation Training</h3>
               <p className={styles.valuePropCardDescription}>
-                Gain problem-solving and creative thinking skills for real world challenges
+                Gain problem-solving and creative thinking skills for real world
+                challenges
               </p>
             </div>
 
-            <div className={styles.valuePropCard}>
+            <div className="card2">
               <Image
-                src="/leadership-dev-icon.svg"
+                src="/leadership-dev-icon.png"
                 alt="Leadership Dev"
                 width={60}
                 height={60}
                 className={styles.cardImg}
                 objectFit="cover"
               />
-              <h3 className={styles.valuePropCardTitle}>Leadership Development</h3>
+              <h3 className={styles.valuePropCardTitle}>
+                Leadership Development
+              </h3>
               <p className={styles.valuePropCardDescription}>
                 Build the confidence and vision to lead teams and businesses
               </p>
@@ -164,24 +212,29 @@ export default function FsxAcademy() {
         </section>
 
         <section className={styles.whoBenefitSection} data-aos="fade-up">
-          <h2 className={styles.whoBenefitTitle}>Who Benefits From the Academy</h2>
-          <p className={styles.whoBenefitDescription}>
-           We designed this academy for founders, builders, innovators and individuals.
-          </p>
+          <div className="sectionHead">
+            <h2 className={styles.whoBenefitTitle}>
+              Who Benefits From the Academy
+            </h2>
+            <h6 className={styles.whoBenefitDescription}>
+              We designed this academy for founders, builders, innovators and
+              individuals.
+            </h6>
+          </div>
           <div className={styles.communityCardsContainer}>
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/organization-icon.svg"
+                  src="/organization-icon.png"
                   alt="organization Icon"
-                  width={430}
+                  width={486}
                   height={324}
                   objectFit="cover"
                   className={styles.communityImg}
                 />
               </div>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>Organizations</h5>
+                <h3 className={styles.communityCardTitle}>Organizations</h3>
                 <p className={styles.communityCardDescription}>
                   We equip teams with impactful training that drives measurable
                   growth.
@@ -190,7 +243,7 @@ export default function FsxAcademy() {
             </div>
             <div className={styles.communityCard}>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>Institutions</h5>
+                <h3 className={styles.communityCardTitle}>Institutions</h3>
                 <p className={styles.communityCardDescription}>
                   Partner with FSX Academy to deliver relevant, industry-ready
                   programs.
@@ -198,9 +251,9 @@ export default function FsxAcademy() {
               </div>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/institution-icon.svg"
+                  src="/institution-icon.png"
                   alt="institution Icon"
-                  width={430}
+                  width={486}
                   height={324}
                   objectFit="cover"
                   className={styles.communityImg}
@@ -210,16 +263,16 @@ export default function FsxAcademy() {
             <div className={styles.communityCard}>
               <div className={styles.communityCardImage}>
                 <Image
-                  src="/individuals.svg"
+                  src="/individuals.png"
                   alt="Individuals Icon"
-                  width={430}
+                  width={486}
                   height={324}
                   objectFit="cover"
                   className={styles.communityImg}
                 />
               </div>
               <div className={styles.communityCardContent}>
-                <h5 className={styles.communityCardTitle}>Individuals</h5>
+                <h3 className={styles.communityCardTitle}>Individuals</h3>
                 <p className={styles.communityCardDescription}>
                   Gain mentorship, upskill in tech/career fields, and join FSX
                   Talent Network.
@@ -229,19 +282,25 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.whatYouGetSection} id="academy" data-aos="fade-up">
-          <h2 className={styles.whatYouGetTitle}>
-            What You Get With FSX Academy{" "}
-          </h2>
-          <p className={styles.whatYouGetDescription}>
-            {" "}
-            Think FSX, Think of limitless opportunities where you also belong to
-            a community. Below is a listed few of what you stand to gain.
-          </p>
-          <div className={styles.whatGetContainer}>
-            <div className={styles.whatGetCard}>
+        <section
+          className={styles.whatYouGetSection}
+          id="fsx-academy"
+          data-aos="fade-up"
+        >
+          <div className="sectionHead">
+            <h2 className={styles.whatYouGetTitle}>
+              What You Get With FSX Academy{" "}
+            </h2>
+            <h6 className={styles.whatYouGetDescription}>
+              {" "}
+              Think FSX, Think of limitless opportunities where you also belong to
+              a community. Below is a listed few of what you stand to gain.
+            </h6>
+          </div>
+          <div className="grid">
+            <div className="card3">
               <Image
-                src="/leadership-dev-icon.svg"
+                src="/leadership-dev-icon.png"
                 alt="Leadership Icon"
                 width={60}
                 height={60}
@@ -253,12 +312,12 @@ export default function FsxAcademy() {
               </h3>
             </div>
 
-            <div className={styles.whatGetCard}>
+            <div className="card3">
               <Image
-                src="/tech-bootcamp-icon.svg"
+                src="/tech-bootcamp-icon.png"
                 alt="Tech Bootcamp Icon"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 className={styles.getImg}
                 objectFit="cover"
               />
@@ -267,12 +326,12 @@ export default function FsxAcademy() {
               </h3>
             </div>
 
-            <div className={styles.whatGetCard}>
+            <div className="card3">
               <Image
-                src="/mentorship-icon.svg"
+                src="/mentorship-icon.png"
                 alt="Mentorship Icon"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 className={styles.getImg}
                 objectFit="cover"
               />
@@ -280,12 +339,12 @@ export default function FsxAcademy() {
                 Mentorship & Career Guidance
               </h3>
             </div>
-            <div className={styles.whatGetCard}>
+            <div className="card3">
               <Image
-                src="/connect-fsx-icon.svg"
+                src="/connect-fsx-icon.png"
                 alt="Connect Icon"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 className={styles.getImg}
                 objectFit="cover"
               />
@@ -293,12 +352,12 @@ export default function FsxAcademy() {
                 Access to FSX Connect & FSX Events{" "}
               </h3>
             </div>
-            <div className={styles.whatGetCard}>
+            <div className="card3">
               <Image
-                src="/certification-icon.svg"
+                src="/certification-icon.png"
                 alt="Certification Icon"
-                width={60}
-                height={60}
+                width={50}
+                height={50}
                 className={styles.getImg}
                 objectFit="cover"
               />
@@ -306,9 +365,9 @@ export default function FsxAcademy() {
                 Certification & Internship Opportunities{" "}
               </h3>
             </div>
-            <div className={styles.whatGetCard}>
+            <div className="card3">
               <Image
-                src="/innovation-trainning-icon.svg"
+                src="/innovation-trainning-icon.png"
                 alt="Lifelong Learning Icon"
                 width={60}
                 height={60}
@@ -322,163 +381,163 @@ export default function FsxAcademy() {
           </div>
         </section>
 
-        <section className={styles.trainningSection} data-aos="fade-up">
-          <h2 className={styles.trainningTitle}>Trainings we Offer</h2>
-          <p className={styles.trainningDescription}>
-            We provide hands-on training programs designed to equip individuals
-            and teams with practical skills for today’s tech-driven world. From
-            software development to product design and business innovation, our
-            courses blend theory with real-world application.
-          </p>
-          <div className={styles.trainingCardsContainer}>
-            <div className={styles.trainingCard}>
-              <h5 className={styles.trainingCardTitle}>Data Science</h5>
-              <p className={styles.trainingCardDescription}>
-                Unlock the power of data with our comprehensive Data Science
-                course. From statistical analysis to machine learning, gain the
-                skills to drive innovation and make data-driven decisions.
-              </p>
-              <ul className={styles.trainingList}>
-                <li className={styles.trainingListItem}>
-                  Statistical modeling
-                </li>
-                <li className={styles.trainingListItem}>Data visualization</li>
-                <li className={styles.trainingListItem}>
-                  Machine learning algorithms
-                </li>
-                <li className={styles.trainingListItem}>
-                  Predictive analytics
-                </li>
-              </ul>
+        <div className={styles.trainningSection} data-aos="fade-up">
+          <section>
+            <div className="sectionHead">
+              <h2 className={styles.trainningTitle}>Trainings we Offer</h2>
+              <h6 className={styles.trainningDescription}>
+                We provide hands-on training programs designed to equip individuals
+                and teams with practical skills for today’s tech-driven world. From
+                software development to product design and business innovation, our
+                courses blend theory with real-world application.
+              </h6>
             </div>
-
-            <div className={styles.trainingCard}>
-              <h5 className={styles.trainingCardTitle}>Cloud Computing</h5>
-              <p className={styles.trainingCardDescription}>
-                Navigate the future with confidence. We provide strategic
-                frameworks for expansion, innovation, and market leadership,
-                ensuring your vision turns into reality.
-              </p>
-              <ul className={styles.trainingList}>
-                <li className={styles.trainingListItem}>
-                  Cloud resource management
-                </li>
-                <li className={styles.trainingListItem}>
-                  Cross-platform integration
-                </li>
-                <li className={styles.trainingListItem}>
-                  Budget optimization strategies
-                </li>
-                <li className={styles.trainingListItem}>
-                  Multi-factor authentication
-                </li>
-              </ul>
+            <div className="grid">
+              <div className="card1">
+                <h5 className={styles.trainingCardTitle}>Data Science</h5>
+                <p className={styles.trainingCardDescription}>
+                  Unlock the power of data with our comprehensive Data Science
+                  course. From statistical analysis to machine learning, gain the
+                  skills to drive innovation and make data-driven decisions.
+                </p>
+                <ul className={styles.trainingList}>
+                  <li className={styles.trainingListItem}>
+                    Statistical modeling
+                  </li>
+                  <li className={styles.trainingListItem}>Data visualization</li>
+                  <li className={styles.trainingListItem}>
+                    Machine learning algorithms
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Predictive analytics
+                  </li>
+                </ul>
+              </div>
+              <div className="card1">
+                <h5 className={styles.trainingCardTitle}>Cloud Computing</h5>
+                <p className={styles.trainingCardDescription}>
+                  Navigate the future with confidence. We provide strategic
+                  frameworks for expansion, innovation, and market leadership,
+                  ensuring your vision turns into reality.
+                </p>
+                <ul className={styles.trainingList}>
+                  <li className={styles.trainingListItem}>
+                    Cloud resource management
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Cross-platform integration
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Budget optimization strategies
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Multi-factor authentication
+                  </li>
+                </ul>
+              </div>
+              <div className="card1">
+                <h5 className={styles.trainingCardTitle}>Cybersecurity</h5>
+                <p className={styles.trainingCardDescription}>
+                  Secure your digital assets with our Cybersecurity course. Learn
+                  to defend against cyber threats and safeguard your
+                  organization's future with our expert-led training.
+                </p>
+                <ul className={styles.trainingList}>
+                  <li className={styles.trainingListItem}>
+                    Vulnerability assessments
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Incident response planning
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Security awareness training
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Compliance and governance
+                  </li>
+                </ul>
+              </div>
+              <div className="card1">
+                <h5 className={styles.trainingCardTitle}>UI/UX Design</h5>
+                <p className={styles.trainingCardDescription}>
+                  Craft exceptional user experiences with our UI/UX Design course.
+                  Learn design thinking and create user-centered designs that
+                  drive engagement and satisfaction.
+                </p>
+                <ul className={styles.trainingList}>
+                  <li className={styles.trainingListItem}>
+                    User research and testing
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Wireframing and prototyping
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Interaction design principles
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    Usability testing and analysis
+                  </li>
+                </ul>
+              </div>
+              <div className="card1">
+                <h5 className={styles.trainingCardTitle}>
+                  Artificial Intelligence
+                </h5>
+                <p className={styles.trainingCardDescription}>
+                  Unlock the future with our Artificial Intelligence course. We
+                  provide strategic direction for AI integration, ensuring your
+                  vision turns into reality and drives innovation.
+                </p>
+                <ul className={styles.trainingList}>
+                  <li className={styles.trainingListItem}>
+                    AI-driven market insights
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    AI-enhanced business models
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    AI-powered growth strategies
+                  </li>
+                  <li className={styles.trainingListItem}>
+                    AI-based competitive insights
+                  </li>
+                </ul>
+              </div>
+              <div className="card1">
+                <h5 className={styles.trainingCardTitle}>Software Development</h5>
+                <p className={styles.trainingCardDescription}>
+                  Embark on a transformative journey with our Software Development
+                  course. From coding basics to advanced techniques, gain the
+                  skills to build innovative applications and shape the digital
+                  world.
+                </p>
+                <ul className={styles.trainingList}>
+                  <li className={styles.trainingListItem}>
+                    Market trend analysis
+                  </li>
+                  <li className={styles.trainingListItem}>Agile methodologies</li>
+                  <li className={styles.trainingListItem}>
+                    Full-stack development
+                  </li>
+                  <li className={styles.trainingListItem}>DevOps practices</li>
+                </ul>
+              </div>
             </div>
-
-            <div className={styles.trainingCard}>
-              <h5 className={styles.trainingCardTitle}>Cybersecurity</h5>
-              <p className={styles.trainingCardDescription}>
-                Secure your digital assets with our Cybersecurity course. Learn
-                to defend against cyber threats and safeguard your
-                organization's future with our expert-led training.
-              </p>
-              <ul className={styles.trainingList}>
-                <li className={styles.trainingListItem}>
-                  Vulnerability assessments
-                </li>
-                <li className={styles.trainingListItem}>
-                  Incident response planning
-                </li>
-                <li className={styles.trainingListItem}>
-                  Security awareness training
-                </li>
-                <li className={styles.trainingListItem}>
-                  Compliance and governance
-                </li>
-              </ul>
-            </div>
-
-            <div className={styles.trainingCard}>
-              <h5 className={styles.trainingCardTitle}>UI/UX Design</h5>
-              <p className={styles.trainingCardDescription}>
-                Craft exceptional user experiences with our UI/UX Design course.
-                Learn design thinking and create user-centered designs that
-                drive engagement and satisfaction.
-              </p>
-              <ul className={styles.trainingList}>
-                <li className={styles.trainingListItem}>
-                  User research and testing
-                </li>
-                <li className={styles.trainingListItem}>
-                  Wireframing and prototyping
-                </li>
-                <li className={styles.trainingListItem}>
-                  Interaction design principles
-                </li>
-                <li className={styles.trainingListItem}>
-                  Usability testing and analysis
-                </li>
-              </ul>
-            </div>
-
-            <div className={styles.trainingCard}>
-              <h5 className={styles.trainingCardTitle}>
-                Artificial Intelligence
-              </h5>
-              <p className={styles.trainingCardDescription}>
-                Unlock the future with our Artificial Intelligence course. We
-                provide strategic direction for AI integration, ensuring your
-                vision turns into reality and drives innovation.
-              </p>
-              <ul className={styles.trainingList}>
-                <li className={styles.trainingListItem}>
-                  AI-driven market insights
-                </li>
-                <li className={styles.trainingListItem}>
-                  AI-enhanced business models
-                </li>
-                <li className={styles.trainingListItem}>
-                  AI-powered growth strategies
-                </li>
-                <li className={styles.trainingListItem}>
-                  AI-based competitive insights
-                </li>
-              </ul>
-            </div>
-
-
-            <div className={styles.trainingCard}>
-              <h5 className={styles.trainingCardTitle}>Software Development</h5>
-              <p className={styles.trainingCardDescription}>
-                Embark on a transformative journey with our Software Development
-                course. From coding basics to advanced techniques, gain the
-                skills to build innovative applications and shape the digital
-                world.
-              </p>
-              <ul className={styles.trainingList}>
-                <li className={styles.trainingListItem}>
-                  Market trend analysis
-                </li>
-                <li className={styles.trainingListItem}>Agile methodologies</li>
-                <li className={styles.trainingListItem}>
-                  Full-stack development
-                </li>
-                <li className={styles.trainingListItem}>DevOps practices</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
 
         <section className={styles.progressSection} data-aos="fade-up">
-          <h2 className={styles.progressTitle}>Our Process</h2>
-          <p className={styles.progressDescription}>
-            Our process ensures every learning journey is practical, engaging,
-            and results-driven — whether for individuals or organizations.
-          </p>
-          <div className={styles.progressCardsContainer}>
-            <div className={styles.progressCard}>
+          <div className="sectionHead">
+            <h2 className={styles.progressTitle}>Our Process</h2>
+            <h6 className={styles.progressDescription}>
+              Our process ensures every learning journey is practical, engaging,
+              and results-driven — whether for individuals or organizations.
+            </h6>
+          </div>
+          <div className="grid">
+            <div className="card2">
               <Image
-                src="/needs-assesment-icon.svg"
+                src="/needs-assesment-icon.png"
                 alt="Needs Assessment Icon"
                 width={60}
                 height={60}
@@ -492,9 +551,9 @@ export default function FsxAcademy() {
               </p>
             </div>
 
-            <div className={styles.progressCard}>
+            <div className="card2">
               <Image
-                src="/curriculum-icon.svg"
+                src="/curriculum-icon.png"
                 alt="Curriculum Icon"
                 width={60}
                 height={60}
@@ -508,9 +567,9 @@ export default function FsxAcademy() {
               </p>
             </div>
 
-            <div className={styles.progressCard}>
+            <div className="card2">
               <Image
-                src="/training-mentor-icon.svg"
+                src="/training-mentor-icon.png"
                 alt="Training-Mentorship Icon"
                 width={60}
                 height={60}
@@ -526,9 +585,9 @@ export default function FsxAcademy() {
               </p>
             </div>
 
-            <div className={styles.progressCard}>
+            <div className="card2">
               <Image
-                src="/project-app-icon.svg"
+                src="/project-app-icon.png"
                 alt="Project Application Icon"
                 width={60}
                 height={60}
@@ -542,9 +601,9 @@ export default function FsxAcademy() {
               </p>
             </div>
 
-            <div className={styles.progressCard}>
+            <div className="card2">
               <Image
-                src="/growth-path-icon.svg"
+                src="/growth-path-icon.png"
                 alt="Growth Path Icon"
                 width={60}
                 height={60}
@@ -560,9 +619,9 @@ export default function FsxAcademy() {
               </p>
             </div>
 
-            <div className={styles.progressCard}>
+            <div className="card2">
               <Image
-                src="/continuous-support-icon.svg"
+                src="/continuous-support-icon.png"
                 alt="Continuous Support Icon"
                 width={60}
                 height={60}
@@ -582,12 +641,14 @@ export default function FsxAcademy() {
         </section>
 
         <section className={styles.connectSection} data-aos="fade-up">
-          <h2 className={styles.connectTitle}>Connect With Us In 3 Steps</h2>
-          <p className={styles.connectDescription}>
-            Take the next step in your journey of innovation and leadership.
-            Learn the skills that make a difference today and tomorrow
-          </p>
-          <div className={styles.connectCardsContainer}>
+          <div className="sectionHead">
+            <h2 className={styles.connectTitle}>Connect With Us In 3 Steps</h2>
+            <h6 className={styles.connectDescription}>
+              Take the next step in your journey of innovation and leadership.
+              Learn the skills that make a difference today and tomorrow
+            </h6>
+          </div>
+          <div className="grid">
             <div className={styles.connectCard}>
               <button className={styles.connectBtn}>Step 1</button>
               <h3 className={styles.connectCardTitle}>Enroll</h3>
@@ -615,7 +676,7 @@ export default function FsxAcademy() {
             </div>
           </div>
         </section>
-      </section>
+      </div>
     </div>
   );
 }

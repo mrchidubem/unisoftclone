@@ -3,8 +3,30 @@
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
-  justify-content: center;
+  justify-content: start;
+  
+}
+.battle {
+  /* background-color: green; */
+  
+  /* background-color: green;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: start !important;
+  justify-content: start !important;
+  margin: 0;
+  padding: 0; */
+}
+
+.battles{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
   width: 100%;
+  justify-content: start;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  /* margin: 32px 0; */
 }
 
 .primaryButtons,
@@ -25,11 +47,37 @@
   transition: all 0.3s ease;
   display: inline-block;
 }
+.btnFsx{
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin: 1rem 0;
+}
 
 /* === BUTTON VARIANTS === */
+.discovers {
+  background-color: #FF6B35;
+  color: #F1F5F9;
+  
+}
+.discovers:hover {
+  background-color: #B54C26;
+}
+.starts {
+  border: 2px solid #E1E7EF;
+  color: #E1E7EF;
+}
+.starts:hover {
+  background-color: #e1e7ef30;
+}
 .discover {
   background-color: #FF6B35;
   color: #F1F5F9;
+  
 }
 .discover:hover {
   background-color: #B54C26;
@@ -40,7 +88,7 @@
   color: #E1E7EF;
 }
 .start:hover {
-  color: #A0A5AA;
+  background-color: #e1e7ef30;
 }
 
 .fsxBranch {
@@ -67,6 +115,7 @@
     justify-content: flex-start;
     gap: 0.75rem;
   }
+
 
   .primaryButtons {
     justify-content: center;
@@ -95,6 +144,7 @@
 
   .secondaryButtons {
     justify-content: flex-start;
+    margin-top: 0px;
   }
 
   .fsxBranch,
@@ -130,6 +180,29 @@
     padding: 0.6rem 1rem;
   }
 }
+/* Mine */
+@media (max-width: 770px){
+  .btnFsx{
+    margin: 0;
+  }
+}
+@media (max-width: 715px){
+  .btnFsx{
+    margin: 0;
+  }
+}
+
+
+@media (max-width: 834px){
+  .battles{
+    justify-content: center;
+  }
+}
+@media (max-width: 840px){
+  .battles{
+    justify-content: center;
+  }
+}
 
 /* ≤767px (Small tablets and phones) */
 @media (max-width: 767px) {
@@ -146,7 +219,11 @@
     width: 100%;
   }
 
+  .buttons{
+    width: 100%;
+  }
   .btn {
+    width: 100%;
     width: 80%;
     text-align: center;
   }
@@ -154,7 +231,12 @@
 
 /* ≤640px (Large phones) */
 @media (max-width: 640px) {
+
+  .buttons{
+    width: 100%;
+  }
   .btn {
+    width: 100%;
     font-size: 1.2rem;
     padding: 1.1rem 1.1rem;
   }
@@ -169,8 +251,12 @@
 
 /* ≤480px (Medium phones) */
 @media (max-width: 480px) {
+
+  .buttons{
+    width: 100%;
+  }
   .btn {
-    width: auto;
+    width: 100%;
     font-size: 0.85rem;
   }
 
@@ -192,7 +278,11 @@
 
 /* ≤430px (Small phones) */
 @media (max-width: 430px) {
+  .buttons{
+    width: 100%;
+  }
   .btn {
+    width: 100%;
     font-size: 0.85rem;
     padding: 1rem 1rem;
   }
