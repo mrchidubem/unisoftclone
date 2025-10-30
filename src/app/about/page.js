@@ -107,7 +107,7 @@ export default function AboutPage() {
 
 {/* Core Values Section */}
 <section>
-  <div className="sectionHead">
+  <div className={styles.coreSection}>
     <h2>Our Core Values</h2>
   </div>
   <div className={styles.grid}>
@@ -131,7 +131,7 @@ export default function AboutPage() {
 
       {/* CEO Section */}
       <section>
-           <div className='sectionHead'>
+           <div className={styles.ceoSection}>
         <h2 >Meet Our CEO</h2>
         </div>
         <div className={styles.content}>
