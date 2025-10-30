@@ -6,17 +6,7 @@
   justify-content: start;
   
 }
-.battle {
-  /* background-color: green; */
-  
-  /* background-color: green;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: start !important;
-  justify-content: start !important;
-  margin: 0;
-  padding: 0; */
-}
+
 
 .battles{
   display: flex;
@@ -44,8 +34,10 @@
   border-radius: 10px;
   text-decoration: none;
   font-weight: bold;
+  Font-size: 16px;
   transition: all 0.3s ease;
   display: inline-block;
+  
 }
 .btnFsx{
   padding: 0.75rem 1.5rem;
@@ -236,7 +228,7 @@
     width: 100%;
   }
   .btn {
-    width: 100%;
+    width: auto;
     font-size: 1.2rem;
     padding: 1.1rem 1.1rem;
   }
@@ -256,7 +248,7 @@
     width: 100%;
   }
   .btn {
-    width: 100%;
+    width: uto;
     font-size: 0.85rem;
   }
 
@@ -282,7 +274,7 @@
     width: 100%;
   }
   .btn {
-    width: 100%;
+    width: auto;
     font-size: 0.85rem;
     padding: 1rem 1rem;
   }
