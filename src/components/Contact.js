@@ -128,7 +128,7 @@ export default function Contact() {
                   </div>
                   {/* Phone Item */}
                   <div className={styles.infoItem}>
-                    <div className={styles.infoIconCircle}><img src="/phone.png" alt="Phone Icon" /></div>
+                    <div className={styles.infoIconCircle}><img src="/Vector (1).png" alt="Phone Icon" /></div>
                     <div className={styles.infoText}>
                       <h6 className={styles.emailHeading}>Phone</h6>
                       <span className={styles.emailSubtext}>Call us on weekdays from 9AM - 5PM</span>
@@ -137,7 +137,7 @@ export default function Contact() {
                   </div>
                   {/* Location Item */}
                   <div className={styles.infoItem}>
-                    <div className={styles.infoIconCircle}><img src="/location.png" alt="Location Icon" /></div>
+                    <div className={styles.infoIconCircle}><img src="/Vector (2).png" alt="Location Icon" /></div>
                     <div className={styles.infoText}>
                       <h6 className={styles.emailHeading}>Location</h6>
                       <span className={styles.emailSubtext}>Where we are located</span>
@@ -217,7 +217,7 @@ export default function Contact() {
                     </div>
                   )}
 
-                  <button type="submit" className={styles.submitButton} disabled={loading}>{loading ? 'Sending...' : 'Send Message'}</button>
+                  <button type="submit" className={styles.submitButton} disabled={loading}>{loading ? 'Sending...' : 'Contact Us'}</button>
                   {successMessage && <p style={{ color: '#16a34a', marginTop: '8px', textAlign: 'center' }}>{successMessage}</p>}
                   {errorMessage && <p style={{ color: '#b91c1c', marginTop: '8px', textAlign: 'center' }}>{errorMessage}</p>}
                 </form>

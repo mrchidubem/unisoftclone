@@ -30,31 +30,44 @@
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 0;
+  max-width: none; /* Ensures full row, no capping */
+  padding: 0; /* FIXED: No side padding for true centering */
 }
 
 .contactHeading {
   font-family: Roboto, sans-serif;
-  font-size: 32px;
   font-weight: 600;
-  line-height: 38.4px;
+  line-height: 1.2;
   color: #FFFFFF;
   margin: 0 auto;
-  letter-spacing: 0%;
+  letter-spacing: -0.01em;
   text-align: center;
-  white-space: nowrap;
+  white-space: normal; /* Allows wrapping on narrow screens */
+  width: 100%;
+  max-width: clamp(320px, 95vw, 706px); /* FIXED: Wider for full-row center, responsive */
+  font-size: clamp(20px, 4.5vw, 32px); /* FIXED: Bold 1-line mobile, scales desktop */
+  text-wrap: balance; /* FIXED: Even wrapping if needed */
+  display: block; /* FIXED: Ensures auto margins center */
 }
 
 .contactLead {
   font-family: Roboto, sans-serif;
-  font-size: 20px;
   font-weight: 400;
-  line-height: 100%;
   margin: 1.2rem auto 0;
-  max-width: none;
-  letter-spacing: 0%;
+  max-width: clamp(320px, 95vw, 706px); /* FIXED: Matches heading—wider, centered */
+  letter-spacing: -0.01em; /* FIXED: Subtle tighten for ~3 lines on mobile */
   text-align: center;
   color: #a8aaa0;
-  width: 706px;
+  width: 100%;
+  line-height: 1.35; /* FIXED: Tighter for balanced 3 rows */
+  font-size: clamp(11px, 2.2vw, 18px); /* FIXED: Compact mobile for 3 lines, grows desktop */
+  text-wrap: balance; /* FIXED: Even line distribution */
+  display: -webkit-box; /* FIXED: For line-clamp multi-line ellipsis */
+  -webkit-line-clamp: 3; /* FIXED: Strict 3-line max */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 3.75em; /* FIXED: Enforces 3 lines with fade */
+  display: block; /* FIXED: Auto center */
 }
 
 /* Grid: Two Columns Below Top */
@@ -64,6 +77,7 @@
   gap: 4rem;
   align-items: start;
   width: 100%;
+  justify-content: center; /* FIXED: Extra centering symmetry */
 }
 
 /* Left Column: Contact Information Icons - On blue bg */
@@ -90,7 +104,7 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem 0; /* Ensures 2rem gap below on ALL screens */
   text-align: left;
   max-width: none;
   letter-spacing: 0%;
@@ -159,7 +173,7 @@
   font-size: 14px;
   font-weight: 400;
   color: #A0A5AA;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.25rem 0; /* Reduced from 0.5rem to tighten gap to value */
   line-height: 1.4;
   letter-spacing: 0%;
   display: block;
@@ -676,6 +690,10 @@
     max-width: 350px;
   }
 
+  .infoLead {
+    margin-bottom: 2rem; /* Matches desktop—maintains gap */
+  }
+
   .rightColumn {
     padding: 40px;
     max-width: calc(570px + 48px);
@@ -694,6 +712,11 @@
   .container {
     padding: 0 10px;
   }
+
+  .contactHeading,
+  .contactLead {
+    max-width: clamp(400px, 85vw, 600px); /* Fluid middle ground—same for both */
+  }
 }
 
 /* Mobile: Up to 768px (phones & small tablets) */
@@ -704,42 +727,38 @@
 
   .topContent {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem; /* FIXED: Balanced vertical flow */
+    padding: 0; /* FIXED: No padding—relies on element margins for center */
   }
 
   .contactHeading {
-    font-size: 28px;
-    line-height: 1.3;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-    white-space: normal;
+    margin: 0 auto 0; /* FIXED: Auto center */
+    padding: 0; /* FIXED: No padding—full width */
   }
 
   .contactLead {
-    font-size: 16px;
-    line-height: 1.4;
-    width: 100%;
-    max-width: 280px;
-    margin: 1rem auto 0;
+    margin: 0.75rem auto 0; /* FIXED: Auto center */
+    padding: 0; /* FIXED: No padding—full width */
   }
 
   .contactGrid {
     grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 0 10px;
+    gap: 4.375rem; /* FIXED: 70px vertical gap between stacked sections (left/right columns) */
+    padding: 0 8px; /* UPDATED: Reduced from 16px to 8px on both sides for tighter edges (as discussed—prevents flush but adds immersion) */
+    justify-content: center; /* FIXED: Ensures column centering */
   }
 
   .leftColumn {
     order: 2;
     align-items: flex-start;
-    padding-left: 10px; /* Added: Maintains left margin for breathing room while left-aligned */
+    padding-left: 0; /* FIXED: No offset */
+    padding-bottom: 0.5rem;
   }
 
   .rightColumn {
     order: 1;
     max-width: none;
-    padding: 32px 24px;
+    padding: 32px; /* FIXED: Uniform all sides for balanced left/right—no touching edge */
     border-radius: 20px;
     align-items: flex-start;
     width: 100%;
@@ -756,12 +775,13 @@
   .infoTitle {
     font-size: 24px;
     line-height: 1.2;
+    margin-bottom: 1rem;
   }
 
   .infoLead {
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .contactInfo {
@@ -770,10 +790,10 @@
   }
 
   .infoItem {
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-start;
     text-align: left;
-    gap: 12px;
+    gap: 28px;
   }
 
   .infoText {
@@ -781,16 +801,27 @@
   }
 
   .infoIconCircle {
-    width: 48px;
-    height: 48px;
-    border-radius: 24px;
-    padding: 12px 14px;
+    /* UPDATED: Increased size to match desktop for more prominence on mobile */
+    width: 56px; /* Was 48px */
+    height: 56px; /* Was 48px */
+    border-radius: 28px; /* Was 24px—keeps it perfectly circular */
+    padding: 16px 18px; /* Was 12px 14px—better centering for larger icons */
   }
 
   .infoIconCircle svg,
   .infoIconCircle img {
-    width: 18px;
-    height: 18px;
+    /* UPDATED: Slightly larger icons inside the bigger circle */
+    width: 20px; /* Was 18px */
+    height: 20px; /* Was 18px */
+  }
+
+  .emailSubtext {
+    margin-bottom: 0.125rem;
+  }
+
+  .emailValue {
+    line-height: 1.2;
+    margin-top: 0;
   }
 
   .cardTitle {
@@ -823,23 +854,35 @@
 
   .input,
   .select,
-  .textarea,
-  .phoneRow {
+  .phoneRow,
+  .textarea {
     width: 100%;
     max-width: none;
-    height: 50px;
-    padding: 16px 20px;
+    height: 56px; /* FIXED: Universal balanced height */
+    padding: 16px 16px 16px 20px; /* FIXED: Slightly more left padding for balance, uniform right/top/bottom */
     font-size: 16px;
     border-radius: 12px;
+    border: 1px solid #A0A5AA;
     margin: 0;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s;
+  }
+
+  .input:focus,
+  .select:focus,
+  .phoneRow:focus-within,
+  .textarea:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
   }
 
   .textarea {
-    height: 120px;
-    padding-right: 100px;
-    padding-top: 16px;
-    padding-bottom: 16px;
+    height: 128px; /* FIXED: Proportional to others */
+    padding: 16px 100px 16px 20px; /* FIXED: Extra right for attach, balanced left */
+    align-items: flex-start;
   }
 
   .textarea::placeholder {
@@ -861,7 +904,7 @@
   }
 
   .phoneRow {
-    height: 50px;
+    height: 56px;
     flex-direction: row;
     padding: 0;
     overflow: hidden;
@@ -876,12 +919,6 @@
     transition: box-shadow 0.3s;
   }
 
-  .phoneRow:focus-within {
-    outline: none;
-    border-color: transparent;
-    box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
-  }
-
   .phoneRow:focus-within .countrySelectorWrapper,
   .phoneRow:focus-within input {
     border-color: transparent !important;
@@ -889,8 +926,8 @@
 
   .countrySelectorWrapper {
     height: 100%;
-    padding: 16px 10px 16px 20px;
-    min-width: 70px;
+    padding: 16px; /* FIXED: Symmetric balance, uniform left/right */
+    min-width: 100px; /* FIXED: Even split, no jut */
     border: none !important;
     border-right: 1px solid #A0A5AA;
     border-radius: 0;
@@ -900,9 +937,10 @@
     gap: 4px;
     background: transparent;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
   }
 
-  /* Lock internals to full vertical stretch—no wobble */
   .countrySelectorWrapper .flag,
   .countrySelectorWrapper .selectedCode,
   .countrySelectorWrapper .selectArrow {
@@ -941,10 +979,9 @@
   .phoneRow input {
     flex: 1;
     height: 100%;
-    padding: 16px 20px;
+    padding: 0 16px; /* FIXED: Uniform sides, no left extra since country handles it */
     border: none !important;
-    border-radius: 0;
-    border-left: none;
+    border-radius: 0 12px 12px 0;
     margin: 0;
     box-sizing: border-box;
     line-height: 1.2;
@@ -970,8 +1007,8 @@
   }
 
   .attachLabel {
-    top: 12px;
-    right: 12px;
+    top: 16px;
+    right: 16px;
     font-size: 13px;
     padding: 4px 6px;
   }
@@ -990,14 +1027,13 @@
 
   .submitButton {
     width: 100%;
-    height: 50px;
-    padding: 8px 20px;
+    height: 56px;
+    padding: 0 20px;
     font-size: 16px;
     margin: 0.5rem auto 0;
     border-radius: 12px;
   }
 
-  /* Country dropdown on mobile */
   .countryDropdown {
     position: fixed;
     top: auto;
@@ -1025,24 +1061,24 @@
   /* Landscape phone tweaks */
   @media (max-height: 500px) and (orientation: landscape) {
     .topContent {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .contactHeading {
-      font-size: 24px;
+      font-size: clamp(18px, 4vw, 24px);
     }
 
     .contactLead {
-      font-size: 14px;
-      display: none;
+      font-size: clamp(11px, 2vw, 14px);
+      display: none; /* Keep hidden for space if needed */
     }
 
     .rightColumn {
-      padding: 24px 16px;
+      padding: 24px;
     }
 
     .textarea {
-      height: 80px;
+      height: 96px;
     }
 
     .cardIntro {
@@ -1056,39 +1092,55 @@
 
   /* Extra small phones */
   @media (max-width: 360px) {
-    .infoIconCircle {
-      width: 40px;
-      height: 40px;
-      padding: 10px 12px;
+    .topContent {
+      padding: 0;
+    }
+
+    .contactHeading,
+    .contactLead {
+      padding: 0;
+      max-width: 100vw; /* FIXED: Full for XS center */
+    }
+
+    .contactGrid {
+      padding: 0 8px; /* UPDATED: Matches mobile reduction (8px both sides) */
+    }
+
+    .rightColumn {
+      padding: 28px;
     }
 
     .input,
     .select,
-    .phoneRow {
-      height: 48px;
-      padding: 14px 16px;
+    .phoneRow,
+    .textarea {
+      padding: 14px 14px 14px 18px; /* FIXED: Scaled uniform with slight left balance for XS */
+    }
+
+    .textarea {
+      padding: 14px 96px 14px 18px;
     }
 
     .phoneRow input {
-      padding: 14px 12px;
+      padding: 0 14px;
     }
 
     .countrySelectorWrapper {
-      padding: 10px 6px;
-      min-width: 55px;
+      padding: 14px;
+      min-width: 90px;
     }
 
     .flag {
-      width: 20px;
-      height: 14px;
+      width: 24px !important;
+      height: 16px !important;
     }
 
     .selectedCode {
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .submitButton {
-      height: 48px;
+      height: 52px;
       font-size: 15px;
     }
 
@@ -1096,9 +1148,22 @@
       width: 100vw;
     }
 
-    /* Scale down the left margin slightly on extra-small screens for tighter fit */
     .leftColumn {
-      padding-left: 8px;
+      padding-left: 0;
+    }
+
+    /* UPDATED: Icon circle scales down slightly for XS but stays larger than before */
+    .infoIconCircle {
+      width: 52px; /* Slightly smaller than 56px for tiny screens, but still increased from original 48px */
+      height: 52px;
+      border-radius: 26px;
+      padding: 14px 16px;
+    }
+
+    .infoIconCircle svg,
+    .infoIconCircle img {
+      width: 18px;
+      height: 18px;
     }
   }
 }
