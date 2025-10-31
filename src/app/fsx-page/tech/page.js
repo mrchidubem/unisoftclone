@@ -63,7 +63,7 @@ const FSXTech = () => {
     <div className={styles.tech}>
       {/* Hero */}
       <div className="hero" data-aos="fade-up">
-        <div className={styles.heroText}>
+        <div className="heroText">
           <h1>FSX Tech </h1>
           <p>
             Technology should simplify, not complicate. 

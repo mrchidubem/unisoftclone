@@ -481,6 +481,32 @@ section {
 }
 
 
+@media screen and (min-width: 1440px) {
+  .svmSection {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .textColumn {
+    width: 40%;
+  }
+
+  .imageColumn {
+    width: 55%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .responsiveImage {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+
+
 
 /* HERO SECTIONS */
  .hero {
@@ -557,6 +583,40 @@ section {
     font-size: 1.1rem;
     color: #7C8084;
     margin-bottom: 1.5rem;
+  }
+
+}
+
+/* Mine */
+@media (max-width: 869px) {
+  .hero {
+    margin-top: 20px;
+    flex-direction: column;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    gap: 0px;
+  }
+
+    .heroText {
+    max-width: 90%;
+    margin-bottom: 1.5rem;
+    margin-top: 5rem;
+    text-align: center;
+    
+  }
+
+    .heroBtns {
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    align-self: center;
+  }
+
+    .heroImg img {
+    width: 100%;
+    max-width: auto;
+    min-width: 450px;
+    margin: 2rem auto;
   }
 
 }
