@@ -145,16 +145,19 @@
 
 .products .swiperContainer .swiper-pagination {
   position: absolute !important;
-  bottom: 0 !important;  /* Lock to absolute bottom of container */
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: auto !important;
+  bottom: 0 !important;
+  left: 0 !important;  /* UPDATED: Full left-to-right span for reliable centering */
+  right: 0 !important;  /* NEW: Span full width of container */
+  top: auto !important;  /* Override any top positioning */
+  width: 100% !important;  /* NEW: Explicit full-width for flex centering */
   display: flex !important;
-  justify-content: center;
-  align-items: center;
+  justify-content: center !important;  /* UPDATED: Emphasize center (was already there, but !important ensures override) */
+  align-items: center !important;
   gap: 8px !important;
   z-index: 5 !important;
-  top: auto !important;  /* Override any top positioning */
+  margin: 0 !important;  /* NEW: Zero out any sneaky margins */
+  padding: 0 !important;  /* NEW: No padding interference */
+  text-align: center !important;  /* NEW: Fallback for older browsers/flex */
 }
 
 .products .swiperContainer .swiper-pagination-bullet {
@@ -166,7 +169,7 @@
   opacity: 0.6 !important;
   transition: all 0.3s ease !important;
   flex-shrink: 0;
-  margin: 0 !important;  /* No extra margins */
+  margin: 0 !important;  /* UPDATED: Reinforce no margins */
 }
 
 .products .swiperContainer .swiper-pagination-bullet-active {

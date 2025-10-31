@@ -1,7 +1,7 @@
 /* Full-width background wrapper */
 .contactBackground {
   width: 100vw;
-  background-color:  #0D519A;
+  background-color: #0D519A;
   position: relative;
   left: 50%;
   right: 50%;
@@ -9,23 +9,20 @@
   margin-right: -50vw;
 }
 
-/* Section layout */
-.contactSection {
-  padding: 80px 0;
+/* Section layout - Relies on global padding/margin for direct inheritance */
+/* .contactSection {
   width: 100%;
   color: white;
   min-height: 800px;
-  margin-top: 1rem;
-}
+} */
 
-/* Centered content */
-.container {
+/* Centered content - No padding to avoid layering on global margin */
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0;
   box-sizing: border-box;
-}
-
+} */
 
 /* Top Full-Width Content: Heading and Paragraph */
 .topContent {
@@ -33,33 +30,44 @@
   text-align: center;
   margin-bottom: 4rem;
   margin-top: 0;
+  max-width: none; /* Ensures full row, no capping */
+  padding: 0; /* FIXED: No side padding for true centering */
 }
 
 .contactHeading {
-  font-family: Bahnschrift, sans-serif;
-  font-size: 32px;
+  font-family: Roboto, sans-serif;
   font-weight: 600;
-  line-height: 38.4px;
+  line-height: 1.2;
   color: #FFFFFF;
-  margin: 0 auto 0 auto;
-  letter-spacing: 0%;
-  width: 421px;
+  margin: 0 auto;
+  letter-spacing: -0.01em;
   text-align: center;
-  /* removed invalid `leading-trim` and vertical-align */
+  white-space: normal; /* Allows wrapping on narrow screens */
+  width: 100%;
+  max-width: clamp(320px, 95vw, 706px); /* FIXED: Wider for full-row center, responsive */
+  font-size: clamp(20px, 4.5vw, 32px); /* FIXED: Bold 1-line mobile, scales desktop */
+  text-wrap: balance; /* FIXED: Even wrapping if needed */
+  display: block; /* FIXED: Ensures auto margins center */
 }
 
 .contactLead {
-  font-family: Bahnschrift, sans-serif;
-  font-size: 20px;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
-  line-height: 100%;
-  margin: 1.2rem auto 0 auto;
-  max-width: none;
-  letter-spacing: 0%;
+  margin: 1.2rem auto 0;
+  max-width: clamp(320px, 95vw, 706px); /* FIXED: Matches heading—wider, centered */
+  letter-spacing: -0.01em; /* FIXED: Subtle tighten for ~3 lines on mobile */
   text-align: center;
   color: #a8aaa0;
-  width: 706px;
-  /* removed invalid `leading-trim` and vertical-align */
+  width: 100%;
+  line-height: 1.35; /* FIXED: Tighter for balanced 3 rows */
+  font-size: clamp(11px, 2.2vw, 18px); /* FIXED: Compact mobile for 3 lines, grows desktop */
+  text-wrap: balance; /* FIXED: Even line distribution */
+  display: -webkit-box; /* FIXED: For line-clamp multi-line ellipsis */
+  -webkit-line-clamp: 3; /* FIXED: Strict 3-line max */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  max-height: 3.75em; /* FIXED: Enforces 3 lines with fade */
+  display: block; /* FIXED: Auto center */
 }
 
 /* Grid: Two Columns Below Top */
@@ -69,6 +77,7 @@
   gap: 4rem;
   align-items: start;
   width: 100%;
+  justify-content: center; /* FIXED: Extra centering symmetry */
 }
 
 /* Left Column: Contact Information Icons - On blue bg */
@@ -79,7 +88,7 @@
 }
 
 .infoTitle {
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 32px;
   font-weight: 600;
   margin: 0 0 1rem 0;
@@ -88,7 +97,6 @@
   color: #FFFFFF;
   width: 389px;
   line-height: 38.4px;
-  /* removed invalid `leading-trim` and vertical-align */
 }
 
 .infoLead {
@@ -96,49 +104,12 @@
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  margin: 0 0 2rem 0;
+  margin: 0 0 2rem 0; /* Ensures 2rem gap below on ALL screens */
   text-align: left;
   max-width: none;
   letter-spacing: 0%;
   color: #A0A5AA;
   width: 389px;
-  /* removed invalid `leading-trim` and vertical-align */
-}
-
-.infoLabel {
-  font-family: Bahnschrift, sans-serif;
-  font-size: 20px;
-  font-weight: 700;
-  color: white;
-  margin: 0 0 0.25rem 0;
-  line-height: 100%;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  display: block;
-}
-
-.infoValue {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #A0A5AA;
-  margin: 0 0 0.25rem 0;
-  line-height: 24px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  display: block;
-}
-
-.infoSubValue {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: white;
-  margin: 0;
-  line-height: 24px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  display: block;
 }
 
 .contactInfo {
@@ -150,37 +121,32 @@
 .infoItem {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
+  gap: 28px;
   width: 100%;
   text-align: left;
 }
 
 .infoIconCircle {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-width: 1.5px;
   border-style: solid;
   border-color: #0D519A;
   background: #DDE9FF;
-  border-radius: 28px;
+  border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 16px 18px; /* top/bottom 16px, left/right 18px */
+  padding: 18px 20px;
   gap: 10px;
-  box-sizing: border-box; /* FIXED: Ensure no overflow */
+  box-sizing: border-box;
 }
 
-.infoIconCircle svg {
-  width: 20px;
-  height: 20px;
-  color: #0D519A;
-}
-
+.infoIconCircle svg,
 .infoIconCircle img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   color: #0D519A;
 }
 
@@ -188,6 +154,42 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+/* Styles for info items (heading, subtext, value) */
+.emailHeading {
+  font-family: Roboto, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin: 0 0 0.25rem 0;
+  line-height: 100%;
+  letter-spacing: 0%;
+  display: block;
+}
+
+.emailSubtext {
+  font-family: Roboto, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #A0A5AA;
+  margin: 0 0 0.25rem 0; /* Reduced from 0.5rem to tighten gap to value */
+  line-height: 1.4;
+  letter-spacing: 0%;
+  display: block;
+  max-width: 300px;
+}
+
+.emailValue {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+  line-height: 24px;
+  letter-spacing: 0%;
+  display: block;
+  word-break: break-all;
 }
 
 /* Right Column: Get In Touch White Card */
@@ -205,12 +207,12 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-right: 0; /* Removed unnecessary margin */
-  box-sizing: border-box; /* FIXED: Prevent padding overflow */
+  margin-right: 0;
+  box-sizing: border-box;
 }
 
 .cardTitle {
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 600;
   font-size: 32px;
   line-height: 38.4px;
@@ -221,11 +223,10 @@
   max-width: 570px;
   margin: 0 auto 1rem auto;
   box-sizing: border-box;
-  /* removed invalid `leading-trim` and vertical-align */
 }
 
 .cardIntro {
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -237,7 +238,6 @@
   max-width: 570px;
   margin: 0 auto 2rem auto;
   box-sizing: border-box;
-  /* removed invalid `leading-trim` and vertical-align */
 }
 
 /* Form - Inside right card */
@@ -247,15 +247,15 @@
   gap: 1rem;
   width: 100%;
   align-items: flex-start;
-  box-sizing: border-box; /* FIXED: For consistent sizing */
+  box-sizing: border-box;
 }
 
 .formRow {
   display: grid;
-  grid-template-columns: 1fr; /* Stacked for uniformity like other inputs */
-  gap: 0.75rem; /* FIXED: Tighter gap for mobile rhythm */
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
   width: 100%;
-  margin: 0; /* FIXED: Explicit no margin for clean stacking */
+  margin: 0;
 }
 
 .input,
@@ -264,10 +264,9 @@
   width: 100%;
   max-width: 570px;
   height: 80px;
-  gap: 10px;
   border-radius: 10px;
   border: 1px solid #A0A5AA;
-  padding: 20px 24px; /* Tighter padding */
+  padding: 20px 24px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
   color: #2C3E50;
@@ -281,150 +280,99 @@
 .textarea:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Sharper focus: thicker (3px) and more opaque ring */
+  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
 }
 
 .input::placeholder,
 .select::placeholder,
 .textarea::placeholder {
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
-  font-style: normal;
   font-size: 20px;
   line-height: 100%;
   letter-spacing: 0%;
   color: #A0A5AA;
   opacity: 1;
-  transform: rotate(0deg);
-  background: transparent;
-  width: auto;
-  height: auto;
-  margin: 0;
-  padding: 0;
-  overflow: visible;
-  white-space: nowrap;
 }
 
 .textarea::placeholder {
-  font-family: Bahnschrift, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 20px;
-  line-height: 100%;
-  letter-spacing: 0%;
   text-align: left;
   vertical-align: middle;
-  color: #A0A5AA;
-  opacity: 1;
-  transform: rotate(0deg);
-  background: transparent;
   width: 211px;
   height: 24px;
-  margin: 0;
-  padding: 0;
-  overflow: visible;
   white-space: nowrap;
 }
 
 .select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
-  /* moved inward and made larger */
   background-position: right 12px center;
   background-repeat: no-repeat;
-  background-size: 14px;   /* slightly larger caret */
-  padding-right: 32px;     /* ensure space for the larger caret */
+  background-size: 14px;
+  padding-right: 32px;
   cursor: pointer;
   border-radius: 12px;
-
-  /* added to match placeholder typography */
-  font-family: Bahnschrift, sans-serif;
-  font-size: 20px;
   font-weight: 400;
   color: #A0A5AA;
   line-height: 1;
 }
 
-/* extra: make options match where browser allows */
 .select option {
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
-  color: #2C3E50; /* Darker color for better readability */
-  background: white;
-}
-
-.countrySelect option {
-  font-family: Bahnschrift, sans-serif;
-  font-size: 16px;
-  color: #2C3E50; /* Darker color for better readability in dropdown */
+  color: #2C3E50;
   background: white;
 }
 
 .phoneRow {
   display: flex;
-  align-items: center; /* Reinforce vertical uniformity */
-  border: none;
-  border-radius: 10px; /* Overall row radius for full uniformity */
-  background: #FAFDFF; /* Unified subtle bg like other inputs */
+  align-items: center;
+  border-radius: 10px;
+  background: #FAFDFF;
   height: 80px;
   overflow: visible;
   width: 100%;
   max-width: 570px;
   box-sizing: border-box;
   padding: 0;
-  gap: 0; /* No space between wrapper and input for seamless border */
-  position: relative; /* For unified focus ring */
-  transition: box-shadow 0.3s; /* Smooth unified focus */
+  gap: 0;
+  position: relative;
+  transition: box-shadow 0.3s;
 }
 
 .phoneRow:focus-within {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Apply focus ring to entire row */
+  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
 }
 
 .phoneRow:focus-within .countrySelectorWrapper,
 .phoneRow:focus-within input {
-  border-color: transparent !important; /* Force transparent borders on both parts for unified focus */
+  border-color: transparent !important;
 }
 
 .countrySelectorWrapper {
   position: relative;
   display: flex;
-  align-items: center; /* Match input's vertical centering */
-  gap: 6px; /* Tiny gap only for flag/code/arrow internals—keeps overall tight */
+  align-items: center;
+  gap: 6px;
   cursor: pointer;
-  padding: 20px 16px 20px 24px; /* Standardized: match input's 20/24, but right=16px to hug code without squeeze */
-  background: #FAFDFF; /* Match input bg for uniformity; was transparent */
-  border: 1px solid #A0A5AA; /* Add matching border; was none */
-  border-top-left-radius: 10px; /* Left-half radius to join input seamlessly */
+  padding: 20px 16px 20px 24px;
+  background: #FAFDFF;
+  border: 1px solid #A0A5AA;
+  border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   height: 100%;
   flex-shrink: 0;
   outline: none;
   width: auto;
-  min-width: 80px; /* Prevent collapse on short codes */
-  box-sizing: border-box; /* Consistent sizing */
-  transition: border-color 0.3s; /* Individual transition, but overridden by row */
-  justify-content: flex-start; /* Already there, but reinforces no squish */
+  min-width: 80px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  justify-content: flex-start;
 }
 
 .countrySelectorWrapper.open .selectArrow {
   transform: rotate(180deg);
-}
-
-.countrySelect {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 2;
-  cursor: pointer;
-  appearance: none;
-  border: none;
-  background: transparent;
-  font-size: 1px;
 }
 
 .countrySelectorWrapper:hover .selectArrow,
@@ -433,67 +381,67 @@
 }
 
 .selectArrow {
-  margin: 0 0 0 4px; /* Adjusted for better hug after gap tweak */
+  margin: 0 0 0 4px;
   font-size: 12px;
   font-weight: bold;
   color: #A0A5AA;
   transition: color 0.2s, transform 0.2s;
   flex-shrink: 0;
-  pointer-events: none; /* Prevent arrow from blocking clicks */
+  pointer-events: none;
 }
 
 .selectedCode {
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 20px;
   font-weight: 400;
   color: #A0A5AA;
-  line-height: 1.2; /* Up from 1—syncs with input's natural rhythm for baseline match */
+  line-height: 1.2;
   white-space: nowrap;
   pointer-events: none;
-  align-self: center; /* New: Explicitly center within its flex line */
-  padding: 0 4px; /* New: Micro-padding for code breathing, prevents edge-touch */
+  align-self: center;
+  padding: 0 4px;
 }
 
 .flag {
-  width: 32px !important; /* Force it—prevents any inherited shrink */
+  width: 32px !important;
   height: 20px !important;
   flex-shrink: 0;
-  margin-right: 4px; /* Small space between flag and code—unchanged */
-  pointer-events: none; /* Let clicks pass through visual elements */
+  margin-right: 4px;
+  pointer-events: none;
   border-radius: 4px;
-  min-width: 32px; /* New: Absolute floor to stop flex from nibbling */
-  flex: 0 0 32px; /* No grow/shrink, fixed basis */
-  object-fit: cover; /* New: Ensures SVG scales crisp without distortion if CDN varies */
-  border: none; /* Just in case any implicit border sneaks in */
+  min-width: 32px;
+  flex: 0 0 32px;
+  object-fit: cover;
+  border: none;
 }
 
 .phoneRow input {
   flex: 1;
   height: 100%;
-  border: 1px solid #A0A5AA; /* Add matching border for uniformity; was none */
-  border-left: none; /* Remove left border on input to avoid double-line join */
-  border-top-right-radius: 10px; /* Right-half radius to complete the row */
+  border: 1px solid #A0A5AA;
+  border-left: none;
+  border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  padding: 20px 24px; /* Full padding like other inputs—unchanged, now matches selector vertically */
+  padding: 20px 24px;
   font-family: Roboto, sans-serif;
   font-size: 16px;
-  color: #2C3E50; /* Darker text to match other inputs; was #7e8790 (too light) */
-  background: #FAFDFF; /* Subtle off-white bg for less stark feel; transparent blended but now uniform */
+  color: #2C3E50;
+  background: #FAFDFF;
   margin: 0;
-  box-sizing: border-box; /* Ensure consistent sizing */
-  transition: border-color 0.3s; /* Individual transition, but overridden by row */
-  line-height: 1.2; /* Explicit: Matches code now, no default wobble */
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+  line-height: 1.2;
   display: flex;
-  align-items: center; /* New: Centers text vertically inside the input */
+  align-items: center;
 }
 
 .phoneRow input::placeholder {
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 20px;
   color: #A0A5AA;
   opacity: 1;
-  line-height: 1.2; /* Sync placeholder too—prevents dip when empty */
+  line-height: 1.2;
   display: flex;
   align-items: center;
 }
@@ -507,7 +455,7 @@
   box-shadow: 0 0 0 1000px #FAFDFF inset !important;
   -webkit-text-fill-color: #2C3E50 !important;
   background-color: #FAFDFF !important;
-  transition: background-color 5000s ease-in-out 0s !important; /* Smooth fade if needed */
+  transition: background-color 5000s ease-in-out 0s !important;
 }
 
 .phoneInput {
@@ -522,20 +470,19 @@
 .textarea {
   height: 170px;
   resize: vertical;
-  padding-right: 120px; /* space for attach button inside textarea */
-  padding-top: calc((170px - 20px) / 2); /* vertically center placeholder (20px font) */
+  padding-right: 120px;
+  padding-top: calc((170px - 20px) / 2);
   padding-bottom: 20px;
   line-height: 1.2;
   box-sizing: border-box;
 }
 
-/* ensure textarea placeholder is left-aligned and vertically centered by padding */
 .textarea::placeholder {
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 20px;
   line-height: 20px;
-  text-align: left; /* keep text left-aligned */
+  text-align: left;
   color: #A0A5AA;
   opacity: 1;
 }
@@ -544,7 +491,7 @@
 .textareaWrapper {
   position: relative;
   width: 100%;
-  box-sizing: border-box; /* FIXED: Consistent */
+  box-sizing: border-box;
 }
 
 .attachLabel {
@@ -563,6 +510,12 @@
   border-radius: 8px;
 }
 
+.attachIcon {
+  width: 16px;
+  height: 16px;
+  color: #6B7280;
+}
+
 .fileInputHidden {
   display: none;
 }
@@ -570,7 +523,7 @@
 /* attached file preview */
 .attachedFile {
   display: grid;
-  grid-template-columns: 1fr auto; /* preview | actions */
+  grid-template-columns: 1fr auto;
   gap: 12px;
   align-items: center;
   background: #F3F6F9;
@@ -579,19 +532,6 @@
   max-width: 570px;
   margin-top: 0.5rem;
   box-sizing: border-box;
-}
-
-.filePreviewIcon {
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #0D519A;
-  flex-shrink: 0;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
 }
 
 .filePreviewMeta {
@@ -616,18 +556,12 @@
   color: #6B7280;
 }
 
-.fileError {
-  color: #B91C1C;
-  font-size: 12px;
-  margin-top: 4px;
-}
-
-/* actions: remove + send */
+/* actions: remove */
 .fileActions {
   display: flex;
   gap: 8px;
   align-items: center;
-  margin: 0; /* keep actions to the right column */
+  margin: 0;
 }
 
 .removeButton {
@@ -648,12 +582,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 570px;               /* exact width */
-  height: 70px;               /* exact height */
-  gap: 10px;                  /* icon/text gap */
-  border-radius: 15px;        /* exact radius */
-  padding: 10px 20px;         /* exact padding top/right/bottom/left */
-  background: #0D519A;        /* exact background color */
+  width: 570px;
+  height: 70px;
+  gap: 10px;
+  border-radius: 15px;
+  padding: 10px 20px;
+  background: #0D519A;
   color: #FFFFFF;
   border: none;
   opacity: 1;
@@ -665,48 +599,18 @@
   transition: transform .08s ease, box-shadow .12s ease, background .12s;
   margin: 1rem auto 0 auto;
   box-sizing: border-box;
-  max-width: 100%; /* FIXED: Responsive width for tablet/mobile */
+  max-width: 100%;
 }
 
-/* compact Send button used when a file is attached */
-.sendButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;                /* auto so it doesn't push layout */
-  max-width: none;
-  height: 56px;               /* slightly smaller for actions area */
-  gap: 8px;
-  border-radius: 15px;
-  padding: 10px 14px;
-  background: #0D519A;
-  color: #FFFFFF;
-  border: none;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  box-shadow: 0 6px 18px rgba(13,81,154,0.16);
-}
-
-/* shared hover / active states */
-.submitButton:hover,
-.sendButton:hover {
+.submitButton:hover {
   transform: translateY(-2px);
   background: #0A3D75;
   box-shadow: 0 10px 24px rgba(13,81,154,0.18);
 }
 
-.submitButton:active,
-.sendButton:active {
+.submitButton:active {
   transform: translateY(0);
   box-shadow: 0 6px 18px rgba(13,81,154,0.14);
-}
-
-.sendButton[disabled],
-.sendButton[aria-disabled="true"] {
-  opacity: 0.6;
-  cursor: default;
 }
 
 /* Custom Dropdown Styles */
@@ -730,7 +634,7 @@
   align-items: center;
   padding: 12px 16px;
   cursor: pointer;
-  font-family: Bahnschrift, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 16px;
   color: #2C3E50;
   transition: background-color 0.2s;
@@ -755,40 +659,27 @@
   border-radius: 4px;
 }
 
-/* Apply uniform background and sharper focus to all inputs/select/textarea (addresses stark bg and dull focus) */
+/* Apply uniform background and sharper focus to all inputs/select/textarea */
 .input,
 .select,
 .textarea,
-.phoneRow input { /* Include phone here for full uniformity */
-  background: #FAFDFF; /* Subtle tint for better feel; was #FFFFFF (too plain) */
+.phoneRow input {
+  background: #FAFDFF;
 }
 
 .input:focus,
 .select:focus,
 .textarea:focus,
-.phoneRow input:focus { /* Extend sharper focus to all */
+.phoneRow input:focus {
   outline: none;
   border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Sharper: 3px thicker, 0.3 opacity for visibility; was 2px 0.2 */
-}
-
-/* Placeholder colors unchanged as requested—no tweaks here */
-.phoneRow input::placeholder,
-.input::placeholder,
-.select::placeholder,
-.textarea::placeholder {
-  /* Existing styles preserved: color #A0A5AA, etc. */
+  box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
 }
 
 /* Enhanced Responsive - Focus on Mobile & Tablet */
 
 /* Tablet: 769px - 1024px (e.g., iPad portrait) */
 @media (max-width: 1024px) and (min-width: 769px) {
-  .contactSection {
-    padding: 60px 0;
-    min-height: auto;
-  }
-
   .contactGrid {
     gap: 3rem;
   }
@@ -799,74 +690,83 @@
     max-width: 350px;
   }
 
+  .infoLead {
+    margin-bottom: 2rem; /* Matches desktop—maintains gap */
+  }
+
   .rightColumn {
     padding: 40px;
     max-width: calc(570px + 48px);
   }
 
   .submitButton {
-    width: 100%; /* FIXED: Full width for tablet consistency */
+    width: 100%;
     max-width: 570px;
   }
 
   .countryDropdown {
     width: 260px;
   }
+
+  /* Mobile-like padding for tablet if needed */
+  .container {
+    padding: 0 10px;
+  }
+
+  .contactHeading,
+  .contactLead {
+    max-width: clamp(400px, 85vw, 600px); /* Fluid middle ground—same for both */
+  }
 }
 
 /* Mobile: Up to 768px (phones & small tablets) */
 @media (max-width: 768px) {
   .contactSection {
-    padding: 40px 0;
-    min-height: auto;
-    margin-top: 0; /* FIXED: No top margin on mobile to avoid hero push */
+    margin-top: 0;
   }
 
   .topContent {
     text-align: center;
-    margin-bottom: 2rem;
-    /* FIXED: Removed padding for full-width consistency */
+    margin-bottom: 2.5rem; /* FIXED: Balanced vertical flow */
+    padding: 0; /* FIXED: No padding—relies on element margins for center */
   }
 
   .contactHeading {
-    font-size: 28px; /* Slightly smaller for better fit */
-    line-height: 1.3;
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
+    margin: 0 auto 0; /* FIXED: Auto center */
+    padding: 0; /* FIXED: No padding—full width */
   }
 
   .contactLead {
-    font-size: 16px;
-    line-height: 1.4;
-    width: 100%;
-    max-width: 280px;
-    margin: 1rem auto 0;
+    margin: 0.75rem auto 0; /* FIXED: Auto center */
+    padding: 0; /* FIXED: No padding—full width */
   }
 
   .contactGrid {
-    grid-template-columns: 1fr; /* Stack left/right fully */
-    gap: 2rem;
-    padding: 0 10px;
+    grid-template-columns: 1fr;
+    gap: 5rem; /* UPDATED: Increased from 4.375rem (70px) to 5rem (80px) for more space between stacked left/right columns */
+    padding: 0 8px; /* UPDATED: Reduced from 16px to 8px on both sides for tighter edges (as discussed—prevents flush but adds immersion) */
+    justify-content: center; /* FIXED: Ensures column centering */
   }
 
   .leftColumn {
-    order: 2; /* Form first on mobile for better UX */
-    align-items: center; /* NEW: Lock full horizontal centering for service cards (Figma mobile alignment) */
+    order: 2;
+    align-items: flex-start;
+    padding-left: 0; /* FIXED: No offset */
+    padding-bottom: 0.5rem;
   }
 
   .rightColumn {
     order: 1;
     max-width: none;
-    padding: 32px 24px;
-    border-radius: 20px; /* Softer on smaller screens */
-    align-items: flex-start; /* FIXED: Left-align for uniform starting line across all rows (matches Figma) */
+    padding: 32px; /* FIXED: Uniform all sides for balanced left/right—no touching edge */
+    border-radius: 20px;
+    align-items: flex-start;
     width: 100%;
   }
 
   .infoTitle,
   .infoLead {
-    text-align: center;
+    text-align: left;
     width: 100%;
     max-width: none;
     margin: 0 auto;
@@ -875,42 +775,53 @@
   .infoTitle {
     font-size: 24px;
     line-height: 1.2;
+    margin-bottom: 1rem;
   }
 
   .infoLead {
     font-size: 14px;
     line-height: 1.4;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .contactInfo {
-    gap: 1.25rem;
-    align-items: center; /* Center icons on mobile */
-    align-items: center; /* NEW: Reinforce centering for the card stack (no prop alteration, just explicit for Figma precision) */
+    gap: 36px; /* UPDATED: Increased from 24px to 36px for generous spacing between info items (Email, Phone, Location) */
+    align-items: flex-start;
   }
 
   .infoItem {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 28px;
   }
 
   .infoText {
-    text-align: center;
+    text-align: left;
   }
 
   .infoIconCircle {
-    width: 48px; /* Smaller icon for mobile */
-    height: 48px;
-    border-radius: 24px;
-    padding: 12px 14px;
+    /* UPDATED: Increased size to match desktop for more prominence on mobile */
+    width: 64px; /* Increased from 56px for larger diameter */
+    height: 64px; /* Increased from 56px for larger diameter */
+    border-radius: 32px; /* Adjusted for perfect roundness on larger size */
+    padding: 18px 20px; /* Adjusted for better centering on larger size */
   }
 
   .infoIconCircle svg,
   .infoIconCircle img {
-    width: 18px;
-    height: 18px;
+    /* UPDATED: Slightly larger icons inside the bigger circle */
+    width: 24px; /* Increased from 20px to fill the larger circle proportionally */
+    height: 24px; /* Increased from 20px to fill the larger circle proportionally */
+  }
+
+  .emailSubtext {
+    margin-bottom: 0.125rem;
+  }
+
+  .emailValue {
+    line-height: 1.2;
+    margin-top: 0;
   }
 
   .cardTitle {
@@ -930,36 +841,48 @@
   }
 
   .contactForm {
-    gap: 0.75rem; /* Tighter spacing */
+    gap: 0.75rem;
     width: 100%;
-    padding: 0; /* FIXED: Removed 5px padding to ensure uniform starting alignment across all rows */
+    padding: 0;
   }
 
   .formRow {
-    grid-template-columns: 1fr; /* Already stacked */
-    gap: 0.75rem; /* FIXED: Consistent with form gap */
-    margin: 0; /* FIXED: Explicit no margin for clean stacking */
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin: 0;
   }
 
   .input,
   .select,
-  .textarea,
-  .phoneRow {
+  .phoneRow,
+  .textarea {
     width: 100%;
     max-width: none;
-    height: 50px; /* Shorter for thumb-friendly taps */
-    padding: 16px 20px; /* Adjusted for mobile */
-    font-size: 16px; /* Prevents zoom on iOS */
+    height: 56px; /* FIXED: Universal balanced height */
+    padding: 16px 16px 16px 20px; /* FIXED: Slightly more left padding for balance, uniform right/top/bottom */
+    font-size: 16px;
     border-radius: 12px;
-    margin: 0; /* FIXED: No extra margin to match other rows' starting line */
-    box-sizing: border-box; /* FIXED: Prevent padding overflow */
+    border: 1px solid #A0A5AA;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    transition: box-shadow 0.3s;
+  }
+
+  .input:focus,
+  .select:focus,
+  .phoneRow:focus-within,
+  .textarea:focus {
+    outline: none;
+    border-color: transparent;
+    box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3);
   }
 
   .textarea {
-    height: 120px; /* Compact for scrolling */
-    padding-right: 100px;
-    padding-top: 16px; /* FIXED: Match input padding for consistency */
-    padding-bottom: 16px; /* FIXED: Match input padding for consistency */
+    height: 128px; /* FIXED: Proportional to others */
+    padding: 16px 100px 16px 20px; /* FIXED: Extra right for attach, balanced left */
+    align-items: flex-start;
   }
 
   .textarea::placeholder {
@@ -976,82 +899,77 @@
 
   .select {
     font-size: 16px;
-    padding-right: 40px; /* Room for caret on small screen */
+    padding-right: 40px;
     background-size: 12px;
   }
 
   .phoneRow {
-    height: 50px; /* FIXED: Keep thumb height, but now horizontal row */
-    flex-direction: row; /* FIXED: Horizontal on mobile for same-line input */
-    padding: 0; /* Remove outer padding to avoid height inflation—let inners handle spacing */
-    overflow: hidden; /* Clip any micro-overflow for crisp edges */
-    border-radius: 12px; /* Unchanged */
-    border: 1px solid #A0A5AA; /* Outer border: single source of truth */
-    background: #FAFDFF; /* Unchanged: Subtle bg */
-    gap: 0; /* No gap—tight join */
+    height: 56px;
+    flex-direction: row;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid #A0A5AA;
+    background: #FAFDFF;
+    gap: 0;
     box-sizing: border-box;
-    margin: 0; /* FIXED: Explicit no margin to align starting line with other rows */
-    align-items: center !important; /* Override any inheritance */
-    position: relative; /* For unified focus ring */
-    transition: box-shadow 0.3s; /* Smooth unified focus */
-  }
-
-  .phoneRow:focus-within {
-    outline: none;
-    border-color: transparent; /* Unified focus: Swap row border for shadow */
-    box-shadow: 0 0 0 3px rgba(13, 81, 154, 0.3); /* Unchanged: Sharper ring */
+    margin: 0;
+    align-items: center !important;
+    position: relative;
+    transition: box-shadow 0.3s;
   }
 
   .phoneRow:focus-within .countrySelectorWrapper,
   .phoneRow:focus-within input {
-    border-color: transparent !important; /* No inner borders to interfere */
+    border-color: transparent !important;
   }
 
   .countrySelectorWrapper {
-    height: 100%; /* FIXED: Full height for seamless join */
-    padding: 16px 10px 16px 20px; /* FIXED: Looser vertical (16px from 12px) and right (10px from 8px) for mobile—flag needs air */
-    min-width: 70px; /* Slight bump from 60px to accommodate flag without cramping code */
-    border: none !important; /* FIXED: Kill all inner borders—row handles outer */
-    border-right: 1px solid #A0A5AA; /* FIXED: Single straight divider line, full height */
-    border-radius: 0; /* FIXED: No radius—row's outer curve covers it */
-    flex: 0 0 auto; /* FIXED: Fixed size, no grow/shrink */
+    height: 100%;
+    padding: 16px; /* FIXED: Symmetric balance, uniform left/right */
+    min-width: 100px; /* FIXED: Even split, no jut */
+    border: none !important;
+    border-right: 1px solid #A0A5AA;
+    border-radius: 0;
+    flex: 0 0 auto;
     position: relative;
-    justify-content: flex-start; /* FIXED: Left-align flag/code, then arrow pushed right */
-    gap: 4px; /* FIXED: Tighter internal gap */
-    background: transparent; /* FIXED: No bg—blends with row */
-    box-sizing: border-box; /* FIXED: Locks the divider to full height */
+    justify-content: flex-start;
+    gap: 4px;
+    background: transparent;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
   }
 
-  /* Lock internals to full vertical stretch—no wobble */
   .countrySelectorWrapper .flag,
   .countrySelectorWrapper .selectedCode,
   .countrySelectorWrapper .selectArrow {
     height: 100%;
     display: flex;
-    align-items: center; /* Ensures code/arrow baseline with flag */
+    align-items: center;
     box-sizing: border-box;
   }
 
   .selectArrow {
-    margin-left: auto; /* FIXED: Push arrow to end after code */
-    position: static; /* FIXED: Remove absolute for proper flex order: flag -> code -> arrow */
-    right: auto; /* FIXED: Reset absolute props */
+    margin-left: auto;
+    position: static;
+    right: auto;
     top: auto;
-    transform: none; /* FIXED: No translate needed */
-    font-size: 12px; /* Unchanged */
+    transform: none;
+    font-size: 12px;
     color: #A0A5AA;
   }
 
   .selectedCode {
-    font-size: 16px; /* Up from 14px—better visibility without crowding */
+    font-size: 16px;
     line-height: 1.2;
-    padding: 0 2px; /* Tighter on mobile */
+    padding: 0 2px;
   }
 
   .flag {
-    width: 28px !important; /* Scaled down but visible (from 24px) */
+    width: 28px !important;
     height: 18px !important;
-    margin-right: 0; /* FIXED: No margin—tight with code */
+    margin-right: 0;
     border-radius: 2px;
     min-width: 28px;
     flex: 0 0 28px;
@@ -1061,22 +979,21 @@
   .phoneRow input {
     flex: 1;
     height: 100%;
-    padding: 16px 20px; /* Even top/bottom for dead-center text (from 12px vert) */
-    border: none !important; /* FIXED: Kill all inner borders—row handles outer, no doubles */
-    border-radius: 0; /* FIXED: No radius—row's outer curve covers it */
-    border-left: none; /* Redundant now, but safe */
+    padding: 0 16px; /* FIXED: Uniform sides, no left extra since country handles it */
+    border: none !important;
+    border-radius: 0 12px 12px 0;
     margin: 0;
     box-sizing: border-box;
-    line-height: 1.2; /* FIXED: Slight loosen for readability */
+    line-height: 1.2;
     white-space: nowrap;
-    align-self: stretch; /* FIXED: Full height stretch */
-    background: transparent; /* FIXED: Blends with row—no disjoint bg */
+    align-self: stretch;
+    background: transparent;
     display: flex;
     align-items: center;
-    outline: none; /* NEW: Kill any default browser outline/border on the input itself (mobile-specific) */
+    outline: none;
   }
 
-  .phoneRow input:focus { /* NEW: Extra layer for focus—ensures no outline or border flashes on tap */
+  .phoneRow input:focus {
     outline: none !important;
     border: none !important;
   }
@@ -1090,14 +1007,14 @@
   }
 
   .attachLabel {
-    top: 12px;
-    right: 12px;
+    top: 16px;
+    right: 16px;
     font-size: 13px;
     padding: 4px 6px;
   }
 
   .attachedFile {
-    grid-template-columns: 1fr; /* Stack preview and actions vertically */
+    grid-template-columns: 1fr;
     gap: 8px;
     padding: 12px;
     text-align: center;
@@ -1108,23 +1025,15 @@
     width: 100%;
   }
 
-  .sendButton {
-    width: 100%;
-    height: 44px; /* Thumb-sized */
-    padding: 8px 16px;
-    font-size: 15px;
-  }
-
   .submitButton {
     width: 100%;
-    height: 50px; /* Consistent with inputs */
-    padding: 8px 20px;
+    height: 56px;
+    padding: 0 20px;
     font-size: 16px;
     margin: 0.5rem auto 0;
     border-radius: 12px;
   }
 
-  /* Country dropdown on mobile */
   .countryDropdown {
     position: fixed;
     top: auto;
@@ -1149,35 +1058,31 @@
     border-radius: 4px;
   }
 
-  /* Landscape phone tweaks (e.g., 320px-480px width, taller height) */
+  /* Landscape phone tweaks */
   @media (max-height: 500px) and (orientation: landscape) {
-    .contactSection {
-      padding: 20px 0;
-    }
-
     .topContent {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
     }
 
     .contactHeading {
-      font-size: 24px;
+      font-size: clamp(18px, 4vw, 24px);
     }
 
     .contactLead {
-      font-size: 14px;
-      display: none; /* Hide lead text in cramped landscape to save space */
+      font-size: clamp(11px, 2vw, 14px);
+      display: none; /* Keep hidden for space if needed */
     }
 
     .rightColumn {
-      padding: 24px 16px;
+      padding: 24px;
     }
 
     .textarea {
-      height: 80px;
+      height: 96px;
     }
 
     .cardIntro {
-      display: none; /* Prioritize form in tight spaces */
+      display: none;
     }
 
     .countryDropdown {
@@ -1185,50 +1090,80 @@
     }
   }
 
-  /* Extra small phones (e.g., < 360px width) */
+  /* Extra small phones */
   @media (max-width: 360px) {
-    .container {
-      padding: 0 10px;
+    .topContent {
+      padding: 0;
     }
 
-    .infoIconCircle {
-      width: 40px;
-      height: 40px;
-      padding: 10px 12px; /* FIXED: Tighter for extra small */
+    .contactHeading,
+    .contactLead {
+      padding: 0;
+      max-width: 100vw; /* FIXED: Full for XS center */
+    }
+
+    .contactGrid {
+      padding: 0 8px; /* UPDATED: Matches mobile reduction (8px both sides) */
+    }
+
+    .rightColumn {
+      padding: 28px;
     }
 
     .input,
     .select,
-    .phoneRow {
-      height: 48px;
-      padding: 14px 16px;
+    .phoneRow,
+    .textarea {
+      padding: 14px 14px 14px 18px; /* FIXED: Scaled uniform with slight left balance for XS */
+    }
+
+    .textarea {
+      padding: 14px 96px 14px 18px;
     }
 
     .phoneRow input {
-      padding: 14px 12px; /* FIXED: Even tighter for extra small */
+      padding: 0 14px;
     }
 
     .countrySelectorWrapper {
-      padding: 10px 6px;
-      min-width: 55px;
+      padding: 14px;
+      min-width: 90px;
     }
 
     .flag {
-      width: 20px;
-      height: 14px;
+      width: 24px !important;
+      height: 16px !important;
     }
 
     .selectedCode {
-      font-size: 13px;
+      font-size: 14px;
     }
 
     .submitButton {
-      height: 48px;
+      height: 52px;
       font-size: 15px;
     }
 
     .countryDropdown {
       width: 100vw;
+    }
+
+    .leftColumn {
+      padding-left: 0;
+    }
+
+    /* UPDATED: Icon circle scales down slightly for XS but stays larger than before */
+    .infoIconCircle {
+      width: 60px; /* Slightly smaller than 64px for tiny screens, but increased from original 52px */
+      height: 60px;
+      border-radius: 30px;
+      padding: 16px 18px;
+    }
+
+    .infoIconCircle svg,
+    .infoIconCircle img {
+      width: 22px; /* Scaled proportionally for XS */
+      height: 22px;
     }
   }
 }
