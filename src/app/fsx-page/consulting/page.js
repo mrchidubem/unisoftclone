@@ -51,7 +51,7 @@ const Consulting = () => {
             enterprises, helping them overcome challenges and unlock growth
             opportunities in Nigeria and across Africa.
           </p>
-          {/* <div >
+          <div >
             <ButtonGroup
               filterKeys={['fsxConsulting1', 'ExploreConsulting']}
               onClickHandlers={{
@@ -59,7 +59,7 @@ const Consulting = () => {
                ExploreConsulting: scrollToConsultingService,
               }}
             />
-          </div> */}
+          </div>
           <div className={styles.customers}>
             <Image
               src="/customerConsulting.png"
