@@ -127,26 +127,26 @@
 }
 
 .infoIconCircle {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-width: 1.5px;
   border-style: solid;
   border-color: #0D519A;
   background: #DDE9FF;
-  border-radius: 28px;
+  border-radius: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 16px 18px;
+  padding: 18px 20px;
   gap: 10px;
   box-sizing: border-box;
 }
 
 .infoIconCircle svg,
 .infoIconCircle img {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   color: #0D519A;
 }
 
@@ -743,7 +743,7 @@
 
   .contactGrid {
     grid-template-columns: 1fr;
-    gap: 4.375rem; /* FIXED: 70px vertical gap between stacked sections (left/right columns) */
+    gap: 5rem; /* UPDATED: Increased from 4.375rem (70px) to 5rem (80px) for more space between stacked left/right columns */
     padding: 0 8px; /* UPDATED: Reduced from 16px to 8px on both sides for tighter edges (as discussed—prevents flush but adds immersion) */
     justify-content: center; /* FIXED: Ensures column centering */
   }
@@ -785,7 +785,7 @@
   }
 
   .contactInfo {
-    gap: 1.25rem;
+    gap: 36px; /* UPDATED: Increased from 24px to 36px for generous spacing between info items (Email, Phone, Location) */
     align-items: flex-start;
   }
 
@@ -802,17 +802,17 @@
 
   .infoIconCircle {
     /* UPDATED: Increased size to match desktop for more prominence on mobile */
-    width: 56px; /* Was 48px */
-    height: 56px; /* Was 48px */
-    border-radius: 28px; /* Was 24px—keeps it perfectly circular */
-    padding: 16px 18px; /* Was 12px 14px—better centering for larger icons */
+    width: 64px; /* Increased from 56px for larger diameter */
+    height: 64px; /* Increased from 56px for larger diameter */
+    border-radius: 32px; /* Adjusted for perfect roundness on larger size */
+    padding: 18px 20px; /* Adjusted for better centering on larger size */
   }
 
   .infoIconCircle svg,
   .infoIconCircle img {
     /* UPDATED: Slightly larger icons inside the bigger circle */
-    width: 20px; /* Was 18px */
-    height: 20px; /* Was 18px */
+    width: 24px; /* Increased from 20px to fill the larger circle proportionally */
+    height: 24px; /* Increased from 20px to fill the larger circle proportionally */
   }
 
   .emailSubtext {
@@ -1154,16 +1154,16 @@
 
     /* UPDATED: Icon circle scales down slightly for XS but stays larger than before */
     .infoIconCircle {
-      width: 52px; /* Slightly smaller than 56px for tiny screens, but still increased from original 48px */
-      height: 52px;
-      border-radius: 26px;
-      padding: 14px 16px;
+      width: 60px; /* Slightly smaller than 64px for tiny screens, but increased from original 52px */
+      height: 60px;
+      border-radius: 30px;
+      padding: 16px 18px;
     }
 
     .infoIconCircle svg,
     .infoIconCircle img {
-      width: 18px;
-      height: 18px;
+      width: 22px; /* Scaled proportionally for XS */
+      height: 22px;
     }
   }
 }
