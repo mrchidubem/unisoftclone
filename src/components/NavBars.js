@@ -14,7 +14,6 @@ export default function Navbar() {
 
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
-  // Close menus only on mobile
   const closeMobileMenu = () => {
     if (window.innerWidth < 768) {
       setMenuOpen(false);
@@ -74,7 +73,7 @@ export default function Navbar() {
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        ☰
+        {menuOpen ? '✖' : '☰'}
       </button>
 
       {/* Nav Links */}
@@ -131,15 +130,14 @@ export default function Navbar() {
             ].map(([path, label]) => (
               <li key={path}>
                 <Link href={`/fsx-page/${path}`} onClick={(e) => {
-  if (path === 'not-found') {
-    e.preventDefault();
-    // Handle the "Not Found" link click event
-  } else {
-    closeMobileMenu();
-  }
-}} className={pathname === `/fsx-page/${path}` ? styles.activeLink : ''}>
-  {label}
-</Link>
+                  if (path === 'not-found') {
+                    e.preventDefault();
+                  } else {
+                    closeMobileMenu();
+                  }
+                }} className={pathname === `/fsx-page/${path}` ? styles.activeLink : ''}>
+                  {label}
+                </Link>
               </li>
             ))}
           </ul>

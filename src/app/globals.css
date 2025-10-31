@@ -481,6 +481,32 @@ section {
 }
 
 
+@media screen and (min-width: 1440px) {
+  .svmSection {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .textColumn {
+    width: 40%;
+  }
+
+  .imageColumn {
+    width: 55%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .responsiveImage {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+
+
 
 /* HERO SECTIONS */
  .hero {
