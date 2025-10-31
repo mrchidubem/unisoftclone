@@ -189,8 +189,9 @@ export default function HomePage() {
       </section>
 
       {/* === BRAND FAMILY SECTION === */}
-      <section data-aos="fade-up">
-        <div
+    
+<section>
+  <div
         className={styles.brandFamily}
         data-aos="fade-up"
       >
@@ -206,8 +207,10 @@ export default function HomePage() {
             individuals succeed.
           </h6>
         </div>
+         </div>
+
         <div className="grid">
-          <div className={styles.card}>
+          <div className= {styles.card}>
             <h3 className={styles.cardTitle}>FSX Consulting</h3>
             <p className={styles.cardTagline}>
               <em></em> “Build Smarter. Scale Faster.”
@@ -285,7 +288,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-             </div>
+            
       </section>
 
       {/* === PARTNERS === */}
@@ -323,7 +326,7 @@ export default function HomePage() {
             </div>
             <div className={styles.logoItem}>
               <Image
-                src="/F_Andela2.png"
+                src="/F_andela3.png"
                 alt="Andela"
                 width={200}
                 height={100}
@@ -359,7 +362,7 @@ export default function HomePage() {
             </div>
             <div className={styles.logoItem}>
               <Image
-                src="/F_Andela2.png"
+                src="/F_andela3.png"
                 alt="Andela"
                 width={200}
                 height={100}

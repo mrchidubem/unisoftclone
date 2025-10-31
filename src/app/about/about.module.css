@@ -80,15 +80,10 @@
 
 .svmSection {
   display: flex;
-  flex-wrap: wrap;
+ flex-direction: row;
   gap: 2rem;
-  padding: 2rem;
-  max-width: 1340px;
-  margin: 0 auto;
   align-items: flex-start;
-  padding-top: 40px;
-  padding-bottom: 40px;
-
+ 
 }
 
 .textColumn {
@@ -200,10 +195,11 @@
 
 /* Core Section */
 .coreSection {
-  padding: 40px 7rem;
+  padding: 20px 2rem;
   margin: 0 auto;
-
   color: #2C3E50;
+  text-align: center;
+  align-items: center;
 }
 
 .heading {
@@ -292,7 +288,7 @@
 /* 📱 Small Screens (Phones) */
 @media (max-width: 768px) {
   .coreSection {
-    padding: 40px 1.5rem;
+    padding: 20px 1.5rem;
   }
 
   .grid {
@@ -324,12 +320,14 @@
 
 
 
-
+/* Meet CEO */
 
 .ceoSection {
-  padding: 2rem;
-  max-width: 1300px;
-  margin: 0 auto 4rem auto;
+padding: 20px 2rem;
+  margin: 0 auto;
+  color: #2C3E50;
+  text-align: center;
+  align-items: center;
 }
 
 .heading {
@@ -359,7 +357,7 @@
   display: flex; 
   justify-content: center;
    align-items: center; 
-   padding: 4rem; 
+ 
   } 
   
   .ceoImage { 
