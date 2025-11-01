@@ -160,7 +160,8 @@ function HeroSection() {
         <h1>{PAGE_TITLE}</h1>
         <p>{PAGE_DESCRIPTION}</p>
 
-        <div className={styles.heroBtns}>
+        {/* <div className={styles.heroBtns}> */}
+           <div>
           <ButtonGroup
             filterKeys={['fsxevents', 'ExploreEvents']}
             onClickHandlers={{
@@ -175,11 +176,11 @@ function HeroSection() {
         <Image
           src="/event1.png"
           alt="FSX Team"
-          fill={false}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: '100%', height: '30%' }}
+          // fill={false}
+          width={540}
+          height={330}
+          // sizes="100vw"
+          // style={{ width: '100%', height: '30%' }}
           priority
         />
       </div>
