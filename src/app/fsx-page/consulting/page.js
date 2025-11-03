@@ -79,7 +79,6 @@ const Consulting = () => {
             alt="error 404 image"
             width={600}
             height={400}
-            
           />
         </div>
       </div>
