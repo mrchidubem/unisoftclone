@@ -42,7 +42,7 @@ font-size: 2.5rem;
   max-width: 450px;
 } */
  /* Hero Section */
-.hero {
+/* .hero {
   margin-top: 100px;
   display: flex;
   align-items: center;
@@ -51,7 +51,7 @@ font-size: 2.5rem;
   background: linear-gradient(to bottom right, #0d519a 10%, #0d519a 55%, #ffffff 150%);
   color: white;
   gap: 50px;
-}
+} */
 
 .heroText {
   display: flex;
