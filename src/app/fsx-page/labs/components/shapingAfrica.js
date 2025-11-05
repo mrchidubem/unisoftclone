@@ -28,7 +28,8 @@ const fadeUp = {
 
 const ShapingAfrica = () => {
   return (
-    <section className={styles.section}>
+    <section >
+      <div className={styles.section}>
       <motion.div
         className={styles.heading}
         initial="hidden"
@@ -36,12 +37,15 @@ const ShapingAfrica = () => {
         viewport={{ once: true, amount: 0.2 }}
         variants={fadeUp}
       >
+
+         <div className="sectionHead">
         <h2>Shaping the Future of Technology in Africa</h2>
-        <p>
+        <h6>
           Together, we’ll engineer the tools that shape Africa. From concept to
           prototype to market-ready product, FSX Labs is your partner in
           innovation.
-        </p>
+        </h6>
+        </div>
       </motion.div>
 
       <div className={styles.grid}>
@@ -69,6 +73,7 @@ const ShapingAfrica = () => {
             </div>
           </motion.div>
         ))}
+      </div>
       </div>
     </section>
   );

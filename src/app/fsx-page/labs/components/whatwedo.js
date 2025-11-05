@@ -39,12 +39,15 @@ const services = [
 
 export default function WhatWeDo() {
   return (
-    <section id="whatwedo" className={styles.container}>
-      <h2 className={styles.title}>What We Do</h2>
-      <p className={styles.subtitle}>
+    <section >
+      <div id="whatwedo" className={styles.container}>
+         <div className="sectionHead">
+      <h2> What We Do </h2>
+      <h6 >
         FSX Labs provides businesses and institutions with the tools they need
         to innovate, automate, and grow.
-      </p>
+      </h6>
+      </div>
 
       <div className={styles.cardsWrapper}>
         {services.map((service, index) => (
@@ -60,6 +63,7 @@ export default function WhatWeDo() {
             <p className={styles.cardDesc}>{service.description}</p>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );

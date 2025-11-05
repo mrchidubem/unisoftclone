@@ -38,11 +38,15 @@ const services = [
 
 export default function HowWeDo() {
   return (
-    <section className={styles.container}>
-      <h2 className={styles.title}>How We Do It</h2>
-      <p className={styles.subtitle}>
+    <section >
+        <div className="sectionHead">
+      <h2>How We Do It</h2>
+      <h6>
         We believe innovation starts with people — their needs, challenges, and goals. That’s why our UX-driven process ensures every solution is practical, scalable, and impactful.
-      </p>
+      </h6>
+         </div>
+      <div className={styles.container}>
+      
 
       <div className={styles.cardsWrapper}>
         {services.map((service, index) => (
@@ -59,6 +63,8 @@ export default function HowWeDo() {
           </div>
         ))}
       </div>
+      </div>
+   
     </section>
   );
 }
