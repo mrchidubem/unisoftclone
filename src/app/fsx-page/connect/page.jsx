@@ -365,17 +365,19 @@ export default function FsxConnect() {
             </p>
             <button className={styles.ctaButton}  onClick={ scrollToContact}>Join Us Today</button> 
           </div>
-          <Image
-            // src="/ellipse-globe-icon.svg"
-            src="/globes-icon.png"
-            alt="Call to Action Image"
-            className={styles.ctaImage}
-            // width={550}
-            // height={350}
-             width={600}
-            height={400}
-            objectFit="cover"
-          />
+          <div className={styles.ctaImageContainer}>
+            <Image
+              // src="/ellipse-globe-icon.svg"
+              src="/globes-icon.png"
+              alt="Call to Action Image"
+              className={styles.ctaImage}
+              // width={550}
+              // height={350}
+               width={600}
+              height={400}
+              objectFit="cover"
+            />
+          </div>
         </section>
       </div>
     </div>
