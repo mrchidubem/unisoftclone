@@ -23,7 +23,8 @@ const AboutSection = () => {
   }, []);
 
   return (
-    <section className={styles.aboutSection}>
+    <section >
+      <div className={styles.aboutSection}>
       <div className={styles.aboutContent}>
         {/* Left Column - Text */}
         <div className={styles.aboutText} data-animate="fade-in-left">
@@ -54,6 +55,7 @@ const AboutSection = () => {
             height={352} 
           />
         </div>
+      </div>
       </div>
     </section>
   );
