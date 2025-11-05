@@ -1,14 +1,10 @@
-
 .footer {
   position: relative;
   color: #F1F5F9;
   padding: 4rem 2rem 2rem;
   font-family: 'Inter', sans-serif;
   overflow: visible;
-  margin-top: -40;
-  
- 
-  
+  margin-top: -40px;
 }
 
 /* Background image layer */
@@ -19,10 +15,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/dotted-world-map-png.webp'); 
+  background-image: url('/dotted-world-map-png.webp');
   background-size: cover;
   background-position: center;
-  opacity: 0.5; 
+  opacity: 0.5;
   z-index: 0;
 }
 
@@ -37,7 +33,6 @@
   background-color: #111927;
   opacity: 0.9;
   z-index: 1;
-  
 }
 
 /* Content stays above layers */
@@ -45,10 +40,7 @@
 .bottomNote {
   position: relative;
   z-index: 2;
-   
 }
-
-
 
 .topSection {
   display: flex;
@@ -56,38 +48,37 @@
   justify-content: space-between;
   gap: 2rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 5rem;
 }
 
 .branding {
   flex: 1 1 300px;
-
 }
 
 .logo {
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  margin-top: -15px;
 }
 
 .tagline {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   margin-top: 0.95rem;
-  max-width: 250;
+  max-width: 250px;
   line-height: 1.8;
 }
 
 .socialIcons {
   display: flex;
   gap: 1rem;
-
 }
 
 .links {
   display: flex;
   gap: 10rem;
-  flex: 1 1 400;
+  flex: 1 1 400px;
 }
 
 .linkGroup {
@@ -176,93 +167,138 @@
   background-color: #7C8084;
 }
 
+/* 🌐 Medium Screens */
+@media (max-width: 1280px) {
+  .topSection {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 0 4rem;
+  }
 
+  .branding {
+    flex: 1 1 280px;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    margin-top: -1rem;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 250px;
+    line-height: 1.6;
+  }
+
+  .socialIcons {
+    gap: 0.55rem;
+    flex-wrap: wrap;
+  }
+
+  .links {
+    flex: 1 1 320px;
+    gap: 5rem;
+    justify-content: flex-start;
+  }
+
+  .linkGroup h4 {
+    font-size: 1rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .linkGroup a {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .newsletter {
+    flex: 1 1 310px;
+    margin-top: 0;
+  }
+
+  .newsletter h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .newsletter p {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    max-width: 400px;
+  }
+
+  .form input {
+    flex: 1 1 200px;
+    font-size: 0.9rem;
+  }
+
+  .form button {
+    font-size: 0.9rem;
+  }
+
+  .bottomNote {
+    font-size: 0.8rem;
+    margin-top: 2rem;
+  }
+
+  .bottomNote::before {
+    top: -1rem;
+  }
+}
 
 /* 🌐 Small Tablets & Landscape Phones */
 @media (max-width: 768px) {
   .topSection {
     flex-direction: column;
-    align-items: center;
-    margin-left: 2rem;
-  }
-
-  .links {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-
-  .form {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .form input,
-  .form button {
-    width: 100%;
-  }
-
-  .bottomNote {
-    font-size: 0.75rem;
-    text-align: center;
-  }
-}
-
-/* 🌐 Medium Tablets (Surface Pro, iPad Air, iPad Mini) */
-@media (max-width: 1024px) {
-  .topSection {
-    flex-direction: column;
     align-items: flex-start;
+    margin: 0 1.5rem;
     gap: 2rem;
-    margin-left: 2rem;
   }
 
   .branding,
   .newsletter,
   .links {
     width: 100%;
-    margin-left: 0;
-  }
-
-  .logo,
-  .tagline,
-  .newsletter h4,
-  .newsletter p,
-  .linkGroup h4,
-  .linkGroup a {
-    text-align: left;
-  }
-
-  .newsletter p {
-    max-width: 90%;
   }
 
   .links {
     flex-direction: column;
     gap: 2rem;
-    align-items: flex-start;
   }
 
   .form {
-    flex-direction: column;
-    width: 100%;
+    gap: 0.75rem;
+    display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: auto;
   }
 
-  .form input {
-    width: 90%;
-  }
-
+  .form input,
   .form button {
-    width: 50%;
-    margin-bottom: 1.5rem;
+    width: auto;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    border-radius: 10px;
   }
 
   .bottomNote {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    text-align: center;
     margin-top: 2rem;
-    text-align: left;
+  }
+
+  .bottomNote::before {
+    top: -1rem;
   }
 }
+
+
 
 /* 📱 Mobile Phones */
 @media (max-width: 480px) {
@@ -274,14 +310,13 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
-    margin-left: 1rem;
+    margin: 0 1rem;
   }
 
   .branding,
   .newsletter,
   .links {
     width: 100%;
-    margin-left: 0;
   }
 
   .logo,
@@ -300,16 +335,15 @@
   .links {
     flex-direction: column;
     gap: 2rem;
-    align-items: flex-start;
   }
 
   .form {
-    flex-direction: column;
-    width: 100%;
+  
+    width: 90%;
   }
 
   .form input {
-    width: 80%;
+    width: 90%;
   }
 
   .form button {
