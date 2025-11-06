@@ -132,7 +132,7 @@ export default function Contact() {
                     <div className={styles.infoText}>
                       <h6 className={styles.emailHeading}>Phone</h6>
                       <span className={styles.emailSubtext}>Call us on weekdays from 9AM - 5PM</span>
-                      <p className={styles.emailValue}>0800 234 567 89</p>
+                      <p className={styles.emailValue}>+2348130706942</p>
                     </div>
                   </div>
                   {/* Location Item */}
