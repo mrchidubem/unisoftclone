@@ -1,15 +1,10 @@
-/* 'use client'; */
+'use client'; 
 
 import styles from './about.module.css';
 import Image from 'next/image';
+import AOS from "aos";
+import { useEffect } from "react";
 
-
-export const metadata = {
-  title: "About Us Fransunisoft",
-  description:
-    "Learn more about Fransunisoft, our misiion and vision. ",
-
-};
 
 
 const values = [
@@ -46,6 +41,14 @@ const values = [
 ];
 
 export default function AboutPage() {
+
+  useEffect(() => {
+    setTimeout(() => {
+      AOS.init({ duration: 1000, once: true });
+    }, 100);
+  }, []);
+
+
   return (
     <main className={styles.aboutMain}>
       {/* Hero Section */}
@@ -106,7 +109,7 @@ export default function AboutPage() {
 </section>
 
 {/* Core Values Section */}
-<section>
+<section className='' data-aos="fade-up">
   <div className={styles.coreSection}>
     <h2>Our Core Values</h2>
   </div>
@@ -130,7 +133,7 @@ export default function AboutPage() {
 
 
       {/* CEO Section */}
-      <section>
+      <section className=''  data-aos="fade-up">
            <div className={styles.ceoSection}>
         <h2 >Meet Our CEO</h2>
         </div>

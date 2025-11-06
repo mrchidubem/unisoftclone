@@ -377,14 +377,79 @@ padding: 20px 2rem;
 
 .bio p {
   margin-bottom: 1.2rem;
-  margin-left: 2rem;
-  line-height: 1.95rem;
+  margin-left: 2.5rem;
+  line-height: 1.75rem;
 }
+
+
+
+
+@media (max-width: 1280px) {
+
+.heading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: #2C3E50;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 4rem;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  color: #ffffff;
+  background-color: #093A6D;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+.imageWrapper { 
+  flex: 1 1 40%; 
+  display: flex; 
+  justify-content: center;
+   align-items: center; 
+ 
+  } 
+  
+  .ceoImage { 
+    width: 200%; 
+    max-width: 500px;
+     aspect-ratio: 1 / 1; 
+     object-fit: cover; 
+     border-radius: 8px; 
+     box-shadow: 0 4px 12px #2C3E50;
+     margin-left: 2rem;
+     }
+
+
+.bio {
+  flex: 1 1 40%;
+  font-size: 0.95rem;
+  line-height: 1rem;
+}
+
+.bio p {
+  margin-bottom: 1.2rem;
+  margin-left: 4rem;
+  line-height: 1.5rem;
+}
+}
+
 
 /* 💻 Tablet */
 @media (max-width: 1024px) {
   .ceoSection {
     padding: 1rem;
+    padding: 20px 2rem;
+  margin: 0 auto;
+  color: #2C3E50;
+  text-align: center;
+  align-items: center;
   }
 
   .heading {

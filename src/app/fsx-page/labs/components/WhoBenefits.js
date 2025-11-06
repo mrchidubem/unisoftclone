@@ -25,7 +25,8 @@ const benefitCards = [
 
 const WhoBenefits = () => {
   return (
-    <section className={styles.section}>
+    <section >
+      <div className={styles.section}>
       <div className={styles.wrapper}>
         <motion.h2
           className={styles.title}
@@ -65,6 +66,7 @@ const WhoBenefits = () => {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

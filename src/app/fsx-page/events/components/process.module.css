@@ -1,0 +1,50 @@
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+.title {
+  color: #0D519A;
+}
+
+.description {
+ color: #2C3E50;
+}
+
+/* === IMAGE === */
+.cardImage {
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  object-fit: cover;
+}
+.equalHeightSwiper{
+  height: auto !important;
+  padding-bottom: 2rem;
+}
+.equalHeightSwiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch; /* all slides will match the tallest one */
+}
+
+/* Each slide stretches vertically */
+.equalHeightSwiper .swiper-slide {
+  display: flex;
+  align-items: stretch;
+}
+/* .equalHeightSwiper .swiper-slide{
+   display: flex;
+  align-items: stretch;
+  padding-bottom: 2rem;
+ 
+} */
+.equalHeightSwiper #card{
+  flex: 1;
+  display: flex;
+
+  /* height: 350px !important;  */
+}
+
+/* === RESPONSIVE STYLES === */
+
+
+

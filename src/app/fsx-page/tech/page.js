@@ -72,7 +72,7 @@ const FSXTech = () => {
              faster, and smarter.
              </p>
 
-          <div className={styles.heroBtns}>
+          <div  >
             <ButtonGroup
               filterKeys={['fsxtech1', 'ExploreTech']}
               onClickHandlers={{
@@ -89,6 +89,7 @@ const FSXTech = () => {
             alt="Hero Image"
             width={600} 
             height={400} 
+         
           />
         </div>
       </div>
@@ -131,7 +132,7 @@ const FSXTech = () => {
             width={612} 
             height={528} 
             className={styles.responsiveImage}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 768px) 100vw, 50vw" /* NEW: Match hero for consistency */
             style={{ width: '100%', height: 'auto' }}
           />
         </div>
