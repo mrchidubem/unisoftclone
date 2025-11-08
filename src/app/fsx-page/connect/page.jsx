@@ -102,7 +102,65 @@ export default function FsxConnect() {
           </div>
         </div>
 
-        <section  data-aos="fade-up">
+        <section data-aos="fade-up">
+          <div className={styles.fsxStats}>
+            <div className={styles.stat}>
+              <h2 className={styles.countBlock}>
+                <CountUp
+                  end={5000}
+                  duration={2}
+                  separator=","
+                  enableScrollSpy
+                  className={styles.plus}
+                />
+                +
+              </h2>
+              <h6 className={styles.label}>Community Members</h6>
+            </div>
+            <div className={styles.stat}>
+              <h2 className={styles.countBlock}>
+                <CountUp
+                  end={100}
+                  duration={2.5}
+                  separator=","
+                  enableScrollSpy
+                  className={styles.plus}
+                />
+                +
+              </h2>
+              <h6 className={styles.label}>Successful Partnerships</h6>
+            </div>
+            <div className={styles.stat}>
+              <h2 className={styles.countBlock}>
+                <CountUp
+                  end={200}
+                  duration={1.5}
+                  separator=","
+                  enableScrollSpy
+                  className={styles.plus}
+                />
+                +
+              </h2>
+              <h6 className={styles.label}>Industry Experts</h6>
+            </div>
+            <div className={styles.stat}>
+              <h2 className={styles.countBlock}>
+                <CountUp
+                  end={10}
+                  duration={2}
+                  separator=","
+                  enableScrollSpy
+                  className={styles.plus}
+                />
+                +
+              </h2>
+              <h6 className={styles.label}>Countries Represented</h6>
+            </div>
+          </div>
+        </section>
+      
+
+        {/* <section  data-aos="fade-up">
           <div className={styles.cardParticipation}>
             <div className={styles.communityMem}>
               <h2 className={styles.communityMemCount}> <CountUp end={5000} duration={2} separator="" enableScrollSpy className={styles.counts}/>+</h2>
@@ -121,7 +179,7 @@ export default function FsxConnect() {
               <h6 className={styles.countriesTitle}>Countries Represented</h6>
             </div>
           </div>
-        </section>
+        </section> */}
 
         
         <section data-aos="fade-up">
@@ -363,7 +421,7 @@ export default function FsxConnect() {
               nation building, youth development, SDG support and innovation
               strategy?
             </p>
-            <button className={styles.ctaButton}  onClick={ scrollToContact}>Join Us Today</button> 
+            <button className={styles.ctaButton}  onClick={ scrollToContact }>Join Us Today</button> 
           </div>
           <div className={styles.ctaImageContainer}>
             <Image
