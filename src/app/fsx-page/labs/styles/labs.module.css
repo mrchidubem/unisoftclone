@@ -53,14 +53,14 @@
 }
 
 .heroContent h1 {
-  font-family: 'Bahnschrift', sans-serif; /* ✅ Page title font */
+ 
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
 }
 
 .heroContent p {
-  font-family: 'Roboto', sans-serif; /* ✅ Description font */
+  
   font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 2rem;

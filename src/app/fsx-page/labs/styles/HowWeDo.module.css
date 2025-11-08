@@ -6,7 +6,7 @@
 
 .title {
   font-size: 32px;
-  font-family: 'Bahnschrift', sans-serif;
+
   font-weight: 600;
   color: #0D519A;
   margin-bottom: 8px;
@@ -14,7 +14,7 @@
 
 .subtitle {
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
+
   font-weight: 400;
   color: #0D519A;
   margin-bottom: 40px;
@@ -59,7 +59,7 @@
 }
 
 .cardTitle {
-  font-family: 'Bahnschrift', sans-serif;
+ 
   font-size: 18px;
   font-weight: 600;
   color:  #2C3E50;
@@ -67,7 +67,7 @@
 }
 
 .cardDesc {
-  font-family: 'Roboto', sans-serif;
+
   font-size: 14px;
   font-weight: 400;
   color: #333;

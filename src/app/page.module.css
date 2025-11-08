@@ -27,8 +27,8 @@
 
 .typewriter {
   text-align: center;
-  font-weight: bold;
-  line-height: 1.5;
+  font-weight: bold; 
+   font-size: 48px;
   color: #F1F5F9;
   overflow: hidden;
   border-right: 1px solid #F1F5F9;
@@ -132,7 +132,7 @@
 /* ≤767px */
 @media (max-width: 768px) {
   .typewriter {
-
+font-size: 40px;
     margin: 2rem auto;
      
   }
@@ -163,6 +163,7 @@
     max-width: 100%;
     text-align: center; 
     display: block;
+     font-size: 32px;
   }
 
 
