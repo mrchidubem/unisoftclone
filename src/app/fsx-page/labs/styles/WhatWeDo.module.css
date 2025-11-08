@@ -45,7 +45,7 @@
 }
 
 .cardTitle {
-  font-family: 'Bahnschrift', sans-serif;
+
   font-size: 18px;
   font-weight: 600;
   color: #2C3E50;
@@ -53,7 +53,7 @@
 }
 
 .cardDesc {
-  font-family: 'Roboto', sans-serif;
+ 
   font-size: 14px;
   font-weight: 400;
   color: #333;
