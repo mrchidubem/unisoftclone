@@ -44,7 +44,7 @@ export default function HomePage() {
         <div className={styles.heroMain} data-aos="fade-up">
           <div className={styles.overlay}>
             <h1 className={styles.typewriter}>
-              Building Smarter, Scaling Faster Engineering Experiences, and
+              Building Smarter, Scaling Faster, Engineering Experiences, and
               Empowering Growth
             </h1>
 

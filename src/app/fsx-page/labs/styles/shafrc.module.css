@@ -5,26 +5,24 @@
 }
 
 .heading {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 50px;
+ display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .heading h2 {
-  font-size: 32px;
-  font-family: 'Bahnschrift', sans-serif;
-  font-weight: 600;
-  color: #0D519A;
-  margin-bottom: 15px;
-  line-height: 1.3;
+ text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .heading p {
   font-size: 16px;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  color: #333;
   line-height: 1.6;
+  margin-bottom: auto;
 }
 
 .grid {
