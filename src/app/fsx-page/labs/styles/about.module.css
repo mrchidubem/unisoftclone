@@ -31,7 +31,7 @@
 }
 
 .aboutText h2 {
-  font-family: "Bahnschrift", sans-serif;
+
   font-weight: 600;
   font-size: 32px;
   line-height: 38.4px;
@@ -40,7 +40,7 @@
 }
 
 .aboutText h3 {
-  font-family: "Bahnschrift", sans-serif;
+
   font-weight: 600;
   font-size: 24px;
   text-align : left;
@@ -50,7 +50,7 @@
 }
 
 .aboutText p {
-  font-family: "Roboto", sans-serif;
+
   font-size: 18px;
   font-weight: 400;
   line-height: 1.6;

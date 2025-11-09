@@ -117,11 +117,10 @@ export default function HomePage() {
           </div>
 
           <div className={styles.fsxImage}>
-            <Image
+            <img
               src="/F_What.png"
               alt="FSX Advantage"
-              width={100}
-              height={100}
+              
             />
           </div>
         </div>
@@ -144,7 +143,7 @@ export default function HomePage() {
           </div>
 
           <div className={styles.stat}>
-            <h2 className={styles.countBlock}>
+            < h2 className={styles.countBlock}>
               <CountUp
                 end={100000}
                 duration={2.5}

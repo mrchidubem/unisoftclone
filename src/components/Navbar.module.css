@@ -328,6 +328,7 @@
     position: static;
     box-shadow: none;
     padding-left: 0;
+    padding-right: 0;
     background-color: transparent;
     min-width: auto;
     transform: none;

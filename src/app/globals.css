@@ -317,6 +317,7 @@ section {
   }
 
      .card2 {
+      
        background-color: #ffffff;
        color: #2C3E50;
        display: flex;
@@ -325,6 +326,7 @@ section {
        padding: 2rem;
        gap: 0.5rem;
        width: 100%;
+       height: 100%;
        text-align: center;
        place-items: center;
        transition: transform 0.3s ease;
