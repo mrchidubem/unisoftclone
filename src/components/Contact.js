@@ -190,7 +190,7 @@ export default function Contact() {
                       <option value="Development">FSX Tech</option>
                       <option value="Event">FSX Events</option>
                       <option value="Connect">FSX Connect</option>
-                      <option value="Development">FSX Academy</option>
+                      <option value="Academy">FSX Academy</option>
                     </select>
                   </div>
 
