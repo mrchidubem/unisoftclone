@@ -40,14 +40,27 @@ export async function POST(request) {
       );
     }
 
+    // ✅ Mapping function for friendly service type display
+    const getServiceDisplay = (type) => {
+      const map = {
+        Consulting: 'FSX Consulting',
+        Support: 'FSX Support',
+        Development: 'FSX Tech',
+        Event: 'FSX Events',
+        Connect: 'FSX Connect',
+        Academy: 'FSX Academy'
+      };
+      return map[type] || type || 'Not specified';
+    };
+
     // ✅ Setup Nodemailer transporter
     const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com", // Example (replace with your provider)
+      host: "smtp.gmail.com", 
       port: 587,
       secure: false,
       auth: {
         user: "mrchidubem8@gmail.com", 
-        pass: "uyosmsrgampbbqla", // Replace with your actual Gmail app password
+        pass: "uyosmsrgampbbqla", 
       },
     });
 
@@ -58,7 +71,7 @@ export async function POST(request) {
           
           <!-- Header -->
           <div style="background: linear-gradient(135deg, #0D519A, #20A89F); padding: 20px; text-align: center; color: white;">
-            <h2 style="margin: 0;">📩 New Contact Request</h2>
+            <h2 style="margin: 0;">📩 New Fsx Contact Request</h2>
           </div>
 
           <!-- Body -->
@@ -67,14 +80,14 @@ export async function POST(request) {
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
             <p><strong>Company:</strong> ${company || "Not provided"}</p>
-            <p><strong>Service Type:</strong> ${serviceType || "Not specified"}</p>
+            <p><strong>Service Type:</strong> ${getServiceDisplay(serviceType)}</p>
             <p><strong>Message:</strong></p>
             <p style="background:#f1f1f1; padding:10px; border-radius:5px;">${message}</p>
           </div>
 
           <!-- Footer -->
           <div style="background: #0D519A; color: white; padding: 15px; text-align: center;">
-            <p style="margin: 0;">FSX Tech © ${new Date().getFullYear()} | Secure Mail</p>
+            <p style="margin: 0;">Fransunisoft © ${new Date().getFullYear()} | Secure Mail</p>
           </div>
         </div>
       </div>
@@ -82,9 +95,9 @@ export async function POST(request) {
 
     // ✅ Send email
     const info = await transporter.sendMail({
-      from: `"FSX Tech Contact" <mrchidubem8@gmail.com>`,
-      to: "mrchidubem9@gmail.com", // Hardcoded recipient
-      subject: `Contact Form Submission - ${firstName} ${lastName}`,
+      from: `"FSX Contact" <mrchidubem8@gmail.com>`,
+      to: "oluwaseyiayodele18@gmail.com",  // hello@fransunisoft.com
+      subject: `FSX Inquiry from ${firstName} ${lastName}`,
       html: htmlContent,
     });
 
