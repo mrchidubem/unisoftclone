@@ -1195,14 +1195,14 @@ font-size: 40px;
     display: flex;
     align-items: center;
     gap: 2rem;
-    width: max-content; 
+   /*  width: max-content;  */
     animation: scrollLogos 25s linear infinite; 
   }
 
   .logoItem {
     flex: 0 0 auto;
-    min-width: 80px;
-    height: 80px;
+    width: auto;
+    height: 100px;
     padding: 0.5rem;
   }
 
