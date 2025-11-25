@@ -60,7 +60,7 @@ export async function POST(request) {
       secure: false,
       auth: {
         user: "mrchidubem8@gmail.com", 
-        pass: "uyosmsrgampbbqla", 
+        pass: "vplpasxrnhguvrnw", 
       },
     });
 
@@ -96,7 +96,7 @@ export async function POST(request) {
     // ✅ Send email
     const info = await transporter.sendMail({
       from: `"FSX Contact" <mrchidubem8@gmail.com>`,
-      to: "oluwaseyiayodele18@gmail.com",  // hello@fransunisoft.com
+      to: "oluwaseyiayodele18@gmail.com", 
       subject: `FSX Inquiry from ${firstName} ${lastName}`,
       html: htmlContent,
     });
