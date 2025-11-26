@@ -30,41 +30,37 @@ const scrollToContact = (e) => {
 
 export default function Labs() {
   return (
-  <>
-    {/* ===== Hero Section ===== */}
-    <div className="hero" data-aos="fade-up">
-      <div className="heroText">
-        <h1>FSX Lab</h1>
-        <p>
-          Every great idea needs a space to grow. FSX Labs is where research,
-          creativity, and technology meet. We help you transform ideas into
-          prototypes, strategies, and innovations for the future.
-        </p>
+    <>
+      {/* ===== Hero Section ===== */}
+      <div className="hero" data-aos="fade-up">
+        <div className="heroText">
+          <h1>FSX Lab</h1>
+          <p>
+            Every great idea needs a space to grow. FSX Labs is where research,
+            creativity, and technology meet. We help you transform ideas into
+            prototypes, strategies, and innovations for the future.
+          </p>
 
-        <div className={styles.heroBtns}>
-          <ButtonGroup
-            filterKeys={['fsxlabs1', 'ExploreLabs']}
-            onClickHandlers={{
-              fsxlabs1: scrollToContact,
-              ExploreLabs: scrollToWhatWeDo,
-            }}
-          /> 
+          <div>
+            <ButtonGroup
+              filterKeys={["fsxlabs1", "ExploreLabs"]}
+              onClickHandlers={{
+                fsxlabs1: scrollToContact,
+                ExploreLabs: scrollToWhatWeDo,
+              }}
+            />
+          </div>
+        </div>
+
+        <div className={styles.heroImg}>
+          <Image
+            src="/labs.png"
+            alt="error 404 image"
+            width={600}
+            height={400}
+          />
         </div>
       </div>
-
-      <div className={styles.heroImg}>
-        <Image
-          src="/labs.png"
-          alt="FSX Lab Team"
-          fill={false}
-          width={0}
-          height={0}
-          sizes="100vw"
-          style={{ width: '100%', height: 'auto' }}
-          priority
-        />
-      </div>
-    </div>
 
       {/* ===== About Us Section ===== */}
       <Aboutus />
@@ -80,7 +76,6 @@ export default function Labs() {
 
       {/* Who Benefits */}
       <WhoBenefits />
-
     </>
   );
 }
