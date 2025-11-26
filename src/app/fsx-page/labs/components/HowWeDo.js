@@ -38,33 +38,32 @@ const services = [
 
 export default function HowWeDo() {
   return (
-    <section >
-        <div className="sectionHead">
-      <h2>How We Do It</h2>
-      <h6>
-        We believe innovation starts with people — their needs, challenges, and goals. That’s why our UX-driven process ensures every solution is practical, scalable, and impactful.
-      </h6>
-         </div>
-      <div className={styles.container}>
-      
-
-      <div className={styles.cardsWrapper}>
-        {services.map((service, index) => (
-          <div key={index} className={styles.card}>
-            <Image
-              src={service.icon}
-              alt={service.title}
-              width={64}
-              height={64}
-              className={styles.icon}
-            />
-            <h3 className={styles.cardTitle}>{service.title}</h3>
-            <p className={styles.cardDesc}>{service.description}</p>
-          </div>
-        ))}
+    <section>
+      <div className="sectionHead">
+        <h2>How We Do It</h2>
+        <h6>
+          We believe innovation starts with people — their needs, challenges,
+          and goals. That’s why our UX-driven process ensures every solution is
+          practical, scalable, and impactful.
+        </h6>
       </div>
+      <div>
+        <div className="grid">
+          {services.map((service, index) => (
+            <div key={index} className="card2">
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={64}
+                height={64}
+                className={styles.icon}
+              />
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
-   
     </section>
   );
 }

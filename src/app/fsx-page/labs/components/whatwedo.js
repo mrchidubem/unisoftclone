@@ -1,9 +1,8 @@
 "use client";
-
 import Image from "next/image";
 import styles from "../styles/WhatWeDo.module.css";
 
-const services = [ 
+const services = [
   {
     title: "Software Development",
     description: "Scalable apps and platforms built to solve real problems.",
@@ -39,31 +38,31 @@ const services = [
 
 export default function WhatWeDo() {
   return (
-    <section >
+    <section>
       <div id="whatwedo" className={styles.container}>
-         <div className="sectionHead">
-      <h2> What We Do </h2>
-      <h6 >
-        FSX Labs provides businesses and institutions with the tools they need
-        to innovate, automate, and grow.
-      </h6>
-      </div>
+        <div className="sectionHead">
+          <h2> What We Do </h2>
+          <h6>
+            FSX Labs provides businesses and institutions with the tools they
+            need to innovate, automate, and grow.
+          </h6>
+        </div>
 
-      <div className={styles.cardsWrapper}>
-        {services.map((service, index) => (
-          <div key={index} className={styles.card}>
-            <Image
-              src={service.icon}
-              alt={service.title}
-              width={64}
-              height={64}
-              className={styles.icon}
-            />
-            <h3 className={styles.cardTitle}>{service.title}</h3>
-            <p className={styles.cardDesc}>{service.description}</p>
-          </div>
-        ))}
-      </div>
+        <div className="grid">
+          {services.map((service, index) => (
+            <div key={index} className="card2">
+              <Image
+                src={service.icon}
+                alt={service.title}
+                width={64}
+                height={64}
+                className={styles.icon}
+              />
+              <h3>{service.title}</h3>
+              <p >{service.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -1,23 +1,23 @@
 "use client";
-import styles from '../styles/shafrc.module.css';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import styles from "../styles/shafrc.module.css";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const data = [
   {
-    title: 'Innovation Hub',
+    title: "Innovation Hub",
     text: "Imagine a space where bold ideas come alive; that's exactly what our innovation labs in Nigeria are built for.",
-    img: '/lab2.1.png',
+    img: "/lab2.1.png",
   },
   {
-    title: 'Research and Development Africa',
+    title: "Research and Development Africa",
     text: "We’re pushing the boundaries of research and development across Africa, turning today’s challenges into tomorrow’s opportunities.",
-    img: '/lab2.2.png',
+    img: "/lab2.2.png",
   },
   {
-    title: 'Prototype Testing',
+    title: "Prototype Testing",
     text: "Before your product hits the market, our hands-on prototype testing ensures it’s refined, reliable, and ready to impress.",
-    img: '/lab2.3.png',
+    img: "/lab2.3.png",
   },
 ];
 
@@ -28,52 +28,51 @@ const fadeUp = {
 
 const ShapingAfrica = () => {
   return (
-    <section >
-      <div className={styles.section}>
-      <motion.div
-        className={styles.heading}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={fadeUp}
-      >
+    <section>
+      <div>
+        <motion.div
+          className={styles.heading}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={fadeUp}
+        >
+          <div className="sectionHead">
+            <h2>Shaping the Future of Technology in Africa</h2>
+            <h6>
+              Together, we’ll engineer the tools that shape Africa. From concept
+              to prototype to market-ready product, FSX Labs is your partner in
+              innovation.
+            </h6>
+          </div>
+        </motion.div>
 
-         <div className="sectionHead">
-        <h2>Shaping the Future of Technology in Africa</h2>
-        <h6>
-          Together, we’ll engineer the tools that shape Africa. From concept to
-          prototype to market-ready product, FSX Labs is your partner in
-          innovation.
-        </h6>
+        <div className={styles.grid}>
+          {data.map((item, index) => (
+            <div
+              key={index}
+              className={styles.card}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={fadeUp}
+            >
+              <div className={styles.image}>
+                <Image
+                  src={item.img}
+                  alt={item.title}
+                  width={500}
+                  height={300}
+                  className={styles.img}
+                />
+              </div>
+              <div className={styles.content}>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </div>
+            </div>
+          ))}
         </div>
-      </motion.div>
-
-      <div className={styles.grid}>
-        {data.map((item, index) => (
-          <motion.div
-            key={index}
-            className={styles.card}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeUp}
-          >
-            <div className={styles.image}>
-              <Image
-                src={item.img}
-                alt={item.title}
-                width={500}
-                height={300}
-                className={styles.img}
-              />
-            </div>
-            <div className={styles.content}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </div>
-          </motion.div>
-        ))}
-      </div>
       </div>
     </section>
   );

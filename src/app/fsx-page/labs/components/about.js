@@ -24,11 +24,11 @@ const AboutSection = () => {
 
   return (
     <section >
-      <div className={styles.aboutSection}>
+      <div>
       <div className={styles.aboutContent}>
         {/* Left Column - Text */}
         <div className={styles.aboutText} data-animate="fade-in-left">
-          <h2>About FSX Lab</h2>
+          <h3>About FSX Lab</h3>
           <p>
             FSX Labs is Nigeria’s center for research and innovation. We provide
             entrepreneurs, startups, and organizations with the tools and environment
@@ -36,7 +36,7 @@ const AboutSection = () => {
             testing to research-driven development, where tomorrow’s breakthroughs begin.
           </p>
 
-          <h3>What Makes Us Standout</h3>
+          <h5>What Makes Us Standout</h5>
           <p>
             FSX Labs is known as a research/innovation space where bold ideas are
             analyzed, experimented, tested, and developed into scalable, market-ready,
@@ -51,8 +51,8 @@ const AboutSection = () => {
             src="/lab1.2.jpg"  
             alt="About FSX Lab" 
             className={styles.image} 
-            width={600} 
-            height={352} 
+            width={435} 
+            height={350} 
           />
         </div>
       </div>
