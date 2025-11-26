@@ -129,8 +129,8 @@ const FSXTech = () => {
           <Image 
             src="/workstation.png" 
             alt="3D Workstation"
-            width={612} 
-            height={528} 
+            width={500} 
+            height={500} 
             className={styles.responsiveImage}
             sizes="(max-width: 768px) 100vw, 50vw" /* NEW: Match hero for consistency */
             style={{ width: '100%', height: 'auto' }}
