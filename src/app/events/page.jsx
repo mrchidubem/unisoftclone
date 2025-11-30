@@ -103,6 +103,11 @@ const ALL_CARDS = [
 // --- EventServicesSection Component ---
 function EventServicesSection() {
  
+  const handleScrollToContact = (e) => {
+  e.preventDefault();
+  const section = document.getElementById("contact");
+  if (section) section.scrollIntoView({ behavior: "smooth" });
+};
 
   return (
     // <section id="ourservices" className={styles.servicesSection}>
@@ -141,18 +146,20 @@ function EventServicesSection() {
               <p>{service.text}</p>
               </div>
             ))}
-            <div className={styles.cardLinkText}>
-              <p>
-                {card.linkText}
-              </p>
+           <Link href="#contact" className={styles.cardLink} onClick={handleScrollToContact}>
+              <div className={styles.cardLinkText}>
+                <p>
+                  {card.linkText}
+                </p>
               
-              <Image
-                src="/arrow-event.png"
-                alt="arrow right"
-                width={24}
-                height={24}
-              />
-            </div>
+                <Image
+                  src="/arrow-event.png"
+                  alt="arrow right"
+                  width={24}
+                  height={24}
+                />
+              </div>
+            </Link>
           </div>
         ))}
       </div>
