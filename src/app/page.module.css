@@ -1134,7 +1134,7 @@ font-size: 40px;
 .logoTrack {
   display: flex;
   gap: 1rem;
-  width: max-content; /* ensures track fits all logos */
+  width: max-content; 
   animation: scrollLogos 20s linear infinite;
 }
 
@@ -1154,7 +1154,7 @@ font-size: 40px;
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%); /* scroll full width */
+    transform: translateX(-100%); 
   }
 }
 
@@ -1176,8 +1176,8 @@ font-size: 40px;
 
   .logoTrack {
     gap: 1rem;
-    width: max-content; /* keep full width */
-    animation-duration: 15s; /* slower for smaller screens */
+    width: max-content; 
+    animation-duration: 15s; 
   }
 }
 
@@ -1196,7 +1196,7 @@ font-size: 40px;
     display: flex;
     align-items: center;
     gap: 2rem;
-    width: max-content; /* critical fix */
+    width: max-content; 
     animation: scrollLogos 15s linear infinite; 
   }
 
