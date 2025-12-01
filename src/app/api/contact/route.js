@@ -91,7 +91,7 @@ export async function POST(request) {
     // Send email
     await transporter.sendMail({
       from: `"FSX Contact Form" <${process.env.SMTP_USER}>`,
-      to: "mrchidubem9@gmail.com",  //hello@fransunisoft.com
+      to: "hello@fransunisoft.com",  //hello@fransunisoft.com
       replyTo: email, // Allows you to directly reply to the visitor
       subject: `FSX Inquiry from ${firstName} ${lastName}`,
       html: htmlContent,
@@ -101,6 +101,7 @@ export async function POST(request) {
       { success: true, message: "Thank you! Your message has been sent successfully." },
       { status: 200 }
     );
+
 
   } catch (error) {
     console.error("Email send failed:", error);
