@@ -4,33 +4,43 @@ import { useState } from 'react';
 import styles from './Footer.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
 export default function Footer() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const pathname = usePathname();
+  const [submitting, setSubmitting] = useState(false);
+  const [msg, setMsg] = useState('');
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
-  const toggleDropdown = () => setShowDropdown(!showDropdown);
-  const closeAll = () => {
-    setMenuOpen(false);
-    setShowDropdown(false);
-  };
-
-  const scrollToContact = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+    setSubmitting(true);
+    setMsg('');
+
+    const formData = new FormData(e.target);
+    formData.append('type', 'newsletter');
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        setMsg('Thank you! You’ve been subscribed!');
+        e.target.reset();
+      } else {
+        setMsg(data.error || 'Something went wrong. Try again.');
+      }
+    } catch (err) {
+      setMsg('Network error. Please try again.');
+    } finally {
+      setSubmitting(false);
     }
-    closeAll?.();
   };
 
   return (
     <footer className={styles.footer}>
       <div className={styles.topSection}>
-        {/* ✅ Branding Section */}
+        {/* Branding Section */}
         <div className={styles.branding}>
           <h2 className={styles.logo}>
             <Link href="/">
@@ -48,60 +58,30 @@ export default function Footer() {
             Engineering innovation and impact across Africa and beyond through the FSX ecosystem
           </p>
 
-          {/* ✅ Social Icons with Links */}
+          {/* Social Icons */}
           <div className={styles.socialIcons}>
-            <a
-              href="https://www.facebook.com/fransunisoft"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
+            <a href="https://www.facebook.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
               <Image src="/Facebook.png" alt="Facebook" width={40} height={40} />
             </a>
-            <a
-              href="https://twitter.com/fransunisoft"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
+            <a href="https://twitter.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
               <Image src="/X-Twitter.png" alt="Twitter" width={40} height={40} />
             </a>
-            <a
-              href="https://www.linkedin.com/company/fransunisoft/"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
+            <a href="https://www.linkedin.com/company/fransunisoft/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Image src="/Linkedin.png" alt="LinkedIn" width={40} height={40} />
             </a>
-            <a
-              href="https://www.instagram.com/fransunisoft"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
+            <a href="https://www.instagram.com/fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <Image src="/Instagram.png" alt="Instagram" width={40} height={40} />
             </a>
-            <a
-              href="https://www.youtube.com/@fransunisoft"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-            >
+            <a href="https://www.youtube.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
               <Image src="/Youtube.png" alt="YouTube" width={40} height={40} />
             </a>
-            <a
-              href="https://www.tiktok.com/@fransunisoft"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="tiktok"
-            >
-              <Image src="/tiktok.png" alt="tiktok" width={40} height={40} />
+            <a href="https://www.tiktok.com/@fransunisoft" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <Image src="/tiktok.png" alt="TikTok" width={40} height={40} />
             </a>
           </div>
         </div>
 
-        {/* ✅ Links Section */}
+        {/* Links Section */}
         <div className={styles.links}>
           <div className={styles.linkGroup}>
             <h4>FSX Ecosystem</h4>
@@ -116,20 +96,19 @@ export default function Footer() {
           <div className={styles.linkGroup}>
             <h4>Quick Links</h4>
             <Link href="/about">About Us</Link>
-            <a
-              href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7377090374336589825"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7377090374336589825" target="_blank" rel="noopener noreferrer">
               Blog
             </a>
-            <a href="#contact" onClick={scrollToContact} className={styles.navLink}>
+            <a href="#contact" onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
               Contact Us
             </a>
           </div>
         </div>
 
-        {/* ✅ Newsletter Section */}
+        {/* Newsletter Section */}
         <div className={styles.newsletter}>
           <h4>Newsletter</h4>
           <p>
@@ -137,15 +116,32 @@ export default function Footer() {
             updates. Sign up for our newsletter and join a community shaping the future of
             technology in Africa.
           </p>
-        
-   <form className={styles.form}>
-            <input type="email" placeholder="Email: johndoe@email.com" required />
-            <button type="submit">Subscribe</button>
+
+          <form className={styles.form} onSubmit={handleSubscribe}>
+            <input
+              type="email"
+              name="email"
+              placeholder="Email: johndoe@email.com"
+              required
+              disabled={submitting}
+            />
+            <button type="submit" disabled={submitting}>
+              {submitting ? 'Subscribing...' : 'Subscribe'}
+            </button>
           </form>
-          </div>
 
-
-      
+          {msg && (
+            <p style={{
+              marginTop: '0.75rem',
+              fontSize: '0.95rem',
+              textAlign: 'center',
+              color: msg.includes('Thank') ? '#16a34a' : '#dc2626',
+              fontWeight: '500'
+            }}>
+              {msg}
+            </p>
+          )}
+        </div>
       </div>
 
       <div className={styles.bottomNote}>
