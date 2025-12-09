@@ -1,21 +1,51 @@
-// src/app/api/contact/route.js
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-// Regex for validating email addresses (RFC 5322 simplified version)
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-// Basic sanitization (remove <script> tags etc.)
 function sanitize(input) {
   if (typeof input !== "string") return "";
-  return input.replace(/<[^>]*>?/gm, ""); 
+  return input.replace(/<[^>]*>?/gm, "").trim();
 }
 
 export async function POST(request) {
   try {
     const formData = await request.formData();
+    const type = sanitize(formData.get('type') || '');
 
-    // Extract and sanitize form inputs
+    //  GMAIL SETUP 
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    });
+
+    // NEWSLETTER SUBSCRIPTION 
+    if (type === 'newsletter') {
+      const email = sanitize(formData.get('email'));
+      if (!email || !emailRegex.test(email)) {
+        return NextResponse.json({ success: false, error: "Please enter a valid email" }, { status: 400 });
+      }
+
+      await transporter.sendMail({
+        from: `"FSX Newsletter" <${process.env.SMTP_USER}>`,
+        to: "hello@fransunisoft.com",
+        subject: `New Subscriber: ${email}`,
+        html: `
+          <div style="font-family:Arial,sans-serif;background:#f8fafc;padding:40px;text-align:center;">
+            <h2 style="color:#0D519A;">New Newsletter Subscriber!</h2>
+            <p style="font-size:18px;"><strong>${email}</strong> just joined the FSX community!</p>
+            <p style="color:#666;">${new Date().toLocaleString()}</p>
+          </div>
+        `,
+      });
+
+      return NextResponse.json({ success: true, message: "Thank you! You've been subscribed!" });
+    }
+
+    // CONTACT FORM 
     const firstName = sanitize(formData.get('firstName'));
     const lastName = sanitize(formData.get('lastName'));
     const email = sanitize(formData.get('email'));
@@ -24,96 +54,57 @@ export async function POST(request) {
     const serviceType = sanitize(formData.get('serviceType'));
     const message = sanitize(formData.get('message'));
 
-    // ✅ Validate required fields
     if (!firstName || !lastName || !email || !message) {
-      return NextResponse.json(
-        { success: false, error: "Required fields are missing." },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error: "Please fill in all required fields." }, { status: 400 });
     }
-
-    // ✅ Validate email format
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { success: false, error: "Invalid email format." },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error: "Please enter a valid email address." }, { status: 400 });
     }
 
-    // ✅ Mapping function for friendly service type display
     const getServiceDisplay = (type) => {
       const map = {
-        Consulting: 'FSX Consulting',
-        Support: 'FSX Support',
-        Development: 'FSX Tech',
-        Event: 'FSX Events',
-        Connect: 'FSX Connect',
-        Academy: 'FSX Academy'
+        Consulting: 'FSX Consulting', Labs: 'FSX Labs', Development: 'FSX Tech',
+        Event: 'FSX Events', Connect: 'FSX Connect', Academy: 'FSX Academy'
       };
       return map[type] || type || 'Not specified';
     };
 
-    // ✅ Setup Nodemailer transporter
-    const transporter = nodemailer.createTransport({
-      host: "smtp.gmail.com", 
-      port: 587,
-      secure: false,
-      auth: {
-        user: "mrchidubem8@gmail.com", 
-        pass: "vplpasxrnhguvrnw", 
-      },
-    });
-
-    // ✅ Enhanced HTML Email Template
     const htmlContent = `
       <div style="font-family: Arial, sans-serif; padding: 20px; color: #333; background: #f9f9f9;">
         <div style="max-width: 600px; margin: auto; background: #fff; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden;">
-          
-          <!-- Header -->
           <div style="background: linear-gradient(135deg, #0D519A, #20A89F); padding: 20px; text-align: center; color: white;">
-            <h2 style="margin: 0;">📩 New Fsx Contact Request</h2>
+            <h2 style="margin: 0;">New FSX Contact Request</h2>
           </div>
-
-          <!-- Body -->
-          <div style="padding: 20px;">
+          <div style="padding: 20px; line-height: 1.6;">
             <p><strong>Name:</strong> ${firstName} ${lastName}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
             <p><strong>Company:</strong> ${company || "Not provided"}</p>
-            <p><strong>Service Type:</strong> ${getServiceDisplay(serviceType)}</p>
+            <p><strong>Service Interested In:</strong> ${getServiceDisplay(serviceType)}</p>
             <p><strong>Message:</strong></p>
-            <p style="background:#f1f1f1; padding:10px; border-radius:5px;">${message}</p>
+            <div style="background:#f1f1f1; padding:15px; border-radius:8px; margin-top:10px;">
+              ${message.replace(/\n/g, '<br>')}
+            </div>
           </div>
-
-          <!-- Footer -->
-          <div style="background: #0D519A; color: white; padding: 15px; text-align: center;">
-            <p style="margin: 0;">Fransunisoft © ${new Date().getFullYear()} | Secure Mail</p>
+          <div style="background: #0D519A; color: white; padding: 15px; text-align: center; font-size: 12px;">
+            <p style="margin: 0;">Fransunisoft © ${new Date().getFullYear()} | Secure Inquiry</p>
           </div>
         </div>
       </div>
     `;
 
-    // ✅ Send email
-    const info = await transporter.sendMail({
-      from: `"FSX Contact" <mrchidubem8@gmail.com>`,
-      to: "oluwaseyiayodele18@gmail.com", 
+    await transporter.sendMail({
+      from: `"FSX Contact Form" <${process.env.SMTP_USER}>`,
+      to: "hello@fransunisoft.com",
+      replyTo: email,
       subject: `FSX Inquiry from ${firstName} ${lastName}`,
       html: htmlContent,
     });
 
-    console.log("Message sent: %s", info.messageId);
-
-    return NextResponse.json(
-      { success: true, message: "Email sent successfully." },
-      { status: 200 }
-    );
+    return NextResponse.json({ success: true, message: "Thank you! Your message has been sent successfully." });
 
   } catch (error) {
-    console.error("Error sending email:", error);
-
-    return NextResponse.json(
-      { success: false, error: "An error occurred while sending your request." },
-      { status: 500 }
-    );
+    console.error("Email send failed:", error);
+    return NextResponse.json({ success: false, error: "Sorry, something went wrong." }, { status: 500 });
   }
 }
