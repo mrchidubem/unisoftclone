@@ -31,7 +31,7 @@ export async function POST(request) {
 
       await transporter.sendMail({
         from: `"FSX Newsletter" <${process.env.SMTP_USER}>`,
-        to: "hello@fransunisoft.com",
+        to: "hello@fransunisoft.com", //jokafor@capplc.com
         subject: `New Subscriber: ${email}`,
         html: `
           <div style="font-family:Arial,sans-serif;background:#f8fafc;padding:40px;text-align:center;">
@@ -95,7 +95,7 @@ export async function POST(request) {
 
     await transporter.sendMail({
       from: `"FSX Contact Form" <${process.env.SMTP_USER}>`,
-      to: "hello@fransunisoft.com",
+      to: "hello@fransunisoft.com",   //hello@fransunisoft.com"
       replyTo: email,
       subject: `FSX Inquiry from ${firstName} ${lastName}`,
       html: htmlContent,
