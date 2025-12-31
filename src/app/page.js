@@ -189,7 +189,7 @@ export default function HomePage() {
 
       {/* === BRAND FAMILY SECTION === */}
     
-<section>
+<section id="brand-family">
   <div
         className={styles.brandFamily}
         data-aos="fade-up"
@@ -218,7 +218,7 @@ export default function HomePage() {
               Business consulting, digital transformation, and community
               programs that bridge strategy with real tech execution and impact.
             </p>
-            <Link href="/fsx-page/consulting" className="button2">
+            <Link href="/consulting" className="button2">
               Learn More
             </Link>
           </div>
@@ -232,7 +232,7 @@ export default function HomePage() {
               Platforms, automation, and innovation programs for building
               scalable solutions from scratch.
             </p>
-            <Link href="/fsx-page/labs" className="button2">
+            <Link href="/labs" className="button2">
               Learn More
             </Link>
           </div>
@@ -244,7 +244,7 @@ export default function HomePage() {
               Computer accessories, gadgets, and electronics procurement
               providing reliable, affordable enterprise technology solutions.
             </p>
-            <Link href="/fsx-page/tech" className="button2">
+            <Link href="/tech" className="button2">
               Learn More
             </Link>
           </div>
@@ -256,7 +256,7 @@ export default function HomePage() {
               Brand activations, corporate events, and community programs with
               global-standard execution.
             </p>
-            <Link href="/fsx-page/events" className="button2">
+            <Link href="/events" className="button2">
               Learn More
             </Link>
           </div>
@@ -270,7 +270,7 @@ export default function HomePage() {
               Connecting communities and brands through digital platforms and
               strategic partnerships.
             </p>
-            <Link href="/fsx-page/connect" className="button2">
+            <Link href="/connect" className="button2">
               Learn More
             </Link>
           </div>
@@ -282,7 +282,7 @@ export default function HomePage() {
               Training and learning programs designed to empower individuals and
               teams with future-ready skills.
             </p>
-            <Link href="/fsx-page/academy" className="button2">
+            <Link href="/academy" className="button2">
               Learn More
             </Link>
           </div>
