@@ -26,7 +26,7 @@ const AboutSection = () => {
     <section >
       <div>
       <div className={styles.aboutContent}>
-        {/* Left Column - Text */}
+        {/* Left Column */}
         <div className={styles.aboutText} data-animate="fade-in-left">
           <h3>About FSX Lab</h3>
           <p>
